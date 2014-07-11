@@ -1,0 +1,283 @@
+﻿<UserControl x:Class="GestorDocument.UI.Buscar.BuscarAsuntoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="380">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary>
+                    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Path Stroke="#6E6E6E" StrokeThickness="1"
+              Fill="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Union">
+                    <CombinedGeometry.Geometry1>
+                        <RectangleGeometry  Rect="0,0,380,520" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <RectangleGeometry  Rect="0,0,40,40">
+                            <RectangleGeometry.Transform>
+                                <RotateTransform Angle="45" CenterX="175" CenterY="380"></RotateTransform>
+                            </RectangleGeometry.Transform>
+                        </RectangleGeometry>
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
+        <Grid Margin="10,18" >
+            <GroupBox Header="Buscar Asunto Por" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock HorizontalAlignment="Left" Text="Prioridad"
+                               VerticalAlignment="Center" Margin="10,0" 
+                               Style="{StaticResource textBockPopUp}" />
+
+                    <ComboBox ItemsSource="{Binding Busqueda.dataListPrio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              Text="{Binding Busqueda.SelectedPrioridadName, Mode=TwoWay}"
+                              Height="23" HorizontalAlignment="Left"
+                              VerticalAlignment="Center" Name="cbPrioridad"
+                              Width="220" Grid.Column="1"
+                              IsEditable="true"  IsReadOnly="true" 
+                              StaysOpenOnEdit="True" Cursor="Hand">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox HorizontalAlignment="Center"
+                                               IsChecked="{Binding Path=IsChecked, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                        <TextBlock Text="{Binding PrioridadName}" VerticalAlignment="Center" IsEnabled="False"/>
+                                    </CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <Border Grid.Row="1" Style="{StaticResource BorderPopUp}"
+                            HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Center"
+                            Grid.ColumnSpan="2"/>
+
+                    <TextBlock HorizontalAlignment="Left" 
+                               Text="Estatus" Grid.Row="2"
+                               VerticalAlignment="Center" Margin="10,0" 
+                               Style="{StaticResource textBockPopUp}" />
+
+                    <ComboBox ItemsSource="{Binding Busqueda.dataListStatus,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              Text="{Binding Busqueda.SelectedStatusAsuntoName, Mode=TwoWay}"
+                              SelectedValuePath="IdStatusAsunto"
+                              Height="23" HorizontalAlignment="Left"
+                              VerticalAlignment="Center" Name="cbStatus"
+                               Width="220"
+                              Grid.Row="2" IsEditable="true"  IsReadOnly="true"
+                              StaysOpenOnEdit="True" Grid.Column="1"
+                              Cursor="Hand">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox HorizontalAlignment="Center"
+                                               IsChecked="{Binding Path=IsChecked, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                        <TextBlock Text="{Binding StatusName}" VerticalAlignment="Center" IsEnabled="False"/>
+                                    </CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <Border Grid.Row="3" Style="{StaticResource BorderPopUp}"
+                            HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Center" Grid.ColumnSpan="2" />
+
+                    <TextBlock HorizontalAlignment="Left" 
+                               Text="Destinatario" Grid.Row="4"
+                               VerticalAlignment="Center" Margin="10,0" 
+                               Style="{StaticResource textBockPopUp}" />
+
+                    <ComboBox ItemsSource="{Binding Busqueda.dataListDestinatarios,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              Text="{Binding Busqueda.SelectedDestinatarioName, Mode=TwoWay}"
+                              SelectedValuePath="IdJerarquia"
+                              Height="23" HorizontalAlignment="Left"
+                              VerticalAlignment="Center" Width="220"
+                              Grid.Row="4" Name="cbDestinatario"
+                              IsEditable="true"  IsReadOnly="true"
+                              StaysOpenOnEdit="True" Grid.Column="1"
+                              Cursor="Hand">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox HorizontalAlignment="Center"
+                                              IsChecked="{Binding Path=IsChecked, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                        <TextBlock Text="{Binding JerarquiaName}" VerticalAlignment="Center" IsEnabled="False"/>
+                                    </CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <Border Grid.Row="5" Style="{StaticResource BorderPopUp}"
+                            HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Center" Grid.ColumnSpan="2" />
+
+                    <TextBlock HorizontalAlignment="Left" 
+                               Text="Signatario" Grid.Row="6"
+                               VerticalAlignment="Center" Margin="10,0" 
+                               Style="{StaticResource textBockPopUp}" />
+
+                    <ComboBox ItemsSource="{Binding Busqueda.dataListSignatarios,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"
+                              Text="{Binding Busqueda.SelectedSignatarioName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              SelectedValuePath="IdDeterminante"
+                              Height="23" HorizontalAlignment="Left"
+                              VerticalAlignment="Center" Name="cbSignatario"
+                              Width="220"
+                              Grid.Row="6" IsEditable="true"  IsReadOnly="true"
+                              StaysOpenOnEdit="True"
+                              Cursor="Hand">
+
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox HorizontalAlignment="Center"
+                                               IsChecked="{Binding Path=IsChecked, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                        <TextBlock Text="{Binding DeterminanteName}" VerticalAlignment="Center" IsEnabled="False"/>
+                                    </CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+
+                    </ComboBox>
+
+                    <Border Grid.Row="7" Style="{StaticResource BorderPopUp}"
+                            HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Center" Grid.ColumnSpan="2" />
+
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Rango de fechas." Grid.Row="8"
+                               VerticalAlignment="Center" Margin="10,0"
+                               Style="{StaticResource textBockPopUp}" />
+
+                    <CheckBox IsChecked="{Binding Busqueda.IsDateChecked, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" Margin="10,0"
+                              VerticalAlignment="Center" Name="CheckBoxFechas" />
+
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Desde" Grid.Row="9"
+                               VerticalAlignment="Center" Margin="10,0"
+                               Style="{StaticResource textBockPopUp}" />
+
+                    <DatePicker SelectedDate="{Binding Busqueda.SelectedFechaDesde,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                Height="25" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="9"
+                                VerticalAlignment="Center" Name="datePickerDesde" Width="220"
+                                IsEnabled="{Binding Busqueda.IsDateChecked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Hasta" Grid.Row="10"
+                               VerticalAlignment="Center" Margin="10,0"
+                               Style="{StaticResource textBockPopUp}" />
+                    <DatePicker SelectedDate="{Binding Busqueda.SelectedFechaHasta,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                Height="25" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="10"
+                                VerticalAlignment="Center" Name="datePickerHasta" Width="220"
+                                IsEnabled="{Binding Busqueda.IsDateChecked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+
+                    <Border Grid.Row="11" Style="{StaticResource BorderPopUp}"
+                            HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Center" Grid.ColumnSpan="2" />
+
+                    <Grid Grid.Row="12" Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock HorizontalAlignment="Left" 
+                                   Text="Folio"
+                                   VerticalAlignment="Bottom" Margin="10,0" 
+                                   Style="{StaticResource textBockPopUp}" />
+                        <TextBox Grid.Row="1" Height="23" HorizontalAlignment="Left"
+                                 Text="{Binding Busqueda.SelectedFolio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" Width="300" Margin="30,0" MaxLength="10"/>
+
+                        <TextBlock HorizontalAlignment="Left" Grid.Row="2"
+                                   Text="Título del asunto"
+                                   VerticalAlignment="Bottom" Margin="10,0" 
+                                   Style="{StaticResource textBockPopUp}" />
+                        <TextBox Grid.Row="3" Height="23" HorizontalAlignment="Left"
+                                 Text="{Binding Busqueda.SelectedTituloAsunto,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" Width="300" Margin="30,0"/>
+
+                        <TextBlock HorizontalAlignment="Left" Grid.Row="4"
+                                   Text="Descripción del asunto"
+                                   VerticalAlignment="Bottom" Margin="10,0" 
+                                   Style="{StaticResource textBockPopUp}" />
+                        <TextBox Grid.Row="5" Height="23" HorizontalAlignment="Left"
+                                 Text="{Binding Busqueda.SelectedDescripcionAsunto,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" Width="300" Margin="30,0"/>
+
+                        <TextBlock HorizontalAlignment="Left" Grid.Row="6"
+                                   Text="Título del archivo digital"
+                                   VerticalAlignment="Bottom" Margin="10,0" 
+                                   Style="{StaticResource textBockPopUp}" />
+                        <TextBox Grid.Row="7" Height="23" HorizontalAlignment="Left"
+                                 Text="{Binding Busqueda.SelectedNameDocumento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" Width="300" Margin="30,0"/>
+
+                    </Grid>
+
+                    <Button Grid.Row="14" Grid.Column="1" 
+                            Height="30" HorizontalAlignment="Right"
+                            Margin="10,0" Cursor="Hand"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Width="50" ToolTip="Buscar Asunto"
+                            Name="btnBuscarTurno"
+                            Style="{StaticResource bntBuscarAsunto}"
+                            Command="{Binding Busqueda.ValidarSearchCommand}"
+                            Click="btnBuscarTurno_Click">
+                        <Image  Stretch="Fill" Width="20" Height="20"
+                                Source="../Imagenes/SearchBuscarAsunto.png"
+                                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                    </Button>
+
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>

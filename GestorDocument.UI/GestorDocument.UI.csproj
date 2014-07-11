@@ -1,0 +1,1293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAB17DDF-5F88-410D-84A2-EE53597AF4AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestorDocument.UI</RootNamespace>
+    <AssemblyName>GestorDocument.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GestorDocument.UI.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\GestorDocument.UI.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\GestorDocument.UI.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=0.13.1.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.0.13.1.0\lib\net40\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="RestSharp">
+      <HintPath>..\..\..\..\..\..\..\..\DLL Gestor\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Designer, Version=1.0.86.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Sqlite86-2\2010\bin\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.0.13.1.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFVisifire.Charts">
+      <HintPath>..\..\..\..\..\..\..\..\DLL Gestor\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AsuntoTurno\AddDestinatarioAreaView.xaml.cs">
+      <DependentUpon>AddDestinatarioAreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AddDestinatarioConCopiaParaView.xaml.cs">
+      <DependentUpon>AddDestinatarioConCopiaParaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AddDestinatarioDireccionView.xaml.cs">
+      <DependentUpon>AddDestinatarioDireccionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AddDestinatarioView.xaml.cs">
+      <DependentUpon>AddDestinatarioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AddDocumentosView.xaml.cs">
+      <DependentUpon>AddDocumentosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AddSignatarioExternoView.xaml.cs">
+      <DependentUpon>AddSignatarioExternoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AddSignatarioView.xaml.cs">
+      <DependentUpon>AddSignatarioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AsuntoConsultaView.xaml.cs">
+      <DependentUpon>AsuntoConsultaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AsuntoTurnoView.xaml.cs">
+      <DependentUpon>AsuntoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\AtenderTurnoView.xaml.cs">
+      <DependentUpon>AtenderTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\BoolToVisibilityConverter.cs" />
+    <Compile Include="AsuntoTurno\CapturaTurnoView.xaml.cs">
+      <DependentUpon>CapturaTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ConsultaAsuntoReadView.xaml.cs">
+      <DependentUpon>ConsultaAsuntoReadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ConsultaExpedienteView.xaml.cs">
+      <DependentUpon>ConsultaExpedienteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ConsultaHeaderAsuntoView.xaml.cs">
+      <DependentUpon>ConsultaHeaderAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ConsultaSeguimientoTurnoView.xaml.cs">
+      <DependentUpon>ConsultaSeguimientoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAddDestinatarioAreaView.xaml.cs">
+      <DependentUpon>DglAddDestinatarioAreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAddDestinatarioConCopiaParaView.xaml.cs">
+      <DependentUpon>DglAddDestinatarioConCopiaParaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAddDestinatarioDireccionView.xaml.cs">
+      <DependentUpon>DglAddDestinatarioDireccionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAddDestinatarioView.xaml.cs">
+      <DependentUpon>DglAddDestinatarioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAddDocumentoView.xaml.cs">
+      <DependentUpon>DglAddDocumentoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAddSignatarioExternoView.xaml.cs">
+      <DependentUpon>DglAddSignatarioExternoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAddSignatarioView.xaml.cs">
+      <DependentUpon>DglAddSignatarioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglAtenderTurnoView.xaml.cs">
+      <DependentUpon>DglAtenderTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\DglResultadoBusquedaAsuntoView.xaml.cs">
+      <DependentUpon>DglResultadoBusquedaAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\HeaderAsuntoView.xaml.cs">
+      <DependentUpon>HeaderAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ImprimirView.xaml.cs">
+      <DependentUpon>ImprimirView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ModifyAsuntoTurnoView.xaml.cs">
+      <DependentUpon>ModifyAsuntoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\NewAsuntoConsultaView.xaml.cs">
+      <DependentUpon>NewAsuntoConsultaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ReadAsuntoTurnoView.xaml.cs">
+      <DependentUpon>ReadAsuntoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ReadExpedienteView.xaml.cs">
+      <DependentUpon>ReadExpedienteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\ResultadoBusquedaAsuntoView.xaml.cs">
+      <DependentUpon>ResultadoBusquedaAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\SeguimientoTurnoView.xaml.cs">
+      <DependentUpon>SeguimientoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\TracingAsunto.xaml.cs">
+      <DependentUpon>TracingAsunto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\TracingAsuntoConsulta.xaml.cs">
+      <DependentUpon>TracingAsuntoConsulta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\TracingAsuntoNotificaciones.xaml.cs">
+      <DependentUpon>TracingAsuntoNotificaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\TreeViewTurnoView.xaml.cs">
+      <DependentUpon>TreeViewTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsuntoTurno\TurnarAsuntoView.xaml.cs">
+      <DependentUpon>TurnarAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Asunto\AsuntoAddView.xaml.cs">
+      <DependentUpon>AsuntoAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Asunto\AsuntoModView.xaml.cs">
+      <DependentUpon>AsuntoModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Asunto\AsuntoNotificacionesView.xaml.cs">
+      <DependentUpon>AsuntoNotificacionesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Asunto\AsuntosConsultaListBoxView.xaml.cs">
+      <DependentUpon>AsuntosConsultaListBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Asunto\AsuntoView.xaml.cs">
+      <DependentUpon>AsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buscar\BarraBotonesView.xaml.cs">
+      <DependentUpon>BarraBotonesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buscar\BuscarAsuntoTurnoView.xaml.cs">
+      <DependentUpon>BuscarAsuntoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buscar\BuscarAsuntoView.xaml.cs">
+      <DependentUpon>BuscarAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buscar\CatResultadoView.xaml.cs">
+      <DependentUpon>CatResultadoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buscar\ResultadoView.xaml.cs">
+      <DependentUpon>ResultadoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CapturaTurnoSeguimientoTurnoView.xaml.cs">
+      <DependentUpon>CapturaTurnoSeguimientoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.cs" />
+    <Compile Include="DashBoard\AnioMesView.xaml.cs">
+      <DependentUpon>AnioMesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\AtendidosView.xaml.cs">
+      <DependentUpon>AtendidosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Common\DataTemplateSelector.cs" />
+    <Compile Include="DashBoard\Common\ViewModelBase.cs" />
+    <Compile Include="DashBoard\DashBoardGraphView.xaml.cs">
+      <DependentUpon>DashBoardGraphView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DashBoardTableView.xaml.cs">
+      <DependentUpon>DashBoardTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DeterminanteView.xaml.cs">
+      <DependentUpon>DeterminanteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\IndicadorPendientes.xaml.cs">
+      <DependentUpon>IndicadorPendientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\IndicadorView.xaml.cs">
+      <DependentUpon>IndicadorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\MultiChartControl\MultiChart.cs" />
+    <Compile Include="DashBoard\MultiChartControl\SeriesTemplateSelector.cs" />
+    <Compile Include="DashBoard\PendientesView.xaml.cs">
+      <DependentUpon>PendientesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\Tablero2View.xaml.cs">
+      <DependentUpon>Tablero2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\TableroAtendidos.xaml.cs">
+      <DependentUpon>TableroAtendidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\TableroPendientes.xaml.cs">
+      <DependentUpon>TableroPendientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\TableroView.xaml.cs">
+      <DependentUpon>TableroView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Determinante\CatDeterminanteView.xaml.cs">
+      <DependentUpon>CatDeterminanteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Determinante\DeterminanteAddView.xaml.cs">
+      <DependentUpon>DeterminanteAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Determinante\DeterminanteModView.xaml.cs">
+      <DependentUpon>DeterminanteModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Determinante\DeterminanteView.xaml.cs">
+      <DependentUpon>DeterminanteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DlgModal\DlgDownloadFile.xaml.cs">
+      <DependentUpon>DlgDownloadFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DlgModal\DlgUpload.xaml.cs">
+      <DependentUpon>DlgUpload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Documentos\CatDocumentosView.xaml.cs">
+      <DependentUpon>CatDocumentosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Documentos\DocumentosAddView.xaml.cs">
+      <DependentUpon>DocumentosAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Documentos\DocumentosModView.xaml.cs">
+      <DependentUpon>DocumentosModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Documentos\DocumentosView.xaml.cs">
+      <DependentUpon>DocumentosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadFile.cs" />
+    <Compile Include="Expediente\CatExpedienteView.xaml.cs">
+      <DependentUpon>CatExpedienteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente\ExpedienteAddView.xaml.cs">
+      <DependentUpon>ExpedienteAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente\ExpedienteModView.xaml.cs">
+      <DependentUpon>ExpedienteModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente\ExpedienteView.xaml.cs">
+      <DependentUpon>ExpedienteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FechaVencimiento\CatFechaVencimientoView.xaml.cs">
+      <DependentUpon>CatFechaVencimientoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FechaVencimiento\FechaVencimientoAddView.xaml.cs">
+      <DependentUpon>FechaVencimientoAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FechaVencimiento\FechaVencimientoModView.xaml.cs">
+      <DependentUpon>FechaVencimientoModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FechaVencimiento\FechaVencimientoView.xaml.cs">
+      <DependentUpon>FechaVencimientoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestorDocumentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorDocumentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IContentControl.cs" />
+    <Compile Include="Instruccion\CatInstruccionView.xaml.cs">
+      <DependentUpon>CatInstruccionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Instruccion\InstruccionAddView.xaml.cs">
+      <DependentUpon>InstruccionAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Instruccion\InstruccionModView.xaml.cs">
+      <DependentUpon>InstruccionModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Instruccion\InstruccionView.xaml.cs">
+      <DependentUpon>InstruccionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login\BindablePasswordBox.cs" />
+    <Compile Include="Login\ControlsValidator.cs" />
+    <Compile Include="Login\SplashView.xaml.cs">
+      <DependentUpon>SplashView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login\UserLoginView.xaml.cs">
+      <DependentUpon>UserLoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowsHeaderView.xaml.cs">
+      <DependentUpon>MainWindowsHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\MenuView.xaml.cs">
+      <DependentUpon>MenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlantillaNotificaciones\PlantillaNotificacionesView.xaml.cs">
+      <DependentUpon>PlantillaNotificacionesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlantillasSubMenu\PantallaInicioView.xaml.cs">
+      <DependentUpon>PantallaInicioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prioridad\CatPrioridadView.xaml.cs">
+      <DependentUpon>CatPrioridadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prioridad\PrioridadAddView.xaml.cs">
+      <DependentUpon>PrioridadAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prioridad\PrioridadModView.xaml.cs">
+      <DependentUpon>PrioridadModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Prioridad\PrioridadView.xaml.cs">
+      <DependentUpon>PrioridadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pruebas\MenuMenuModel.cs" />
+    <Compile Include="Pruebas\MenuModel.cs" />
+    <Compile Include="Pruebas\MenuViewModel.cs" />
+    <Compile Include="Reportes\PantallaReportes.xaml.cs">
+      <DependentUpon>PantallaReportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEficienciaView.xaml.cs">
+      <DependentUpon>ReporteEficienciaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Reportes.xaml.cs">
+      <DependentUpon>Reportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowWindows.cs" />
+    <Compile Include="Signatario\CatSignatarioView.xaml.cs">
+      <DependentUpon>CatSignatarioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Signatario\SignatarioAddView.xaml.cs">
+      <DependentUpon>SignatarioAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Signatario\SignatarioModView.xaml.cs">
+      <DependentUpon>SignatarioModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Signatario\SignatarioView.xaml.cs">
+      <DependentUpon>SignatarioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusAsunto\CatStatusAsuntoView.xaml.cs">
+      <DependentUpon>CatStatusAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusAsunto\StatusAsuntoAddView.xaml.cs">
+      <DependentUpon>StatusAsuntoAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusAsunto\StatusAsuntoModView.xaml.cs">
+      <DependentUpon>StatusAsuntoModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusAsunto\StatusAsuntoView.xaml.cs">
+      <DependentUpon>StatusAsuntoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusTurno\CatStatusTurnoView.xaml.cs">
+      <DependentUpon>CatStatusTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusTurno\StatusTurnoAddView.xaml.cs">
+      <DependentUpon>StatusTurnoAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusTurno\StatusTurnoModView.xaml.cs">
+      <DependentUpon>StatusTurnoModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusTurno\StatusTurnoView.xaml.cs">
+      <DependentUpon>StatusTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDeterminante\CatTipoDeterminanteView.xaml.cs">
+      <DependentUpon>CatTipoDeterminanteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDeterminante\TipoDeterminanteAddView.xaml.cs">
+      <DependentUpon>TipoDeterminanteAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDeterminante\TipoDeterminanteModView.xaml.cs">
+      <DependentUpon>TipoDeterminanteModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDeterminante\TipoDeterminanteView.xaml.cs">
+      <DependentUpon>TipoDeterminanteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\CatTipoDocumentoView.xaml.cs">
+      <DependentUpon>CatTipoDocumentoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\TipoDocumentoAddView.xaml.cs">
+      <DependentUpon>TipoDocumentoAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\TipoDocumentoModView.xaml.cs">
+      <DependentUpon>TipoDocumentoModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\TipoDocumentoView.xaml.cs">
+      <DependentUpon>TipoDocumentoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\Turno\CatTurnoView.xaml.cs">
+      <DependentUpon>CatTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\Turno\TurnoAddView.xaml.cs">
+      <DependentUpon>TurnoAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\Turno\TurnoModView.xaml.cs">
+      <DependentUpon>TurnoModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TipoDocumento\Turno\TurnoView.xaml.cs">
+      <DependentUpon>TurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicacion\CatUbicacionView.xaml.cs">
+      <DependentUpon>CatUbicacionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicacion\UbicacionAddView.xaml.cs">
+      <DependentUpon>UbicacionAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicacion\UbicacionModView.xaml.cs">
+      <DependentUpon>UbicacionModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicacion\UbicacionView.xaml.cs">
+      <DependentUpon>UbicacionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\HistorialAsuntosDataGrid.xaml.cs">
+      <DependentUpon>HistorialAsuntosDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\MenuView.xaml.cs">
+      <DependentUpon>MenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\NotificadorView.xaml.cs">
+      <DependentUpon>NotificadorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\PopUp.xaml.cs">
+      <DependentUpon>PopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\Stock\StockSingleton.cs" />
+    <Compile Include="v2\TableroView.xaml.cs">
+      <DependentUpon>TableroView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\UsuarioInfoView.xaml.cs">
+      <DependentUpon>UsuarioInfoView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AsuntoTurno\AddDestinatarioAreaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AddDestinatarioConCopiaParaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AddDestinatarioDireccionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AddDestinatarioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AddDocumentosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AddSignatarioExternoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AddSignatarioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AsuntoConsultaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AsuntoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\AtenderTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\CapturaTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ConsultaAsuntoReadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ConsultaExpedienteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ConsultaHeaderAsuntoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ConsultaSeguimientoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAddDestinatarioAreaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAddDestinatarioConCopiaParaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAddDestinatarioDireccionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAddDestinatarioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAddDocumentoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAddSignatarioExternoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAddSignatarioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglAtenderTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\DglResultadoBusquedaAsuntoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\HeaderAsuntoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ImprimirView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ModifyAsuntoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\NewAsuntoConsultaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ReadAsuntoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ReadExpedienteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\ResultadoBusquedaAsuntoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\SeguimientoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\TracingAsunto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\TracingAsuntoConsulta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AsuntoTurno\TracingAsuntoNotificaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\TreeViewTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsuntoTurno\TurnarAsuntoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Asunto\AsuntoAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Asunto\AsuntoModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Asunto\AsuntoNotificacionesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Asunto\AsuntosConsultaListBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Asunto\AsuntoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Buscar\BarraBotonesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Buscar\BuscarAsuntoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buscar\BuscarAsuntoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buscar\CatResultadoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Buscar\ResultadoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CapturaTurnoSeguimientoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\AnioMesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\AtendidosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\DashBoardGraphView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\DashBoardTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\DeterminanteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\IndicadorPendientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\IndicadorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DashBoard\PendientesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\Tablero2View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DashBoard\TableroAtendidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\TableroPendientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DashBoard\TableroView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Determinante\CatDeterminanteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Determinante\DeterminanteAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Determinante\DeterminanteModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Determinante\DeterminanteView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DlgModal\DlgDownloadFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DlgModal\DlgUpload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Documentos\CatDocumentosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Documentos\DocumentosAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Documentos\DocumentosModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Documentos\DocumentosView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Expediente\CatExpedienteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Expediente\ExpedienteAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Expediente\ExpedienteModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Expediente\ExpedienteView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FechaVencimiento\CatFechaVencimientoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FechaVencimiento\FechaVencimientoAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FechaVencimiento\FechaVencimientoModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FechaVencimiento\FechaVencimientoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Instruccion\CatInstruccionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Instruccion\InstruccionAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Instruccion\InstruccionModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Instruccion\InstruccionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Login\SplashView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login\UserLoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindowsHeaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\MenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlantillaNotificaciones\PlantillaNotificacionesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlantillasSubMenu\PantallaInicioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prioridad\CatPrioridadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prioridad\PrioridadAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prioridad\PrioridadModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prioridad\PrioridadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reportes\PantallaReportes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reportes\ReporteEficienciaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reportes\Reportes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Signatario\CatSignatarioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Signatario\SignatarioAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Signatario\SignatarioModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Signatario\SignatarioView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusAsunto\CatStatusAsuntoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatusAsunto\StatusAsuntoAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusAsunto\StatusAsuntoModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusAsunto\StatusAsuntoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusTurno\CatStatusTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatusTurno\StatusTurnoAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusTurno\StatusTurnoModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusTurno\StatusTurnoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DictionaryTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipoDeterminante\CatTipoDeterminanteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipoDeterminante\TipoDeterminanteAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipoDeterminante\TipoDeterminanteModView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipoDeterminante\TipoDeterminanteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipoDocumento\CatTipoDocumentoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipoDocumento\TipoDocumentoAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TipoDocumento\TipoDocumentoModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TipoDocumento\TipoDocumentoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TipoDocumento\Turno\CatTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipoDocumento\Turno\TurnoAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TipoDocumento\Turno\TurnoModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TipoDocumento\Turno\TurnoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ubicacion\CatUbicacionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ubicacion\UbicacionAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ubicacion\UbicacionModView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Ubicacion\UbicacionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="v2\HistorialAsuntosDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\MenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\NotificadorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\PopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\TableroView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\UsuarioInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="Resources\Entypo.ttf" />
+    <Resource Include="Resources\Entypo-license.txt" />
+    <Resource Include="Resources\WindowsIcons-license.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Imagenes\conagua.jpg" />
+    <Resource Include="Imagenes\Conagua.png" />
+    <Resource Include="Imagenes\Search1.png" />
+    <Resource Include="Imagenes\filter.png" />
+    <Resource Include="Imagenes\SearchBuscarAsunto.png" />
+    <Resource Include="Imagenes\Tablero.png" />
+    <Resource Include="Imagenes\Grafic.png" />
+    <Resource Include="Imagenes\Apps-Task-Manager-Metro-icon.png" />
+    <Resource Include="Imagenes\GrayTexture.jpg" />
+    <Resource Include="Imagenes\ReportDocuments.png" />
+    <Resource Include="Imagenes\ReporteCorrespondecia.png" />
+    <Resource Include="Imagenes\ReporteEficiencia.png" />
+    <Resource Include="Imagenes\Personal.ico" />
+    <Resource Include="Imagenes\UserSegurity.ico" />
+    <Resource Include="Imagenes\Login.ico" />
+    <Resource Include="Imagenes\LoginUser.ico" />
+    <Resource Include="Imagenes\appbar.user.tie.png" />
+    <Resource Include="Imagenes\GestionDocument.ico" />
+    <Resource Include="Imagenes\Copia de Search alt.png" />
+    <Resource Include="Imagenes\Copia de semaforo_amarillo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Imagenes\semaforo_amarillo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\semaforo_rojo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\semaforo_verde.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Imagenes\Windows8StartScreen.ico" />
+    <Content Include="Reportes\Caratula.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\Eficiencia.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReportDetalle.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestorDocumentDataSet.xsc">
+      <DependentUpon>GestorDocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GestorDocumentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GestorDocumentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestorDocumentDataSet.xss">
+      <DependentUpon>GestorDocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\GestorDocument.DAL.Reportes.GestorDocumentDataSet+SP_ReporteDetalleDataTable.datasource" />
+    <None Include="Properties\DataSources\GestorDocument.DAL.Reportes.GestorDocumentDataSet+SP_ReporteEficienciaDataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestorDocument.DAL\GestorDocument.DAL.csproj">
+      <Project>{4A0F4B34-6E2B-4F7E-A679-CC1D33ADE5D2}</Project>
+      <Name>GestorDocument.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestorDocument.Model\GestorDocument.Model.csproj">
+      <Project>{17FBA103-3EB7-46D9-B84D-1AE16DC0E513}</Project>
+      <Name>GestorDocument.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestorDocument.ViewModel\GestorDocument.ViewModel.csproj">
+      <Project>{7BB8D374-A057-4EAE-B85F-C8E5A903C02C}</Project>
+      <Name>GestorDocument.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SyncService.ViewModel\SyncService.ViewModel.csproj">
+      <Project>{F92DC412-E0CB-4132-A3B6-D87B1CA1BC47}</Project>
+      <Name>SyncService.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\11593_774276.JPG" />
+    <Resource Include="Imagenes\1367270965_87924.ico" />
+    <Resource Include="Imagenes\1367271221_search.png" />
+    <Resource Include="Imagenes\Apps-Live-Messenger-alt-2-Metro-icon %281%29.png" />
+    <Resource Include="Imagenes\Apps-Live-Messenger-alt-2-Metro-icon.png" />
+    <Resource Include="Imagenes\Apps-Magnifier-Metro-icon.png" />
+    <Resource Include="Imagenes\Apps-Windows-Live-Mesh-Metro-icon.png" />
+    <Resource Include="Imagenes\artleo.com-8074.jpg" />
+    <Resource Include="Imagenes\btn_prioridad_alta.png" />
+    <Resource Include="Imagenes\btn_prioridad_media.png" />
+    <Resource Include="Imagenes\btn_prioridad_normal.png" />
+    <Resource Include="Imagenes\Buscar.ico" />
+    <Resource Include="Imagenes\Buzz-Read-message-icon.png" />
+    <Resource Include="Imagenes\Configure_alt_3.png" />
+    <Resource Include="Imagenes\Documents Folder.ico" />
+    <Resource Include="Imagenes\Folders-OS-Blank-Folder-Metro-icon.png" />
+    <Resource Include="Imagenes\ReportesMetro.png" />
+    <Resource Include="Imagenes\Folders-OS-Personal-Metro-icon.png" />
+    <Resource Include="Imagenes\fondo-gris-textura.png" />
+    <Resource Include="Imagenes\fondo-gris_main.png" />
+    <Resource Include="Imagenes\images.jpg" />
+    <Resource Include="Imagenes\Magnifier-icon.png" />
+    <Resource Include="Imagenes\mail-icon %281%29.png" />
+    <Resource Include="Imagenes\mail-icon.png" />
+    <Resource Include="Imagenes\main_bg.png" />
+    <Resource Include="Imagenes\Metro-icon-serach.png" />
+    <Resource Include="Imagenes\Metro-Search-Blue-48.png" />
+    <Resource Include="Imagenes\myspace alt.png" />
+    <Resource Include="Imagenes\Other-Mail-alt-Metro-icon.png" />
+    <Resource Include="Imagenes\Other-Mail-Metro-icon.png" />
+    <Resource Include="Imagenes\Other-Search-Metro-icon.png" />
+    <Resource Include="Imagenes\page-edit-icon.png" />
+    <Resource Include="Imagenes\Search alt.png" />
+    <Resource Include="Imagenes\search-icon.png" />
+    <Resource Include="Imagenes\Search_button.png" />
+    <Resource Include="Imagenes\settings-icon.png" />
+    <Resource Include="Imagenes\Start-Menu-Search-icon.png" />
+    <Resource Include="Imagenes\sync-icon %281%29.png" />
+    <Resource Include="Imagenes\sync-icon.png" />
+    <Resource Include="Imagenes\Update.png" />
+    <Resource Include="Imagenes\win8-search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Excel.png" />
+    <Resource Include="Imagenes\Notepad.png" />
+    <Resource Include="Imagenes\Paint.png" />
+    <Resource Include="Imagenes\pdf.jpg" />
+    <Resource Include="Imagenes\PowerPoint.png" />
+    <Resource Include="Imagenes\Word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\FondoGrisTracing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\White_Texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\logo conagua.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\TextureRed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Red_texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Blue_Texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Green_Texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\GreenTexture.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE6D5CF0-414B-4621-854A-94718ED1848D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SyncService.Server.DAL</RootNamespace>
+    <AssemblyName>SyncService.Server.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\DLL Gestor\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="POCOS\APP_BANDEJA.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\APP_MENU.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\APP_ROL.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\APP_ROL_MENU.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\APP_USUARIO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\APP_USUARIO_ROL.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_DETERMINANTE.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_INSTRUCCION.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_ORGANIGRAMA.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_PRIORIDAD.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_STATUS_ASUNTO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_STATUS_TURNO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_TIPO_DETERMINANTE.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_TIPO_DOCUMENTO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_TIPO_EXTENCION.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_TIPO_UNIDAD_NORMATIVA.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\CAT_UBICACION.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\GET_ASUNTO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\GET_DOCUMENTOS.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\GET_EXPEDIENTE.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\GET_FECHA_VENCIMIENTO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\GET_TURNO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\INF_ACCION.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\INF_FORM.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\INF_INFODOC.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\MODIFIEDDATA.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\REL_DESTINATARIO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\REL_DESTINATARIO_CCP.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\REL_SIGNATARIO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\REL_SIGNATARIO_EXTERNO.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\SyncServiceServerEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyncServiceServerEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\SyncServiceServerEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\SyncServiceServerEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SyncServiceServerEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="POCOS\SYNCTABLE.cs">
+      <DependentUpon>SyncServiceServerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BroadcastRepository.cs" />
+    <Compile Include="Repository\JsonRepository.cs" />
+    <Compile Include="Repository\ReceiverRepository.cs" />
+    <Compile Include="Repository\SerializerJson.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="POCOS\SyncServiceServerEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SyncServiceServerEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="POCOS\SyncServiceServerEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SyncServiceServerEntity.Context.cs</LastGenOutput>
+    </None>
+    <None Include="POCOS\SyncServiceServerEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SyncServiceServerEntity.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SyncService.Model\SyncService.Model.csproj">
+      <Project>{E9D8B330-1CE4-4FCC-993F-38145E978E32}</Project>
+      <Name>SyncService.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30FFF0C2-4EA2-4212-BEDE-F5194791B2C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Protell.Server.DAL</RootNamespace>
+    <AssemblyName>Protell.Server.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\..\..\DLL Gestor\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IConvertPoco.cs" />
+    <Compile Include="JSON\SerializerJson.cs" />
+    <Compile Include="Pocos\APP_MENU.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\APP_ROL.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\APP_ROL_MENU.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\APP_USUARIO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\APP_USUARIO_ROL.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_DETERMINANTE.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_INSTRUCCION.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_ORGANIGRAMA.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_PRIORIDAD.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_SERVER_LASTDATA.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_STATUS_ASUNTO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_STATUS_TURNO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_SYNC.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_TIPO_DETERMINANTE.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_TIPO_DOCUMENTO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_UBICACION.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\CAT_UPLOAD_LOG.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\EntityGestorDocument.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityGestorDocument.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\GET_ASUNTO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\GET_DOCUMENTOS.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\GET_EXPEDIENTE.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\GET_FECHA_VENCIMIENTO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\GET_TURNO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\INF_ACCION.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\INF_FORM.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\INF_INFODOC.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\PocosGestorDocument.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PocosGestorDocument.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\PocosGestorDocument.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\REL_DESTINATARIO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocos\REL_SIGNATARIO.cs">
+      <DependentUpon>PocosGestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\InstruccionRepository.cs" />
+    <Compile Include="Repository\TipoDeterminanteRepository.cs" />
+    <Compile Include="Repository\TipoDocumentoRepository.cs" />
+    <Compile Include="Repository\UploadLogRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestorDocument.Model\GestorDocument.Model.csproj">
+      <Project>{17FBA103-3EB7-46D9-B84D-1AE16DC0E513}</Project>
+      <Name>GestorDocument.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Pocos\EntityGestorDocument.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EntityGestorDocument.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Pocos\PocosGestorDocument.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PocosGestorDocument.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Pocos\PocosGestorDocument.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PocosGestorDocument.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

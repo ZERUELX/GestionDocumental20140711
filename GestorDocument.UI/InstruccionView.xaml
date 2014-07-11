@@ -1,0 +1,52 @@
+﻿<Window x:Class="GestorDocument.UI.InstruccionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="InstruccionView" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Command="{Binding NewCommand}"   
+                    Name="BtNuevo" Content="Nuevo" 
+                    Height="23" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    Width="75" Click="BtNuevo_Click" />
+            <Button Command="{Binding DeleteCommand}"  
+                    Name="BtEliminar" Content="Eliminar" 
+                    Height="23" HorizontalAlignment="Center"
+                    Width="75" Grid.Column="1" />
+        </Grid>
+        <DataGrid HorizontalAlignment="Stretch" Name="DataGridInstruccion" VerticalAlignment="Stretch"
+                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                  ItemsSource="{Binding Instruccions, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedInstruccion}" Grid.Row="1"
+                  MouseDoubleClick="DataGridInstruccion_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center"
+                              IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Clave" Width="*" 
+                                Binding="{Binding Path=IdInstruccion}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Nombre de la instrucción" Width="*" 
+                                Binding="{Binding Path=InstruccionName}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Clave de la instrucción" Width="*" 
+                                Binding="{Binding Path=CveInstruccion}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

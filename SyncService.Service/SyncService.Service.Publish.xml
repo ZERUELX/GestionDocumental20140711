@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\ISAAC\Desktop\RESPALDO DE APP GESTION DOCUMENTAL\ServiciosGestionDocumental" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Perfil1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="04/13/2012 10:00:28" />
+    <file relUrl="bin/SyncService.Server.DAL.pdb" publishTime="03/19/2014 14:20:33" />
+    <file relUrl="Services/Broadcast.svc" publishTime="07/01/2013 05:45:32" />
+    <file relUrl="bin/SyncService.Service.pdb" publishTime="03/19/2014 14:20:34" />
+    <file relUrl="bin/SyncService.Server.DAL.dll" publishTime="03/19/2014 14:20:33" />
+    <file relUrl="Web.config" publishTime="03/19/2014 14:37:51" />
+    <file relUrl="Services/Receiver.svc" publishTime="07/01/2013 05:00:14" />
+    <file relUrl="bin/SyncService.Service.dll" publishTime="03/19/2014 14:20:34" />
+    <file relUrl="bin/SyncService.Model.pdb" publishTime="03/19/2014 14:20:27" />
+    <file relUrl="bin/SyncService.Model.dll" publishTime="03/19/2014 14:20:27" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9D8B330-1CE4-4FCC-993F-38145E978E32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SyncService.Model</RootNamespace>
+    <AssemblyName>SyncService.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitacoraModel.cs" />
+    <Compile Include="SynPocos\APP_MENU.cs" />
+    <Compile Include="SynPocos\APP_ROL.cs" />
+    <Compile Include="SynPocos\APP_ROL_MENU.cs" />
+    <Compile Include="SynPocos\APP_USUARIO.cs" />
+    <Compile Include="SynPocos\APP_USUARIO_ROL.cs" />
+    <Compile Include="SynPocos\CAT_DETERMINANTE.cs" />
+    <Compile Include="SynPocos\CAT_INSTRUCCION.cs" />
+    <Compile Include="SynPocos\CAT_ORGANIGRAMA.cs" />
+    <Compile Include="SynPocos\CAT_PRIORIDAD.cs" />
+    <Compile Include="SynPocos\CAT_STATUS_ASUNTO.cs" />
+    <Compile Include="SynPocos\CAT_STATUS_TURNO.cs" />
+    <Compile Include="SynPocos\CAT_TIPO_DETERMINANTE.cs" />
+    <Compile Include="SynPocos\CAT_TIPO_DOCUMENTO.cs" />
+    <Compile Include="SynPocos\CAT_TIPO_EXTENCION.cs" />
+    <Compile Include="SynPocos\CAT_TIPO_UNIDAD_NORMATIVA.cs" />
+    <Compile Include="SynPocos\CAT_UBICACION.cs" />
+    <Compile Include="SynPocos\GET_ASUNTO.cs" />
+    <Compile Include="SynPocos\GET_DOCUMENTOS.cs" />
+    <Compile Include="SynPocos\GET_EXPEDIENTE.cs" />
+    <Compile Include="SynPocos\GET_FECHA_VENCIMIENTO.cs" />
+    <Compile Include="SynPocos\GET_TURNO.cs" />
+    <Compile Include="SynPocos\REL_DESTINATARIO.cs" />
+    <Compile Include="SynPocos\REL_DESTINATARIO_CCP.cs" />
+    <Compile Include="SynPocos\REL_SIGNATARIO.cs" />
+    <Compile Include="SynPocos\REL_SIGNATARIO_EXTERNO.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

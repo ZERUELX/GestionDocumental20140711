@@ -1,0 +1,112 @@
+﻿<Window xmlns:my="clr-namespace:GestorDocument.UI.AsuntoTurno" 
+        x:Class="GestorDocument.UI.AsuntoTurno.DglAddDestinatarioView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Agregar Destinatario" 
+        Height="300" Width="500"
+        MinHeight="250" MinWidth="300"
+        MaxHeight="500" MaxWidth="700"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanResizeWithGrip"
+        WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary>
+                    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderBrush="#424242" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Name="gridHeader" MouseDown="DragableGridMouseDown">
+                <Grid.Background>
+                    <ImageBrush ImageSource="..\Imagenes\fondo-gris-textura.png" TileMode="Tile" 
+                            Stretch="Fill">
+                    </ImageBrush>
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="AGREGAR DESTINATARIO" 
+                    HorizontalAlignment="Left" Margin="10,0" 
+                    Name="lblNameConsulta" VerticalAlignment="Center"
+                    Style="{StaticResource labelTituloAddDoc}"/>
+                <Grid  Grid.Column="1" Name="HeaderGrid" VerticalAlignment="Center" 
+                HorizontalAlignment="Center" Height="20" Width="30" >
+                    <Border Style="{StaticResource BorderMinMAxCerrar}"
+                        HorizontalAlignment="center" VerticalAlignment="center">
+                        <TextBlock Name="CloseButton" Text="r"
+                                Style="{StaticResource textBockMInMaxCerrar}"
+                                MouseLeftButtonUp="CloseButton_MouseLeftButtonUp"
+                                ToolTip="Cerrar" />
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <ImageBrush ImageSource="..\Imagenes\main_bg.png" TileMode="Tile" Viewbox="0,0,100,100"
+                            ViewboxUnits="Absolute" Viewport="0,0,100,100" ViewportUnits="Absolute">
+                    </ImageBrush>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <DataGrid ItemsSource="{Binding Organigramas, Mode=TwoWay}"
+                      AutoGenerateColumns="False" HorizontalAlignment="Stretch" 
+                      Name="dataGrid1" VerticalAlignment="Stretch"
+                      Margin="5,0" CanUserAddRows="False" CanUserDeleteRows="False"
+                      RowStyle="{StaticResource RowStyle}" 
+                      Style="{StaticResource GridStyle}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}" >
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="" Width="30">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox HorizontalAlignment="Center"
+                                              IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn IsReadOnly="True" Header="Destinatario" Width="*" 
+                                Binding="{Binding JerarquiaName}"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="AGREGAR" Grid.Row="2" Height="25" 
+                        HorizontalAlignment="Center" 
+                        Name="btnAgregar" VerticalAlignment="Center"
+                        Width="100" Click="btnAgregar_Click"
+                        Command="{Binding AddOrganigramaCommand}"
+                        Style="{StaticResource bntAsuntoTurno}"/>
+                    <Button Content="CANCELAR" Grid.Column="1" Grid.Row="2" 
+                        Height="25" HorizontalAlignment="Center"
+                        Name="btnCancelar" VerticalAlignment="Center"
+                        Width="100" Click="btnCancelar_Click" 
+                        Style="{StaticResource bntAsuntoTurno}"/>
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

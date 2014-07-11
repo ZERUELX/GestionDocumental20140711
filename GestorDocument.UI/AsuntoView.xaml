@@ -1,0 +1,85 @@
+﻿<Window x:Class="GestorDocument.UI.AsuntoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AsuntoView" Height="300" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Command="{Binding NewCommand}"   
+                    Name="BtNuevo" Content="Nuevo" 
+                    Height="23" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    Width="75" Click="BtNuevo_Click" />
+            <Button Command="{Binding DeleteCommand}"  
+                    Name="BtEliminar" Content="Eliminar" 
+                    Height="23" HorizontalAlignment="Center"
+                    Width="75" Grid.Column="1" />
+        </Grid>
+        <DataGrid HorizontalAlignment="Stretch" Name="DataGridAsunto" VerticalAlignment="Stretch"
+                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                  ItemsSource="{Binding Asuntos, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedAsunto}" Grid.Row="1"
+                  MouseDoubleClick="DataGridAsunto_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center"
+                              IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Clave" Width="*" 
+                                Binding="{Binding Path=IdAsunto}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="FechaCreacion" Width="*" 
+                                Binding="{Binding Path=FechaCreacion}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="FechaRecibido" Width="*" 
+                                Binding="{Binding Path=FechaRecibido}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="FechaDocumento" Width="*" 
+                                Binding="{Binding Path=FechaDocumento}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="ReferenciaDocumento" Width="*" 
+                                Binding="{Binding Path=ReferenciaDocumento}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Titulo" Width="*" 
+                                Binding="{Binding Path=Titulo}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Descripcion" Width="*" 
+                                Binding="{Binding Path=Descripcion}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Alcance" Width="*" 
+                                Binding="{Binding Path=Alcance}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="IdUbicacion" Width="*" 
+                                Binding="{Binding Ubicacion.UbicacionName}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="IdInstruccion" Width="*" 
+                                Binding="{Binding Instruccion.InstruccionName}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="IdPrioridad" Width="*" 
+                                Binding="{Binding Prioridad.PrioridadName}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="IdStatusAsunto" Width="*" 
+                                Binding="{Binding StatusAsunto.StatusName}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="FechaVencimiento" Width="*" 
+                                Binding="{Binding Path=FechaVencimiento}"></DataGridTextColumn>
+
+                <DataGridTextColumn IsReadOnly="True" Header="Folio" Width="*" 
+                                Binding="{Binding Path=Folio}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

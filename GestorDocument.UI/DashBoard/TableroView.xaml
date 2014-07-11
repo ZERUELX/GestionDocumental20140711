@@ -1,0 +1,69 @@
+﻿<Window x:Class="GestorDocument.UI.DashBoard.TableroView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TableroView" Height="900" Width="1027" 
+        xmlns:my="clr-namespace:GestorDocument.UI.DashBoard">
+
+    
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Visible">                    
+    <Grid Width="1002">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="225"/>
+                    <RowDefinition Height="225"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+            <my:AnioMesView Height="auto" HorizontalAlignment="Center" x:Name="anioMesView1" VerticalAlignment="Center" Width="500" Grid.Column="0"/>
+            <my:DeterminanteView  Height="auto" HorizontalAlignment="Center" x:Name="Determinantes" VerticalAlignment="Center" Width="500" Grid.Column="1"/>
+        </Grid>
+                <Grid Grid.Row="1">
+                    <Button  Height="AUTO" Width="100" Content="Filtrar" Command="{Binding FiltrarCommand}"/>
+                </Grid>
+                    <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+            <my:AtendidosView Height="auto" HorizontalAlignment="Center"  x:Name="TableroAtendidos"
+                              VerticalAlignment="Stretch" Width="auto" Grid.Column="0"/>
+            <my:PendientesView Height="auto" HorizontalAlignment="Center" x:Name="TableroPendientes" 
+                              VerticalAlignment="Stretch" Width="auto" Grid.Column="1"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+                    <my:DashBoardTableView x:Name="TodosDBTView" Grid.Column="0" Height="200" />
+            <my:DashBoardGraphView x:Name="TodosGraphView" Grid.Column="1" Height="200" Width="450"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="18"/>
+                        <ColumnDefinition Width="482" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <my:DashBoardTableView x:Name="UrgentesDBTView" Grid.Column="0" Height="200"/>
+                    <my:DashBoardGraphView x:Name="UrgentesGraphView" Grid.Column="2" Height="200" Width="450" Margin="7,12,25,12" />
+                </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+                    <my:DashBoardTableView x:Name="PrioritariosDBTView" Grid.Column="0" Height="200"/>
+                    <my:DashBoardGraphView x:Name="PrioritariosGraphView" Grid.Column="1" Height="200" Width="450" />
+                </Grid>
+    </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,105 @@
+﻿<Controls:MetroWindow x:Class="GestorDocument.UI.Reportes.ReporteEficienciaView"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                      xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+                      xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms" 
+                      Title="Reporte de Eficiencia de la Gestión de Asuntos por Correspondencia" Height="700" Width="1000"
+                      WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Controls:MetroContentControl>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid HorizontalAlignment="Center" Width="980" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Áreas :" HorizontalAlignment="Right"  Name="label1" 
+                       VerticalAlignment="Center"
+                       Style="{StaticResource labelCampo}"/>
+                <ComboBox Name="cbxDestinatario" Height="25" Width="250"  HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" 
+                      ItemsSource="{Binding Destinatarios}" SelectionChanged="cbxDestinatario_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True}"/>
+                                <TextBlock Margin="5" Text="{Binding RolName}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <CheckBox Content="Seleccionar Todos" Height="16" Name="checkBox2" IsChecked="{Binding IsTodosDestinatarios, Mode=TwoWay}" Grid.Column="1" Margin="0,51,0,8" />
+                <TextBlock Name="txbDestinatario" Height="18" HorizontalAlignment="Left" Text="{Binding DestinatariosText,Mode=TwoWay}" MaxWidth="220" Grid.Column="1" Margin="15,28,0,28" Width="220" />
+
+
+                <Label Content="Signatario :" HorizontalAlignment="Right" 
+                       Name="label2" VerticalAlignment="Center" Grid.Row="1"
+                       Style="{StaticResource labelCampo}"/>
+                <ComboBox Name="cbxSignatario" Height="25" Width="250"  HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1"
+                      ItemsSource="{Binding Signatarios}" SelectionChanged="cbxSignatario_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox Margin="5" IsChecked="{Binding IsActive, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnValidationError=True}" />
+                                <TextBlock Margin="5" Text="{Binding DeterminanteName}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <CheckBox Content="Seleccionar Todos" Height="16" Name="checkBox" IsChecked="{Binding IsTodosSignatarios, Mode=TwoWay}" Grid.Column="1" Margin="0,51,0,8"  Grid.Row="1"/>
+                <TextBlock Name="txbSignatario" Height="18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding SignatariosText,Mode=TwoWay}" MaxWidth="220" Grid.Column="1" Grid.Row="1" />
+                <Label HorizontalAlignment="Right"
+                               Content="Rango de fechas :" Grid.Column="2"
+                               VerticalAlignment="Top" Margin="0,10,7,0"
+                               Style="{StaticResource labelCampo}" />
+                <Label Content="Desde :" HorizontalAlignment="Right" Name="label" 
+                       VerticalAlignment="Center" Grid.Column="2"
+                       Style="{StaticResource labelCampo}" Margin="0,49,0,3" />
+                <DatePicker Name="dpInicio" Grid.Column="3" HorizontalAlignment="Left" Width="AUTO" Height="25" 
+                            SelectedDate="{Binding FechaInicio,Mode=TwoWay}" Margin="0,48,0,2"
+                            IsEnabled="{Binding IsDateChecked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Hasta :" HorizontalAlignment="Right"  Name="lbl"
+                       VerticalAlignment="Center" Grid.Column="2" Grid.Row="1"
+                       Style="{StaticResource labelCampo}"/>
+                <DatePicker Name="dpFin" Grid.Column="3" HorizontalAlignment="Left" Width="AUTO" Height="25" Grid.Row="1"
+                            SelectedDate="{Binding FechaFin,Mode=TwoWay}"
+                            IsEnabled="{Binding IsDateChecked,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox  Grid.Column="3" Height="16" HorizontalAlignment="Left" Margin="2,16,0,0" Name="checkBox1" VerticalAlignment="Top"
+                           IsChecked="{Binding IsDateChecked, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+            <Grid Grid.Row="1" HorizontalAlignment="Center">
+                <Button Name="btnFiltrar" Width="200" Content="Filtrar" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"  
+                    Command="{Binding GetTextosCommand}" Click="btnFiltrar_Click" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <WindowsFormsHost >
+                    <rv:ReportViewer x:Name="_reportViewer"  ZoomMode="PageWidth" />
+                </WindowsFormsHost>
+            </Grid>
+        </Grid>
+    </Controls:MetroContentControl>
+</Controls:MetroWindow>

@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BB8D374-A057-4EAE-B85F-C8E5A903C02C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestorDocument.ViewModel</RootNamespace>
+    <AssemblyName>GestorDocument.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\GestorDocument.ViewModel.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\GestorDocument.ViewModel.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsuntoAddViewModel.cs" />
+    <Compile Include="AsuntoModViewModel.cs" />
+    <Compile Include="AsuntoNotificacionesViewModel.cs" />
+    <Compile Include="AsuntoTurno\AddDestinatarioCcpViewModel.cs" />
+    <Compile Include="AsuntoTurno\AddDeterminanteAsuntoViewModel.cs" />
+    <Compile Include="AsuntoTurno\AddDeterminanteExternoAsuntoViewModel.cs" />
+    <Compile Include="AsuntoTurno\AddDocumentoAsuntoViewModel.cs" />
+    <Compile Include="AsuntoTurno\AddOrganigramaAsuntoViewModel.cs" />
+    <Compile Include="AsuntoTurno\AtenderTurnoViewModel.cs" />
+    <Compile Include="AsuntoTurno\ConsultaAsuntoViewModel.cs" />
+    <Compile Include="AsuntoTurno\ImprimirViewModel.cs" />
+    <Compile Include="AsuntoTurno\OrganigramaViewModel.cs" />
+    <Compile Include="AsuntoTurno\ResultadoBusquedaAsuntoTurnoViewModel.cs" />
+    <Compile Include="AsuntoTurno\TrancingAsuntoTurnoReadViewModel.cs" />
+    <Compile Include="AsuntoTurno\TrancingAsuntoTurnoViewModel.cs" />
+    <Compile Include="AsuntoTurno\TrancingAsuntoViewModel.cs" />
+    <Compile Include="AsuntoTurno\TreeViewViewModel.cs" />
+    <Compile Include="AsuntoViewModel.cs" />
+    <Compile Include="BarraBotonesViewModel.cs" />
+    <Compile Include="BusquedaAsuntoTurnoViewModel.cs" />
+    <Compile Include="BusquedaViewModel.cs" />
+    <Compile Include="DashBoard\AnioMesViewModel.cs" />
+    <Compile Include="DashBoard\AtendidosViewModel.cs" />
+    <Compile Include="DashBoard\DashBoardGraphViewModel.cs" />
+    <Compile Include="DashBoard\DashBoardTableViewModel.cs" />
+    <Compile Include="DashBoard\DataPointViewModel.cs" />
+    <Compile Include="DashBoard\DeterminanteViewModel.cs" />
+    <Compile Include="DashBoard\GraphSeriesViewModel.cs" />
+    <Compile Include="DashBoard\PendientesViewModel.cs" />
+    <Compile Include="DashBoard\TableroViewModel.cs" />
+    <Compile Include="IConfirmation.cs" />
+    <Compile Include="IDownloadFile.cs" />
+    <Compile Include="IShowWindows.cs" />
+    <Compile Include="Login\UserLoginViewModel.cs" />
+    <Compile Include="MenuViewModel.cs" />
+    <Compile Include="ReporteEficienciaViewModel.cs" />
+    <Compile Include="ReportesViewModel.cs" />
+    <Compile Include="SyncDocs\SyncDocsViewModel.cs" />
+    <Compile Include="TreeViewDireccion\DestinatarioAreaTreeViewModel.cs" />
+    <Compile Include="TreeViewDireccion\DestinatarioDireccionesTreeViewModel.cs" />
+    <Compile Include="TreeViewDireccion\TreeViewSeguimientoViewModel.cs" />
+    <Compile Include="TreeviewItemViewModel\IParentItem.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="PantallaInicio\PantallaInicioViewModel.cs" />
+    <Compile Include="ResultadoViewModel.cs" />
+    <Compile Include="DeterminanteAddViewModel.cs" />
+    <Compile Include="DeterminanteModViewModel.cs" />
+    <Compile Include="DeterminanteViewModel.cs" />
+    <Compile Include="DocumentosAddViewModel.cs" />
+    <Compile Include="DocumentosModViewModel.cs" />
+    <Compile Include="DocumentosViewModel.cs" />
+    <Compile Include="ExpedienteAddViewModel.cs" />
+    <Compile Include="ExpedienteModViewModel.cs" />
+    <Compile Include="ExpedienteViewModel.cs" />
+    <Compile Include="FechaVencimientoAddViewModel.cs" />
+    <Compile Include="FechaVencimientoModViewModel.cs" />
+    <Compile Include="FechaVencimientoViewModel.cs" />
+    <Compile Include="InstruccionAddViewModel.cs" />
+    <Compile Include="InstruccionModViewModel.cs" />
+    <Compile Include="InstruccionViewModel.cs" />
+    <Compile Include="PrioridadAddViewModel.cs" />
+    <Compile Include="PrioridadModViewModel.cs" />
+    <Compile Include="PrioridadViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="SignatarioAddViewModel.cs" />
+    <Compile Include="SignatarioModViewModel.cs" />
+    <Compile Include="SignatarioViewModel.cs" />
+    <Compile Include="StatusAsuntoAddViewModel.cs" />
+    <Compile Include="StatusAsuntoModViewModel.cs" />
+    <Compile Include="StatusAsuntoViewModel.cs" />
+    <Compile Include="StatusTurnoAddViewModel.cs" />
+    <Compile Include="StatusTurnoModViewModel.cs" />
+    <Compile Include="StatusTurnoViewModel.cs" />
+    <Compile Include="TipoDeterminanteAddViewModel.cs" />
+    <Compile Include="TipoDeterminanteModViewModel.cs" />
+    <Compile Include="TipoDeterminanteViewModel.cs" />
+    <Compile Include="TipoDocumentoAddViewModel.cs" />
+    <Compile Include="TipoDocumentoModViewModel.cs" />
+    <Compile Include="TipoDocumentoViewModel.cs" />
+    <Compile Include="TreeviewItemViewModel\DestinatarioItemViewModel.cs" />
+    <Compile Include="TreeviewItemViewModel\ISeguimientoParentItem.cs" />
+    <Compile Include="TreeviewItemViewModel\SeguimientoTurnoItemViewModel.cs" />
+    <Compile Include="TurnoAddViewModel.cs" />
+    <Compile Include="TurnoModViewModel.cs" />
+    <Compile Include="TurnoViewModel.cs" />
+    <Compile Include="UbicacionAddViewModel.cs" />
+    <Compile Include="UbicacionModViewModel.cs" />
+    <Compile Include="UbicacionViewModel.cs" />
+    <Compile Include="v2\AsuntosDataGridViewModel.cs" />
+    <Compile Include="v2\MenuViewModel.cs" />
+    <Compile Include="v2\TableroViewModel.cs" />
+    <Compile Include="ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestorDocument.DAL\GestorDocument.DAL.csproj">
+      <Project>{4A0F4B34-6E2B-4F7E-A679-CC1D33ADE5D2}</Project>
+      <Name>GestorDocument.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestorDocument.Model\GestorDocument.Model.csproj">
+      <Project>{17FBA103-3EB7-46D9-B84D-1AE16DC0E513}</Project>
+      <Name>GestorDocument.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

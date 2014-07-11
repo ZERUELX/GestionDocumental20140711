@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="GestorDocument.UI.MainWindowsHeaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="1000">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <Storyboard x:Key="rotateImg" >
+                        <DoubleAnimation Storyboard.TargetName="imgSyncFiles" 
+                             Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
+                             From="0" To="360" Duration="0:0:1" 
+                             AutoReverse="False" RepeatBehavior="Forever" />
+                    </Storyboard>
+                </ResourceDictionary>
+                <ResourceDictionary Source="./Themes/DictionaryTheme.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border Grid.ColumnSpan="5" BorderThickness="0,0,0,2"
+            BorderBrush="#BDBDBD" MouseLeftButtonDown="DragableGridMouseDown"
+            Name="BorderMainHader">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush  ImageSource=".\Imagenes\main_bg.png" TileMode="Tile" Viewbox="0,0,100,100"
+                                    ViewboxUnits="Absolute" Viewport="0,0,100,100" ViewportUnits="Absolute">
+                </ImageBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Image  Name="Conagua"
+                    Source="./Imagenes/Conagua.png"
+                    VerticalAlignment="Center" Stretch="Uniform"/>
+
+
+            <TextBlock Text="ORGANISMO DE CUENCA AGUAS DEL VALLE DE MÉXICO" Name="lblOCVAM"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                       Grid.Column="1" TextWrapping="WrapWithOverflow" Style="{StaticResource textBockOCVAM}" />
+
+            <Label Content="GESTIÓN DOCUMENTAL DE ASUNTOS POR CORRESPONDENCIA" Name="lblTitulo"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Style="{StaticResource labelTitulo}" Grid.Column="3"  />
+
+            <!--<StackPanel Grid.Column="2" Orientation="Vertical" Margin="0,5,0,0">
+
+                <Border Background="Transparent" Height="40" 
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                        BorderBrush="Black" BorderThickness="0,0,1,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="4" Orientation="Vertical" Margin="0,5,0,0">
+
+                <Border Background="Transparent" Height="40" 
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                        BorderBrush="Black" BorderThickness="0,0,1,0"/>
+            </StackPanel>-->
+
+            <Grid Grid.Column="5" 
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch">
+                <Canvas Name="cnvTmpRot"  Visibility="Collapsed"  Height="30" Width="30"  Opacity="0.5" Panel.ZIndex="60" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Image Width="25" Height="25" HorizontalAlignment="Center" 
+                           Name="imgSyncFiles" Stretch="Fill" VerticalAlignment="Center" 
+                           Source="./Imagenes/1367270965_87924.ico" Visibility="Visible" 
+                           ToolTip="Listo" MouseUp="imgSyncFiles_MouseUp" Cursor="Hand">
+                        <Image.RenderTransform>
+                            <RotateTransform Angle="0" CenterX="12.5" CenterY="12.5" />
+                        </Image.RenderTransform>
+                    </Image>
+                </Canvas>
+                <Canvas Name="cnvTmpRot2" Height="30" Width="30"  Opacity="0.5" Panel.ZIndex="60" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Image Width="25" Height="25" Name="imgSyncFiles2" Stretch="Fill"
+                           Source="./Imagenes/1367270965_87924.ico"
+                           Visibility="Visible" ToolTip="Listo" MouseUp="imgSyncFiles_MouseUp"
+                           >
+                        <Image.RenderTransform>
+                            <RotateTransform Angle="0" CenterX="12.5" CenterY="12.5" />
+                        </Image.RenderTransform>
+                    </Image>
+                </Canvas>
+            </Grid>
+
+            <!--<StackPanel Grid.Column="6" Orientation="Vertical" Margin="0,5,0,0">
+
+                <Border Background="Transparent" Height="40" 
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                        BorderBrush="Black" BorderThickness="0,0,1,0"/>
+            </StackPanel>-->
+
+            <Grid  Grid.Column="7" Name="HeaderGrid" VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" Height="20" Width="70" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Style="{StaticResource BorderMinMAxCerrar}" 
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="0">
+                    <TextBlock Name="MinimizeButton" Text="0"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="MinimizeButtonMouseLeftButtonUp"
+                                   ToolTip="Minimizar"/>
+                </Border>
+                <Border Style="{StaticResource BorderMinMAxCerrar}"
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="1">
+                    <TextBlock Name="MaximizeButton" Text="1"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="MaximizeButtonMouseLeftButtonUp"
+                                   ToolTip="Maximizar"/>
+                </Border>
+                <Border Style="{StaticResource BorderMinMAxCerrar}"
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="2">
+                    <TextBlock Name="CloseButton" Text="r"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="CloseButtonMouseLeftButtonUp"
+                                   ToolTip="Cerrar" />
+                </Border>
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

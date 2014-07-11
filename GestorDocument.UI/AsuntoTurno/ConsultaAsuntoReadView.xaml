@@ -1,0 +1,506 @@
+﻿<Controls:MetroWindow x:Class="GestorDocument.UI.AsuntoTurno.ConsultaAsuntoReadView"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                      xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+                      xmlns:cv="clr-namespace:GestorDocument.UI.AsuntoTurno"
+                      Title="IMFORMACIÓN DEL ASUNTO" Height="700" Width="850"
+                      WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"/>
+                <ResourceDictionary>
+                    <cv:BoolToVisibilityConverter x:Key="converter"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Controls:MetroContentControl>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="225"/>
+                        <RowDefinition Height="125"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="125"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Fecha de Creación"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.FechaCreacion, Mode=TwoWay,
+                               UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy hh:mm tt}}"/>
+
+                        </Border>
+
+                        <Label Content="Folio" Grid.Column="3"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="5"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.Folio, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="N° del documento" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.ReferenciaDocumento, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+
+                        <Label Content="Fecha de recibido"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                       Grid.Column="3"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="5"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.FechaRecibido, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy}}"/>
+
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Fecha del documento" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="0,0,20,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.FechaDocumento, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy}}"/>
+                        </Border>
+
+                        <Label Content="Ubicación"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                       Grid.Column="3"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="5"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.UbicacionText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Instrucción" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.Instruccion.InstruccionName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Asunto" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.Titulo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Descripción del Asunto" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+
+                        <Label Content="Fecha limite de respuesta"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="0,0" Style="{StaticResource labelCampoConsulta}"
+                       Grid.Column="2"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="3"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.FechaVencimiento, Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy}}"/>
+
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="6">
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="AUTO" Margin="30,0,10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Top" TextWrapping="WrapWithOverflow"
+                               HorizontalAlignment="Left" Margin="5,5,0,0"
+                               Text="{Binding ReadAsunto.Descripcion,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Alcance" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.Alcance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Prioridad" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.Prioridad.PrioridadName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+
+                        <Label Content="Estatus del asunto"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                       Grid.Column="3"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="5"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.StatusAsunto.StatusName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="9">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="90"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Documentos Agregados"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                       Grid.Column="3"/>
+                        <DataGrid ItemsSource="{Binding ReadAsunto.Turno.Documento, Mode=TwoWay}"
+                                  SelectedItem="{Binding SelectedDocumentos,Mode=TwoWay}"
+                                  CanUserAddRows="False" HorizontalAlignment="Left"  Height="95"
+                                  CanUserDeleteRows="False" AutoGenerateColumns="False"
+                                  Margin="5,0" Name="dataGridExpediente" VerticalAlignment="Stretch"
+                                  RowStyle="{StaticResource RowStyle}" 
+                                  Style="{StaticResource GridStyle}" Grid.Row="1"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn IsReadOnly="True" Header="Nombre del documento" Width="*" 
+                                                    Binding="{Binding Path=DocumentoName}"/>
+
+                                <DataGridTextColumn IsReadOnly="True"  Width="*" 
+                                                    Binding="{Binding Path=Fecha,StringFormat={}{0:dd/MM/yyyy}}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock TextAlignment="Center" 
+                                       Text="Fecha de carga"/>
+                                    </DataGridTextColumn.Header>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn IsReadOnly="True" Width="*" 
+                                                    Binding="{Binding Path=TipoDocumento.TipoDocumentoName}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock TextAlignment="Center" 
+                                       Text="Tipo de documento"/>
+                                    </DataGridTextColumn.Header>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Grid Grid.Row="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Anexos" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Left"
+                                   Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                            <Border BorderBrush="Black" BorderThickness="0.5" Grid.Row="1"
+                                    Height="AUTO" Margin="30,0,10,0" HorizontalAlignment="Stretch">
+                                <TextBlock VerticalAlignment="Top" TextWrapping="WrapWithOverflow"
+                               HorizontalAlignment="Left" Margin="5,5,0,0"
+                               Text="{Binding ReadAsunto.Anexos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                            </Border>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Signatarios Agregados"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                       Grid.Column="3"/>
+                        <DataGrid ItemsSource="{Binding ReadAsunto.Signatario, Mode=TwoWay}"
+                          SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}" Grid.Row="1"
+                          CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                          HorizontalAlignment="Left" Height="95" VerticalAlignment="Stretch"
+                          Margin="5,0" Name="dataGridSignatario" RowStyle="{StaticResource RowStyle}" 
+                          Style="{StaticResource GridStyle}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn IsReadOnly="True" Width="130" 
+                                                Binding="{Binding Determinante.PrefijoFolio}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock TextAlignment="Center" 
+                                       Text="Determinante"/>
+                                    </DataGridTextColumn.Header>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn IsReadOnly="True" Header="Nombre del area" Width="*" 
+                                                    Binding="{Binding Determinante.Area}"/>
+
+                                <DataGridTextColumn IsReadOnly="True" Header="Nombre del títular" Width="*" 
+                                                    Binding="{Binding Determinante.DeterminanteName}"/>
+
+                                <DataGridTextColumn IsReadOnly="True" Width="145" 
+                                                    Binding="{Binding Determinante.TipoDeterminante.TipoDeterminanteName}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock TextAlignment="Center" 
+                                       Text="Tipo determinante"/>
+                                    </DataGridTextColumn.Header>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <Grid Grid.Row="11">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Contacto" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="25" Margin="10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Left" Margin="5,0"
+                               Text="{Binding ReadAsunto.Contacto,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="12">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Destinatarios Agregados"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                       Grid.Column="3"/>
+
+                        <DataGrid ItemsSource="{Binding ReadAsunto.Turno.Destinatario, Mode=TwoWay}"
+                                  Visibility="{Binding IsVisibleDestinatarioInterno,Mode=TwoWay,Converter={StaticResource converter}}"
+                        SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}"
+                        CanUserAddRows="False" HorizontalAlignment="Left"  Height="95"
+                        CanUserDeleteRows="False" AutoGenerateColumns="False" Grid.Row="1"
+                        Margin="5,0" Name="dataGridDestinatario" VerticalAlignment="Stretch"
+                        RowStyle="{StaticResource RowStyle}" Style="{StaticResource GridStyle}"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn IsReadOnly="True" Header="DESTINATARIO" Width="*" 
+                                                    Binding="{Binding Path=Rol.Organigrama.JerarquiaName}"></DataGridTextColumn>
+                                <DataGridTextColumn IsReadOnly="True" Header="NOMBRE TITULAR" Width="*" 
+                                                    Binding="{Binding Path=Rol.Organigrama.JerarquiaTitular}"></DataGridTextColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <DataGrid ItemsSource="{Binding ReadAsunto.SignatarioExterno, Mode=TwoWay}"
+                                  Visibility="{Binding IsVisibleDestinatarioExterno, Mode=TwoWay, Converter={StaticResource converter}}"
+                          SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}" Grid.Row="1"
+                          CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                          HorizontalAlignment="Left" Height="95" VerticalAlignment="Stretch"
+                          Margin="5,0" Name="dataGridSignatarioExterno" RowStyle="{StaticResource RowStyle}" 
+                          Style="{StaticResource GridStyle}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn IsReadOnly="True" Width="130" 
+                                                Binding="{Binding Determinante.PrefijoFolio}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock TextAlignment="Center" 
+                                       Text="Determinante"/>
+                                    </DataGridTextColumn.Header>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+
+                                <DataGridTextColumn IsReadOnly="True" Header="Nombre del area" Width="*" 
+                                                    Binding="{Binding Determinante.Area}"/>
+
+                                <DataGridTextColumn IsReadOnly="True" Header="Nombre del títular" Width="*" 
+                                                    Binding="{Binding Determinante.DeterminanteName}"/>
+
+                                <DataGridTextColumn IsReadOnly="True" Width="145" 
+                                                    Binding="{Binding Determinante.TipoDeterminante.TipoDeterminanteName}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock TextAlignment="Center" 
+                                       Text="Tipo determinante"/>
+                                    </DataGridTextColumn.Header>
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="HorizontalAlignment" Value="Center" />
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <Grid Grid.Row="13">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Comentario" 
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                    </Grid>
+
+                    <Grid Grid.Row="14">
+                        <Border BorderBrush="Black" BorderThickness="0.5" Grid.Column="1"
+                        Height="AUTO" Margin="30,0,10,0" HorizontalAlignment="Stretch">
+                            <TextBlock VerticalAlignment="Top" TextWrapping="WrapWithOverflow"
+                               HorizontalAlignment="Left" Margin="5,5,0,0"
+                               Text="{Binding ReadAsunto.Turno.Comentario,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Border>
+                    </Grid>
+
+                </Grid>
+            </ScrollViewer>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Cerrar" Height="23" HorizontalAlignment="Right" Grid.Column="1"
+                        Margin="20,0" Name="btnCerrar" VerticalAlignment="Center" Width="120"
+                        Click="btnCerrar_Click"/>
+            </Grid>
+        </Grid>
+    </Controls:MetroContentControl>
+</Controls:MetroWindow>

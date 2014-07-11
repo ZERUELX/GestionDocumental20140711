@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="GestorDocument.UI.DashBoard.AnioMesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>            
+        </Grid.ColumnDefinitions>        
+        <Label Content="AÑO:" Grid.Column="0" Grid.Row="0" Foreground="White"
+               VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Name="cbxAnios"  Height="25" Grid.Column="0" Grid.Row="1"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                  ItemsSource="{Binding Anios}"
+                  DisplayMemberPath="Anio"  
+                  SelectedItem="{Binding SelectedAnio,Mode=TwoWay}"   
+                  />
+        <Label Content="MES:" Grid.Column="0" Grid.Row="2" Foreground="White"
+               VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Name="cbxMes" Grid.Column="0" Grid.Row="3" Height="25"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  ItemsSource="{Binding Meses}"
+                  DisplayMemberPath="MesName"
+                  SelectedItem="{Binding SelectedMes,Mode=TwoWay}"   
+                  />
+    </Grid>
+</UserControl>

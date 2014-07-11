@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="GestorDocument.UI.AsuntoTurno.AsuntoConsultaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="330" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.Row="1" Background="White">
+            <!--<Border.Effect>
+                <DropShadowEffect Color="Black"  ShadowDepth="5" Opacity=".5"/>
+            </Border.Effect>-->
+            <!--<Border.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black"  ShadowDepth=".1"/>
+            </Border.BitmapEffect>-->
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Width="60" Height="75" 
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      Margin="5,0">
+                    <Image Name="img_Prioridad" Source="{Binding PrioridadPath}" Width="45" 
+                           Cursor="Hand" ToolTip="Prioridad" Margin="5,0,5,10"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" 
+                               Text="{Binding Titulo}" Grid.Row="1" 
+                               VerticalAlignment="Top" 
+                               Style="{StaticResource textBockTurConTitulo}" />
+                </Grid>
+                <Grid Grid.Column="2" HorizontalAlignment="Right" Margin="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left" 
+                           Text="Fecha de recepción" Margin="5,0" 
+                           VerticalAlignment="Center" Style="{StaticResource textBockTurConFecRec}">
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Left" 
+                               Text="{Binding fecha}" Grid.Column="1" 
+                               VerticalAlignment="Center" 
+                               Style="{StaticResource textBockTurConFecRec}" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left" 
+                           Text="Fecha a vencer" Margin="5,0" 
+                           VerticalAlignment="Center" Style="{StaticResource textBockTurConFecVen}" />
+                        <TextBlock HorizontalAlignment="Left" 
+                           Text="{Binding fechaVencer}" Grid.Column="1" 
+                           VerticalAlignment="Center" Style="{StaticResource textBockTurConFecVen2}" />
+                    </Grid>
+                </Grid>
+                <Grid Margin="10,5" Grid.Row="4" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left" 
+                           Text="Folio" Style="{StaticResource textBockTurConFolio}" 
+                           VerticalAlignment="Center" Margin="10,0" />
+                        <TextBlock HorizontalAlignment="Left" 
+                                   Text="{Binding IdTurno}" Grid.Column="1" 
+                                   VerticalAlignment="Center"
+                                   Style="{StaticResource textBockTurConFolio2}" />
+                    </Grid>
+                    <Grid Margin="5" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left" 
+                           Text="# Documento" Style="{StaticResource textBockTurConDoc}"
+                           VerticalAlignment="Center" Margin="10,0" />
+                        <TextBlock HorizontalAlignment="Left" 
+                                   Text="{Binding NumDoc}" Grid.Column="1" 
+                                   VerticalAlignment="Center"
+                                   Style="{StaticResource textBockTurConDoc2}" />
+                    </Grid>
+                </Grid>
+                <Grid Margin="10,5" Grid.Row="2" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" 
+                           Text="Signatarios" Margin="5,0" 
+                           VerticalAlignment="Center"
+                               Style="{StaticResource textBockTurConSignatrio}" />
+                    <Border Grid.Column="1" BorderBrush="Silver" BorderThickness=".5" >
+                        <TextBlock HorizontalAlignment="Left" 
+                               Text="{Binding Signatarios}" 
+                               VerticalAlignment="Center" Margin="5,0"
+                               Style="{StaticResource textBockTurConGeneric}" />
+                    </Border>
+                </Grid>
+                <Grid Margin="10,5" Grid.Row="8" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" 
+                           Text="Descrpción del asunto " Margin="10,0" 
+                           VerticalAlignment="Center"
+                           Style="{StaticResource textBockTurConDesAsunto}" />
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="WrapWithOverflow" 
+                               Text="{Binding Asunto}" Grid.Row="1" 
+                               VerticalAlignment="Top" Margin="20,0"
+                               Style="{StaticResource textBockTurConGeneric}" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

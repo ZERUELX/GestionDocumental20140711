@@ -1,0 +1,379 @@
+﻿<Window x:Class="GestorDocument.UI.AsuntoTurno.ReadAsuntoTurnoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Consulta del Asunto (Solo lectura)" Height="700" Width="800"
+        MinHeight="500" MinWidth="600"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanResizeWithGrip"
+        WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderBrush="#424242" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Name="gridHeader" MouseDown="DragableGridMouseDown">
+                <Grid.Background>
+                    <ImageBrush ImageSource="..\Imagenes\fondo-gris-textura.png" TileMode="Tile" 
+                            Stretch="Fill">
+                    </ImageBrush>
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="CONSULTA DEL ASUNTO (Solo Lectura)" 
+                    HorizontalAlignment="Left" Margin="10,0" 
+                    Name="lblNameConsulta" VerticalAlignment="Center"
+                    Style="{StaticResource labelTituloAddDoc}"/>
+
+                <Grid  Grid.Column="1" Name="HeaderGrid" VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" Height="20" Width="70" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Style="{StaticResource BorderMinMAxCerrar}" 
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="0">
+                        <TextBlock Name="MinimizeButton" Text="0"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="MinimizeButtonMouseLeftButtonUp"
+                                   ToolTip="Minimizar"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderMinMAxCerrar}"
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="1">
+                        <TextBlock Name="MaximizeButton" Text="1"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="MaximizeButtonMouseLeftButtonUp"
+                                   ToolTip="Maximizar"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderMinMAxCerrar}"
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="2">
+                        <TextBlock Name="CloseButton" Text="r"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="CloseButtonMouseLeftButtonUp"
+                                   ToolTip="Cerrar" />
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <ImageBrush ImageSource="..\Imagenes\main_bg.png" TileMode="Tile" Viewbox="0,0,100,100"
+                            ViewboxUnits="Absolute" Viewport="0,0,100,100" ViewportUnits="Absolute">
+                    </ImageBrush>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="160"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="190"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Name="lblFechaCreacion" Content="Fecha de Creación"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                            <TextBlock Grid.Column="1" Name="tbFechaCreacion" 
+                               VerticalAlignment="Center" HorizontalAlignment="Left"
+                               Text="{Binding ReadAsunto.FechaCreacion, Mode=TwoWay,
+                               UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy hh:mm tt}}"/>
+
+                            <Label Name="lblFolio" Content="Folio" Grid.Column="3"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampoConsulta}"/>
+                            <TextBox Grid.Column="4" Name="tbFolio" Height="23" VerticalAlignment="Center" MaxLength="10"
+                             HorizontalAlignment="Left" Width="180"
+                             Text="{Binding ReadAsunto.Folio, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="1" IsEnabled="False"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="190"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Name="lblReferenciaDoc" Content="N° del documento"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Grid.Row="0" Style="{StaticResource labelCampoConsulta}"/>
+                            <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Height="23" 
+                             HorizontalAlignment="Left" Width="180" MaxLength="250"
+                             Text="{Binding ReadAsunto.ReferenciaDocumento, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="0" IsEnabled="False"/>
+
+                            <Label Name="lblFechaRecibido" Content="Fecha de recibido"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                           Grid.Column="3" Grid.Row="0"/>
+                            <TextBox Grid.Column="4" Name="tbFechaRecibido" Height="23" VerticalAlignment="Center" MaxLength="10"
+                             HorizontalAlignment="Left" Width="180"
+                             Text="{Binding ReadAsunto.FechaRecibido, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy}}"
+                             TabIndex="1" IsEnabled="False"/>
+
+
+                            <Label Name="lblFechaDoc" Content="Fecha del documento"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Grid.Row="1" Style="{StaticResource labelCampoConsulta}"/>
+                            <TextBox Grid.Column="1" Name="tbFechaDoc" Height="23" VerticalAlignment="Center" MaxLength="10"
+                             HorizontalAlignment="Left" Width="180" Grid.Row="1"
+                             Text="{Binding ReadAsunto.FechaDocumento, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy}}"
+                             TabIndex="1" IsEnabled="False"/>
+
+                            <Label Name="lblUbicacion" Content="Ubicación"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Grid.Row="1" Grid.Column="3"
+                           Style="{StaticResource labelCampoConsulta}"/>
+                            <TextBox Grid.Column="4" Grid.Row="1" Name="tbUbicacion" Height="23" VerticalAlignment="Center" 
+                             HorizontalAlignment="Left" Width="180" MaxLength="50"
+                             Text="{Binding ReadAsunto.UbicacionText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="5" Grid.ColumnSpan="2"  IsEnabled="False"/>
+
+
+                            <Label Name="lblIntruccion" Content="Instrucción"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampoConsulta}"
+                           Grid.Row="2"/>
+                            <TextBox VerticalAlignment="Stretch" Margin="0,0,10,0" Name="txtInstruccion" Grid.ColumnSpan="5"
+                             Grid.Column="1" Height="23" Grid.Row="2" HorizontalAlignment="Stretch" IsEnabled="False"
+                             Text="{Binding ReadAsunto.Instruccion.InstruccionName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+
+                        </Grid>
+
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Asunto"  HorizontalAlignment="Left" 
+                           Margin="10,0" Name="lblAsunto" VerticalAlignment="Center" Style="{StaticResource labelCampoConsulta}" />
+                            <TextBox Grid.Column="1" Grid.ColumnSpan="4"  Height="23" HorizontalAlignment="Stretch" 
+                             VerticalAlignment="Stretch" Margin="10,0" Name="txtTitulo"
+                             Text="{Binding ReadAsunto.Titulo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="6" IsEnabled="False"/>
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20*" />
+                                    <RowDefinition Height="10*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="200"></ColumnDefinition>
+                                    <ColumnDefinition Width="200"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Descripción del Asunto" HorizontalAlignment="Left" 
+                               Margin="5,3,0,3" Name="lblDescripcion"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource labelCampoConsulta}" Grid.RowSpan="2" />
+
+                                <Label Content="Fecha limite de respuesta" HorizontalAlignment="Right"
+                               Margin="0,3,10,3" Name="lblFechaRes" VerticalAlignment="Center"
+                               Grid.Column="2" Style="{StaticResource labelCampoConsulta}" Grid.RowSpan="2" />
+                                <TextBox Grid.Column="4" Name="tbFechaLimite" Height="23" VerticalAlignment="Center" MaxLength="10"
+                             HorizontalAlignment="Left" Width="180" Grid.RowSpan="2"
+                             Text="{Binding ReadAsunto.FechaVencimiento, Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:dd/MM/yyyy}}"
+                             TabIndex="1" IsEnabled="False"/>
+
+                            </Grid>
+                            <TextBox Grid.Column="1" Grid.ColumnSpan="4"  Height="80" HorizontalAlignment="Stretch" MaxLength="500"
+                             Name="txtDescripcion" VerticalAlignment="Top" Grid.Row="2" Margin="10,0" AcceptsReturn="True"
+                             TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
+                             Text="{Binding ReadAsunto.Descripcion,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="8" IsEnabled="False"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="140"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.ColumnSpan="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Name="lblAlcance" Content="Alcance"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="10,0" Style="{StaticResource labelCampoConsulta}"/>
+                                <TextBox Grid.Column="1" Name="tbAlcance" Height="23" VerticalAlignment="Center" 
+                             HorizontalAlignment="Stretch" MaxLength="250" Margin="0,0,10,0"
+                             Text="{Binding ReadAsunto.Alcance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="9" IsEnabled="False"/>
+                            </Grid>
+                            <Label Content="Prioridad"  HorizontalAlignment="Left" 
+                           Margin="5,0" Name="lblPrioridad" VerticalAlignment="Center"
+                           Style="{StaticResource labelCampoConsulta}" Grid.Row="1" />
+                            <TextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Height="23" 
+                             HorizontalAlignment="Left" Width="180" MaxLength="250"
+                             Text="{Binding ReadAsunto.Prioridad.PrioridadName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="0" IsEnabled="False"/>
+
+
+                            <Label Name="lblStatus" Content="Estatus" Grid.Row="1"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="10,0" Grid.Column="3" Style="{StaticResource labelCampoConsulta}"/>
+                            <TextBlock Grid.Column="4" Name="tbStatus" Grid.Row="1"
+                               VerticalAlignment="Center" HorizontalAlignment="Left"
+                               Text="{Binding ReadAsunto.StatusAsunto.StatusName, Mode=TwoWay}"/>
+
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <DataGrid ItemsSource="{Binding ReadAsunto.Turno.Documento, Mode=TwoWay}"
+                              SelectedItem="{Binding SelectedDocumentos,Mode=TwoWay}"
+                              CanUserAddRows="False" HorizontalAlignment="Left"  Height="80"
+                              CanUserDeleteRows="False" AutoGenerateColumns="False"
+                              Margin="5" Name="dataGridExpediente" VerticalAlignment="Stretch"
+                              RowStyle="{StaticResource RowStyle}" 
+                              Style="{StaticResource GridStyle}"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn IsReadOnly="True" Header="Documentos" Width="*" 
+                            Binding="{Binding Path=DocumentoName}"></DataGridTextColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+
+                        <Grid Grid.Row="5">
+                            <DataGrid ItemsSource="{Binding ReadAsunto.Signatario, Mode=TwoWay}"
+                        SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}"
+                        CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                        HorizontalAlignment="Left" Height="80" VerticalAlignment="Stretch"
+                        Margin="5" Name="dataGridSignatario" RowStyle="{StaticResource RowStyle}" 
+                        Style="{StaticResource GridStyle}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn IsReadOnly="True" Header="Signatarios" Width="*" 
+                             Binding="{Binding Path=Determinante.DeterminanteName}"></DataGridTextColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+
+                        <Grid Grid.Row="6">
+                            <DataGrid ItemsSource="{Binding ReadAsunto.Turno.Destinatario, Mode=TwoWay}"
+                        SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}"
+                        CanUserAddRows="False" HorizontalAlignment="Left"  Height="80"
+                        CanUserDeleteRows="False" AutoGenerateColumns="False"
+                        Margin="5" Name="dataGridDestinatario" VerticalAlignment="Stretch"
+                        RowStyle="{StaticResource RowStyle}" Style="{StaticResource GridStyle}"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn IsReadOnly="True" Header="Destinatarios" Width="*" 
+                            Binding="{Binding Path=Rol.Organigrama.JerarquiaName}"></DataGridTextColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+
+                        <Grid Grid.Row="7">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Name="lblComentario" Content="Comentarios"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Grid.Row="0" Margin="10,0" 
+                           Style="{StaticResource labelCampoConsulta}"/>
+                            <TextBox Grid.Column="1" Grid.ColumnSpan="4"  Height="60" HorizontalAlignment="Stretch" MaxLength="2000"
+                             Name="txtComentarios" VerticalAlignment="Top" Grid.Row="2" Margin="30,0,10,5" AcceptsReturn="True"
+                             TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
+                             Text="{Binding ReadAsunto.Turno.Comentario,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="17" IsEnabled="False"/>
+                        </Grid>
+
+                    </Grid>
+                </ScrollViewer>
+                <Grid Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Button Name="BtnCerrar" VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch" 
+                    Height="23" Content="CERRAR" Margin="10,0"
+                    Grid.Column="3" Click="BtnCerrar_Click"
+                    Style="{StaticResource bntAsuntoTurno}"/>
+
+                    <!--<Button Name="BtnImprimir" VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch" 
+                    Height="23" Content="IMPRIMIR" Margin="10,0"
+                    Grid.Column="2" Click="BtnImprimir_Click"
+                    Style="{StaticResource bntAsuntoTurno}"
+                    Command="{Binding ImprimirCommand}"/>-->
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

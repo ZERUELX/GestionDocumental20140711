@@ -1,0 +1,741 @@
+﻿<UserControl xmlns:my="clr-namespace:GestorDocument.UI.Buscar"  x:Class="GestorDocument.UI.AsuntoTurno.ModifyAsuntoTurnoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cv="clr-namespace:GestorDocument.UI.AsuntoTurno"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="1100" d:DesignWidth="700">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type TextBox}"
+                           BasedOn="{StaticResource MetroTextBox}">
+                        <Setter Property="Validation.ErrorTemplate"
+                                Value="{x:Null}" />
+                    </Style>
+
+                    <Style TargetType="{x:Type ComboBox}"
+                           BasedOn="{StaticResource MetroComboBox}">
+                        <Setter Property="Validation.ErrorTemplate"
+                                Value="{x:Null}" />
+                    </Style>
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <cv:BoolToVisibilityConverter x:Key="converter"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.Background>
+                <ImageBrush ImageSource="..\Imagenes\fondo-gris-textura.png" TileMode="Tile" 
+                             Stretch="Fill">
+                </ImageBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="BtnGuardar" VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch"
+                    Height="25" Content="GUARDAR AVANCE"
+                    Command="{Binding ValidarAsuntoCommand}"
+                    Margin="5,0" Click="BtnGuardar_Click"/>
+
+            <Button Name="BtnGuardarTurnar" VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch" 
+                    Height="25" Content="TURNAR ASUNTO" Margin="5,0"
+                    Grid.Column="1" Command="{Binding ValidarTurnarCommand}"
+                    Click="BtnGuardarTurnar_Click"/>
+
+            <Button Name="BtnRegresar" VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch" 
+                    Height="25" Content="REGRESAR" Margin="5,0"
+                    Grid.Column="4" Click="BtnRegresar_Click"/>
+
+            <Button Name="BtnImprimir" VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch" 
+                    Height="25" Content="IMPRIMIR CARÁTULA" Margin="5,0"
+                    Grid.Column="2" Click="BtnImprimir_Click"
+                    Command="{Binding ImprimirCommand}"/>
+
+            <Button Grid.Column="3" Height="25"
+                    HorizontalAlignment="Stretch" Content="BUSCAR ASUNTOS"
+                    Name="btnBuscar" VerticalAlignment="Center" Margin="5,0"
+                    Click="btnBuscar_Click" ToolTip="Buscar" Cursor="Hand"/>
+            <Popup Name="popup1" PopupAnimation="Scroll"  AllowsTransparency="True"
+                   Placement="Left"  IsOpen="False" StaysOpen="False"
+                   VerticalAlignment="Top" HorizontalAlignment="Left"
+                   Grid.Row="0" Grid.Column="3"
+                   PlacementTarget="{Binding ElementName=btnBuscar}"
+                   VerticalOffset="20" HorizontalOffset="180">
+                <my:BuscarAsuntoTurnoView />
+            </Popup>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush  ImageSource="..\Imagenes\main_bg.png" TileMode="Tile" Viewbox="0,0,100,100"
+                                    ViewboxUnits="Absolute" Viewport="0,0,100,100" ViewportUnits="Absolute">
+                </ImageBrush>
+                <!--<ImageBrush ImageSource="..\Imagenes\GrayTexture.jpg" TileMode="Tile" 
+                            Stretch="Fill">
+                </ImageBrush>-->
+            </Grid.Background>
+            <TextBlock  HorizontalAlignment="Center" Name="tbTitulo" 
+                        Text="CAPTURA DE NUEVO ASUNTO" VerticalAlignment="Center"
+                        Style="{StaticResource tBTituloCapturaAsunto}"/>
+        </Grid>
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="0,0,5,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="160"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="230"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="198" />
+                    </Grid.ColumnDefinitions>
+                    <Label Name="lblFechaCreacion" Content="Fecha de Creación"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampo}"/>
+                    <TextBlock Grid.Column="1" Name="tbFechaCreacion" 
+                               VerticalAlignment="Center" HorizontalAlignment="Left"
+                               Text="{Binding Asunto.FechaCreacion, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Label Name="lblReferenciaDoc" Content="N° del documento"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Grid.Row="0" Style="{StaticResource labelCampo}"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Height="23" 
+                             HorizontalAlignment="Left" Width="180" MaxLength="250" Name="tbReferencia"
+                             Text="{Binding Asunto.ReferenciaDocumento, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
+                                                                NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                             TabIndex="0"/>
+
+                    <Label Name="lblFolio" Content="Folio" Grid.Column="3"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampo}"/>
+                    <TextBox Grid.Column="4" Name="tbFolio" Height="23" VerticalAlignment="Center" MaxLength="10"
+                             HorizontalAlignment="Left" Width="180"
+                             Text="{Binding Asunto.Folio, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
+                                                 NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                             TabIndex="1"/>
+
+                    <Label Name="lblFechaRecibido" Content="Fecha de recibido"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampo}"
+                           Grid.Column="3" Grid.Row="1"/>
+                    <DatePicker Grid.Column="4" Height="25" VerticalAlignment="Center" 
+                                HorizontalAlignment="Left" Width="180"
+                                SelectedDate="{Binding Asunto.FechaRecibido,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
+                                                                    NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                                TabIndex="3" Grid.Row="1"/>
+
+                    <Label Name="lblFechaDoc" Content="Fecha del documento"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Grid.Row="1" Style="{StaticResource labelCampo}"/>
+                    <DatePicker Grid.Column="1" Height="25" Grid.Row="1" VerticalAlignment="Center"
+                                HorizontalAlignment="Left" Width="180"
+                                SelectedDate="{Binding Asunto.FechaDocumento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
+                                                                    NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                                TabIndex="2"/>
+
+                    <Label Name="lblUbicacion" Content="Ubicación"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Grid.Row="2" Grid.Column="3"
+                           Style="{StaticResource labelCampo}"/>
+                    <TextBox Grid.Column="4" Grid.Row="2" Name="tbUbicacion" Height="23" VerticalAlignment="Center" 
+                             HorizontalAlignment="Left" Width="180" MaxLength="50"
+                             Text="{Binding Asunto.UbicacionText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="5"/>
+
+                    <Label Name="lblIntruccion" Content="Instrucción"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampo}"
+                           Grid.Row="2"/>
+
+                    <ComboBox ItemsSource="{Binding Instruccions}"
+                              SelectedItem="{Binding Asunto.Instruccion,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged
+                                                     ,NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                              Text="{Binding Asunto.Instruccion.InstruccionName, Mode=TwoWay}"
+                              DisplayMemberPath="InstruccionName" 
+                              Name="cbIntruccion" Grid.Column="1"
+                              Height="23" Grid.Row="2"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Left" 
+                              Width="180" TabIndex="4"
+                              IsEditable="True"
+                              IsTextSearchEnabled="True"
+                              IsTextSearchCaseSensitive="False" StaysOpenOnEdit="True"
+                              TextSearch.TextPath="InstruccionName"
+                              LostKeyboardFocus="cbIntruccion_LostKeyboardFocus"/>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Asunto"  HorizontalAlignment="Left" 
+                           Margin="5,0" Name="lblAsunto" VerticalAlignment="Center" Style="{StaticResource labelCampo}" />
+                    <TextBox Grid.Column="1" Grid.ColumnSpan="4"  Height="23" HorizontalAlignment="Stretch" 
+                             VerticalAlignment="Stretch" Margin="0,0,20,0" Name="txtTitulo"
+                             Text="{Binding Asunto.Titulo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged
+                                                ,NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                             TabIndex="6"/>
+
+                    <Grid Grid.Row="1" Grid.ColumnSpan="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*" />
+                            <RowDefinition Height="10*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Descripción del Asunto" HorizontalAlignment="Left" 
+                               Margin="5,3,0,3" Name="lblDescripcion"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource labelCampo}" Grid.RowSpan="2" />
+                        <Label Content="Fecha limite de respuesta" HorizontalAlignment="Right"
+                               Margin="0,3,10,3" Name="lblFechaRes" VerticalAlignment="Center"
+                               Grid.Column="2" Style="{StaticResource labelCampo}" Grid.RowSpan="2" />
+                        <DatePicker Grid.Column="4"  Height="25"
+                                    Name="dPFechaRes" VerticalAlignment="Center"
+                                    Margin="0,0" Grid.RowSpan="2"
+                                    HorizontalAlignment="Left" Width="180"
+                                    SelectedDate="{Binding Asunto.FechaVencimiento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged
+                                                           ,NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                                    TabIndex="7"/>
+                    </Grid>
+                    <TextBox Grid.Column="1" Grid.ColumnSpan="4"  Height="90" HorizontalAlignment="Stretch" MaxLength="500"
+                             Name="txtDescripcion" VerticalAlignment="Top" Grid.Row="2" Margin="0,0,20,0" AcceptsReturn="True"
+                             TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
+                             Text="{Binding Asunto.Descripcion,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged
+                                            ,NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                             TabIndex="8"/>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.ColumnSpan="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Name="lblAlcance" Content="Alcance"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="5,0" Style="{StaticResource labelCampo}"/>
+                        <TextBox Grid.Column="1" Name="tbAlcance" Height="23" VerticalAlignment="Center" 
+                             HorizontalAlignment="Stretch" MaxLength="250" Margin="0,0,20,0"
+                             Text="{Binding Asunto.Alcance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             TabIndex="9"/>
+                    </Grid>
+                    <Label Content="Prioridad"  HorizontalAlignment="Left" 
+                           Margin="4,0,0,0" Name="lblPrioridad" VerticalAlignment="Center"
+                           Style="{StaticResource labelCampo}" Grid.Row="1" />
+                    <ComboBox ItemsSource="{Binding Prioridads}"
+                              SelectedItem="{Binding Asunto.Prioridad,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
+                                                     NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                              Text="{Binding Asunto.Prioridad.PrioridadName, Mode=TwoWay}"
+                              DisplayMemberPath="PrioridadName" 
+                              Name="cbPrioridad" Grid.Column="1" Grid.Row="2" 
+                              Height="23" VerticalAlignment="Center"
+                              HorizontalAlignment="Left" Width="180"
+                              TabIndex="10"/>
+
+                    <Label Name="lblStatus" Content="Estatus del asunto" Grid.Row="1"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="10,0" Grid.Column="3" Style="{StaticResource labelCampo}"/>
+                    <TextBlock Grid.Column="4" Name="tbStatus" Grid.Row="1"
+                               VerticalAlignment="Center" HorizontalAlignment="Left"
+                               Text="{Binding Asunto.StatusAsunto.StatusName, Mode=TwoWay}"/>
+
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="85"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="DOCUMENTOS AGREGADOS"  HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"
+                           Style="{StaticResource labelCampo}" Grid.Row="0" />
+
+                    <Grid Grid.Row="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="AGREGAR DOCUMENTO" Height="23" HorizontalAlignment="Center" 
+                                Name="btnAgregarExpedinete" VerticalAlignment="Center" Width="140" 
+                                Click="btnAgregarExpedinete_Click" TabIndex="11"/>
+                        <Button Content="ELIMINAR DOCUMENTOS " Height="23" HorizontalAlignment="Center" 
+                                Name="btnEliminarExpediente" VerticalAlignment="Center" Width="140"
+                                Grid.Column="2" Command="{Binding DeleteDocumentosCommand}" TabIndex="12"/>
+
+                        <Border Grid.Column="1" Margin="10,0" Style="{StaticResource BorderObligatorio}"
+                                Visibility="{Binding ISEmptyDocs, Converter={StaticResource converter}}">
+                            <TextBlock Text="DOCUMENTOS OBLIGATORIOS"
+                                       Style="{StaticResource tbObligatorio}"/>
+                        </Border>
+                    </Grid>
+
+                    <DataGrid ItemsSource="{Binding Documentos, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedDocumentos,Mode=TwoWay}"
+                              CanUserAddRows="False" Grid.Column="1" Grid.Row="2" 
+                              HorizontalAlignment="Left"  Height="90"
+                              CanUserDeleteRows="False" AutoGenerateColumns="False"
+                              Margin="10,0" Name="dataGridExpediente" VerticalAlignment="Stretch"
+                              RowStyle="{StaticResource RowStyle}" 
+                              Style="{StaticResource GridStyle}"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                              ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="" Width="30">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox HorizontalAlignment="Center"
+                                            IsChecked="{Binding Path=IsCheckedDelete,UpdateSourceTrigger=PropertyChanged}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTextColumn IsReadOnly="True" Header="Nombre del documento" Width="*" 
+                                                    Binding="{Binding Path=DocumentoName}"/>
+
+                            <DataGridTextColumn IsReadOnly="True"  Width="*" 
+                                                Binding="{Binding Path=Fecha,StringFormat={}{0:dd/MM/yyyy}}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock TextAlignment="Center" 
+                                       Text="Fecha de carga"/>
+                                </DataGridTextColumn.Header>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn IsReadOnly="True" Width="*" 
+                                                Binding="{Binding Path=TipoDocumento.TipoDocumentoName}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock TextAlignment="Center" 
+                                       Text="Tipo de documento"/>
+                                </DataGridTextColumn.Header>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="21"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Name="lblAnexos" Content="Anexos"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Grid.Row="0" Margin="10,0" 
+                           Style="{StaticResource labelCampo}"/>
+                        <TextBox Grid.Row="5" Height="58" HorizontalAlignment="Stretch"
+                            Margin="20,0,10,0" Name="txtAnexos" VerticalAlignment="Stretch" 
+                            Controls:TextboxHelper.ClearTextButton="True"
+                            TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxLength="250"
+                            Text="{Binding Asunto.Anexos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 TabIndex="13"/>
+                    </Grid>
+
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="SIGNATARIOS AGREGADOS"  HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"
+                           Style="{StaticResource labelCampo}" Grid.Row="0" />
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="AGREGAR SIGNATARIOS" Height="23" HorizontalAlignment="Center" 
+                                Name="btnAgregarSignatario" VerticalAlignment="Center" Width="140" 
+                                Click="btnAgregarSignatario_Click" TabIndex="14"/>
+
+                        <Button Content="ELIMINAR SIGNATARIOS" Height="23" HorizontalAlignment="Center" 
+                                Name="btnEliminarSignatario" VerticalAlignment="Center" Width="140"
+                                Grid.Column="2" Command="{Binding DeleteSignatariosCommand}" TabIndex="15"/>
+
+                        <Border Grid.Column="1" Margin="10,0" Style="{StaticResource BorderObligatorio}"
+                                Visibility="{Binding ISEmptySignatario, Converter={StaticResource converter}}">
+                            <TextBlock Text="SIGNATARIOS OBLIGATORIOS"
+                                       Style="{StaticResource tbObligatorio}"/>
+                        </Border>
+                    </Grid>
+
+                    <DataGrid ItemsSource="{Binding Signatario, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}"
+                              Grid.Column="1" Grid.Row="2" CanUserAddRows="False"
+                              CanUserDeleteRows="False" AutoGenerateColumns="False"
+                              HorizontalAlignment="Left" Height="90" VerticalAlignment="Stretch"
+                              Margin="10,0" Name="dataGridSignatario"
+                              RowStyle="{StaticResource RowStyle}" 
+                              Style="{StaticResource GridStyle}"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                              ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="" Width="30">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox HorizontalAlignment="Center"
+                                            IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTextColumn IsReadOnly="True" Width="130" 
+                                                Binding="{Binding Determinante.PrefijoFolio}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock TextAlignment="Center" 
+                                       Text="Determinante"/>
+                                </DataGridTextColumn.Header>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTextColumn IsReadOnly="True" Header="Nombre del area" Width="*" 
+                                                    Binding="{Binding Determinante.Area}"/>
+
+                            <DataGridTextColumn IsReadOnly="True" Header="Nombre del títular" Width="*" 
+                                                    Binding="{Binding Determinante.DeterminanteName}"/>
+
+                            <DataGridTextColumn IsReadOnly="True" Width="145" 
+                                                    Binding="{Binding Determinante.TipoDeterminante.TipoDeterminanteName}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock TextAlignment="Center" 
+                                       Text="Tipo determinante"/>
+                                </DataGridTextColumn.Header>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblContacto" Content="Contacto"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="10,0" Style="{StaticResource labelCampo}"/>
+                    <TextBox Grid.Column="1" Name="tbContacto" Height="23" VerticalAlignment="Center" 
+                             HorizontalAlignment="Stretch" MaxLength="250" Margin="0,0,10,0"
+                             Text="{Binding Asunto.Contacto,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
+                             NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                             TabIndex="16"/>
+                </Grid>
+
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Content="Destinatarios Internos" HorizontalAlignment="Left" 
+                                 Margin="10,0" Name="radioBInternos" VerticalAlignment="Center"
+                                 IsChecked="{Binding IsCheckedInterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 TabIndex="17"/>
+
+                    <RadioButton Content="Destinatarios Externos" HorizontalAlignment="Left"
+                                 Margin="10,0" Name="radioBExternos" VerticalAlignment="Center"
+                                 Grid.Column="1" TabIndex="18"
+                                 IsChecked="{Binding IsCheckedExterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+
+                <Grid Grid.Row="8">
+                    <TabControl >
+                        <TabItem Header="DESTINATARIOS" Name="tabItemCaptura" 
+                                 Style="{StaticResource TabItemCapturaAsunto}" 
+                                 IsSelected="{Binding IsSelecedInterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Visibility="{Binding IsEnabledInterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource converter}}">
+                            <Grid Visibility="{Binding IsEnabledInterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource converter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="AGREGAR DESTINATARIOS" Height="23" HorizontalAlignment="Center" 
+                                            Name="btnAgregarDestinatraio" VerticalAlignment="Center" Width="140" 
+                                            Click="btnAgregarDestinatraio_Click" TabIndex="19"/>
+                                    <Button Content="ELIMINAR DESTINATARIOS" Height="23" HorizontalAlignment="Center" 
+                                            Name="btnEliminarDestinatario" VerticalAlignment="Center" Width="140"
+                                            Grid.Column="2" Command="{Binding DeleteDestinatariosCommand}" TabIndex="20"/>
+                                    <Border Grid.Column="1" Margin="10,0" Style="{StaticResource BorderObligatorio}"
+                                            Visibility="{Binding ISEmptyDestinatario, Converter={StaticResource converter}}">
+                                        <TextBlock Text="DESTINATARIOS OBLIGATORIOS"
+                                       Style="{StaticResource tbObligatorio}"/>
+                                    </Border>
+                                </Grid>
+
+                                <DataGrid ItemsSource="{Binding Destinatario, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}"
+                                          CanUserAddRows="False" Grid.Column="1" Grid.Row="1" 
+                                          HorizontalAlignment="Left"  Height="100"
+                                          CanUserDeleteRows="False" AutoGenerateColumns="False"
+                                          Margin="10,0" Name="dataGridDestinatario" VerticalAlignment="Stretch"
+                                          RowStyle="{StaticResource RowStyle}" 
+                                          Style="{StaticResource GridStyle}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                          ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Header="" Width="30">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox HorizontalAlignment="Center"
+                                                               IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTextColumn IsReadOnly="True" Header="DESTINATARIOS INTERNOS" Width="*" 
+                                                            Binding="{Binding Path=Rol.Organigrama.JerarquiaName}"/>
+
+                                        <DataGridTextColumn IsReadOnly="True" Header="NOMBRE TITULAR" Width="*" 
+                                                            Binding="{Binding Path=Rol.Organigrama.JerarquiaTitular}"/>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="DESTINATARIOS" Name="tabItemDestinatariosExternos"
+                                 Style="{StaticResource TabItemCapturaAsunto}" 
+                                 IsSelected="{Binding IsSelecedExterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Visibility="{Binding IsEnabledExterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource converter}}">
+                            <Grid Visibility="{Binding IsEnabledExterno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged ,Converter={StaticResource converter}}" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="AGREGAR DESTINATARIOS" Height="23" HorizontalAlignment="Center" 
+                                        Name="btnAgregarDestinatraioExternos" VerticalAlignment="Center" Width="140" 
+                                        Click="btnAgregarDestinatraioExternos_Click" TabIndex="19"/>
+                                    <Button Content="ELIMINAR DESTINATARIOS" Height="23" HorizontalAlignment="Center" 
+                                        Name="btnEliminarDestinatarioExternos" VerticalAlignment="Center" Width="140"
+                                        Grid.Column="2" Command="{Binding DeleteSignatariosExternosCommand}" TabIndex="20"/>
+                                    <Border Grid.Column="1" Margin="10,0" Style="{StaticResource BorderObligatorio}"
+                                            Visibility="{Binding ISEmptySignatarioExterno, Converter={StaticResource converter}}">
+                                        <TextBlock Text="DESTINATARIOS OBLIGATORIOS"
+                                       Style="{StaticResource tbObligatorio}"/>
+                                    </Border>
+                                </Grid>
+
+                                <DataGrid ItemsSource="{Binding SignatarioExterno, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}"
+                                          CanUserAddRows="False" Grid.Column="1" Grid.Row="1" 
+                                          HorizontalAlignment="Left"  Height="100"
+                                          CanUserDeleteRows="False" AutoGenerateColumns="False"
+                                          Margin="10,0" Name="dataGridDestinatarioExternos" VerticalAlignment="Stretch"
+                                          RowStyle="{StaticResource RowStyle}" 
+                                          Style="{StaticResource GridStyle}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                          ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                                    <DataGrid.Columns>
+
+                                        <DataGridTemplateColumn Header="" Width="30">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox HorizontalAlignment="Center"
+                                                              IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTextColumn IsReadOnly="True" Header="DESTINATARIOS EXTERNOS" Width="*" 
+                                                    Binding="{Binding Determinante.Area}"/>
+
+                                        <DataGridTextColumn IsReadOnly="True" Header="NOMBRE DEL TITULAR" Width="*" 
+                                                            Binding="{Binding Path=Determinante.DeterminanteName}"/>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="CON COPIA PARA" Name="tabItemSeguimento"
+                                 Style="{StaticResource TabItemCapturaAsunto}">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="AGREGAR DESTINATARIOS" Height="23" HorizontalAlignment="Center" 
+                                        Name="btnAgregarDestinatraioCcp" VerticalAlignment="Center" Width="140" 
+                                        Click="btnAgregarDestinatraioCcp_Click" TabIndex="21"/>
+                                    <Button Content="ELIMINAR DESTINATARIOS" Height="23" HorizontalAlignment="Center" 
+                                        Name="btnEliminarDestinatarioCcp" VerticalAlignment="Center" Width="140"
+                                        Grid.Column="2" Command="{Binding DeleteDestinatariosCcpCommand}" TabIndex="22"/>
+                                </Grid>
+
+                                <DataGrid ItemsSource="{Binding DestinatarioCcp, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                          SelectedItem="{Binding SelectedDeterminante,Mode=TwoWay}"
+                                          CanUserAddRows="False" Grid.Column="1" Grid.Row="1" 
+                                          HorizontalAlignment="Left"  Height="100"
+                                          CanUserDeleteRows="False" AutoGenerateColumns="False"
+                                          Margin="10,0" Name="dataGridDestinatarioCcp" VerticalAlignment="Stretch"
+                                          RowStyle="{StaticResource RowStyle}" 
+                                          Style="{StaticResource GridStyle}"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                          ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}">
+                                    <DataGrid.Columns>
+
+                                        <DataGridTemplateColumn Header="" Width="30">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox HorizontalAlignment="Center"
+                                                              IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTextColumn IsReadOnly="True" Header="DESTINATARIOS CON COPIA PARA" Width="*" 
+                                                            Binding="{Binding Path=Rol.Organigrama.JerarquiaName}"/>
+
+                                        <DataGridTextColumn IsReadOnly="True" Header="NOMBRE TITULAR" Width="*" 
+                                                            Binding="{Binding Path=Rol.Organigrama.JerarquiaTitular}"/>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+
+                <Grid Grid.Row="9">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="21"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Name="lblComentario" Content="Comentarios"
+                           VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Grid.Row="0" Margin="10,0" 
+                           Style="{StaticResource labelCampo}"/>
+                    <TextBox Grid.Row="4" Height="65" HorizontalAlignment="Stretch"
+                     Margin="20,0,10,10" Name="txtComentarios" VerticalAlignment="Stretch" 
+                     Controls:TextboxHelper.ClearTextButton="True"
+                     TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxLength="2000"
+                     Text="{Binding Turno.Comentario,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TabIndex="23"/>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

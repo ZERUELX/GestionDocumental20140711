@@ -1,0 +1,136 @@
+﻿<Window x:Class="GestorDocument.UI.AsuntoTurno.DglAddDestinatarioConCopiaParaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Agregar destinatarios con copia para" Height="700" Width="700"
+        MinHeight="500" MinWidth="600"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border BorderBrush="#424242" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Name="gridHeader" MouseDown="DragableGridMouseDown">
+                <Grid.Background>
+                    <ImageBrush ImageSource="..\Imagenes\fondo-gris-textura.png" TileMode="Tile" 
+                            Stretch="Fill">
+                    </ImageBrush>
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="AGREGAR DESTINATARIO CON COPIA PARA" 
+                    HorizontalAlignment="Left" Margin="10,0" 
+                    Name="lblNameConsulta" VerticalAlignment="Center"
+                    Style="{StaticResource labelTituloAddDoc}"/>
+
+                <Grid  Grid.Column="1" Name="HeaderGrid" VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" Height="20" Width="70" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Style="{StaticResource BorderMinMAxCerrar}" 
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="0">
+                        <TextBlock Name="MinimizeButton" Text="0"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="MinimizeButtonMouseLeftButtonUp"
+                                   ToolTip="Minimizar"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderMinMAxCerrar}"
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="1">
+                        <TextBlock Name="MaximizeButton" Text="1"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="MaximizeButtonMouseLeftButtonUp"
+                                   ToolTip="Maximizar"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderMinMAxCerrar}"
+                                HorizontalAlignment="center" VerticalAlignment="center"
+                                Grid.Column="2">
+                        <TextBlock Name="CloseButton" Text="r"
+                                   Style="{StaticResource textBockMInMaxCerrar}"
+                                   MouseLeftButtonUp="CloseButtonMouseLeftButtonUp"
+                                   ToolTip="Cerrar" />
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <ImageBrush ImageSource="..\Imagenes\main_bg.png" TileMode="Tile" Viewbox="0,0,100,100"
+                            ViewboxUnits="Absolute" Viewport="0,0,100,100" ViewportUnits="Absolute">
+                    </ImageBrush>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                
+                <DataGrid ItemsSource="{Binding Organigramas, Mode=TwoWay}"
+                          AutoGenerateColumns="False" HorizontalAlignment="Stretch" 
+                          Name="dataGrid1" VerticalAlignment="Stretch"
+                          Margin="5,0" CanUserAddRows="False" CanUserDeleteRows="False"
+                          RowStyle="{StaticResource RowStyle}" 
+                          Style="{StaticResource GridStyle}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}" >
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="" Width="30">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox HorizontalAlignment="Center"
+                                              IsChecked="{Binding Path=IsChecked,UpdateSourceTrigger=PropertyChanged}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn IsReadOnly="True" Header="Destinatario" Width="*" 
+                                Binding="{Binding JerarquiaName}"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                <Grid Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Button Content="AGREGAR" Grid.Row="2" Height="25" 
+                        HorizontalAlignment="Stretch" Margin="15,0"
+                        Name="btnAgregar" VerticalAlignment="Center"
+                        Click="btnAgregar_Click"
+                        Command="{Binding AddOrganigramaCommand}"
+                        Style="{StaticResource bntAsuntoTurno}"/>
+
+                    <Button Content="CANCELAR" Grid.Column="3" Grid.Row="2" 
+                        Height="25" HorizontalAlignment="Stretch"
+                        Name="btnCancelar" VerticalAlignment="Center"
+                        Click="BtnCerrar_Click" Margin="15,0"
+                        Style="{StaticResource bntAsuntoTurno}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

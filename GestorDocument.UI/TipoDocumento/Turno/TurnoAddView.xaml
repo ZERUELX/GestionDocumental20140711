@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="GestorDocument.UI.Turno.TurnoAddView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="430">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btGuardar" Command="{Binding SaveCommand}" 
+                    Content="Guardar" Height="23" HorizontalAlignment="Right"
+                    VerticalAlignment="Center" Margin=" 10,0"
+                    Width="75" Click="btGuardar_Click" Grid.Column="1" />
+            <Button Name="btCancelar" HorizontalAlignment="Right"
+                    Content="Cancelar" Height="23"  Grid.Column="2"
+                    VerticalAlignment="Center" Margin=" 10,0"
+                    Width="75" Click="btCancelar_Click" />
+        </Grid>
+        <Separator Height="9" HorizontalAlignment="Stretch" 
+                   Name="separator2" VerticalAlignment="Center"
+                   Grid.Row="1"/>
+        <Grid Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="NUEVO: Turno." Height="23" HorizontalAlignment="Left" 
+                       Name="textBlockTitle" VerticalAlignment="Center"
+                       Grid.Row="1" Margin="10,0"/>
+
+            <Separator Height="7" HorizontalAlignment="Stretch" 
+                       Name="separator1" VerticalAlignment="Center"
+                       Grid.Row="2" Grid.ColumnSpan="2"/>
+
+            <TextBlock Text="Turno Anterior:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="3"  
+                       Name="textBlockTurnoName" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Turno.IdTurnoAnt, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox1"
+                      VerticalAlignment="Center" Width="120" Grid.Row="3" Grid.Column="1" />
+
+            <TextBlock Text="Fecha de Creación:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="4"  
+                       Name="textBlockCveTurno" VerticalAlignment="Center"
+                       Margin="10,0"/>
+            <DatePicker Grid.Column="1" Height="25" HorizontalAlignment="Left" 
+                            Name="datePFecha" VerticalAlignment="Center" Width="150" Grid.Row="4"
+                            SelectedDate="{Binding Turno.FechaCreacion, Mode=TwoWay}"/>
+            <!--<TextBox  Text="{Binding Turno.FechaCreacion, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox2"
+                      VerticalAlignment="Center" Width="120" Grid.Row="4" Grid.Column="1" />-->
+
+            <TextBlock Text="Fecha de Envío:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="5"  
+                       Name="textBlockArea" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <DatePicker Grid.Column="1" Height="25" HorizontalAlignment="Left" 
+                            Name="datePFechaEnvio" VerticalAlignment="Center" Width="150" Grid.Row="5"
+                            SelectedDate="{Binding Turno.FechaEnvio, Mode=TwoWay}"/>
+            <!--<TextBox  Text="{Binding Turno.FechaEnvio, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox3"
+                      VerticalAlignment="Center" Width="120" Grid.Row="5" Grid.Column="1" />-->
+
+            <TextBlock Text="Asunto:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="6"  
+                       Name="textBlockPrefijo" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <ComboBox ItemsSource="{Binding Asuntos}"
+                      SelectedItem="{Binding Turno.Asunto}"
+                      DisplayMemberPath="Titulo" 
+                      Height="23" HorizontalAlignment="Left" Name="comboBox1" 
+                      VerticalAlignment="Center" Width="120" Grid.Row="6" Grid.Column="1" />
+            
+            <TextBlock Text="Status del turno:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="7"  
+                       Name="textBlockIdTurno" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <ComboBox ItemsSource="{Binding StatusTurnos}"
+                      SelectedItem="{Binding Turno.StatusTurno}"
+                      DisplayMemberPath="StatusName" 
+                      Height="23" HorizontalAlignment="Left" Name="comboBox4" 
+                      VerticalAlignment="Center" Width="120" Grid.Row="7" Grid.Column="1" />
+
+            <TextBlock Text="Comentario:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="8"  
+                       Name="textBlock3" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Turno.Comentario, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox4"
+                      VerticalAlignment="Center" Width="120" Grid.Row="8" Grid.Column="1" />
+
+            <TextBlock Text="Respuesta:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="9"  
+                       Name="textBlock1" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Turno.Respuesta, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox5"
+                      VerticalAlignment="Center" Width="120" Grid.Row="9" Grid.Column="1" />
+
+            <TextBlock Text="{Binding ElementExists}" Height="23" 
+                       HorizontalAlignment="Center" Name="textBlockElementExist" 
+                       VerticalAlignment="Center" Width="144"
+                       Grid.Row="10" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Grid>
+</UserControl>

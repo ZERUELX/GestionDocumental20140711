@@ -1,0 +1,234 @@
+﻿<UserControl xmlns:my1="clr-namespace:GestorDocument.UI.Buscar" 
+             xmlns:my="clr-namespace:GestorDocument.UI.Asunto"  
+             x:Class="GestorDocument.UI.Asunto.AsuntoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="..\Imagenes\11593_774276.JPG" TileMode="Tile" Viewbox="0,0,100,100"
+                                    ViewboxUnits="Absolute" Viewport="0,0,100,100" ViewportUnits="Absolute">
+            </ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="..\Imagenes\fondo-gris-textura.png" TileMode="Tile" 
+                             Stretch="Fill">
+                </ImageBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding NewCommand}"   
+                    Name="BtNuevo" Content="NUEVO ASUNTO" 
+                    Height="25" HorizontalAlignment="Left"
+                    VerticalAlignment="Center" 
+                    Width="140" Click="BtNuevo_Click"
+                    Margin="30,0" ToolTip="Nuevo Asunto"/>
+
+            <Button Name="BtRegresar" Content="REGRESAR" 
+                    Height="25" HorizontalAlignment="Right"
+                    VerticalAlignment="Center" 
+                    Width="140" Click="BtRegresar_Click"
+                    Margin="30,0" Grid.Column="2"/>
+
+            <Button Grid.Column="1" Height="25" HorizontalAlignment="Center"
+                    Name="btnBuscar" VerticalAlignment="Center" Width="140" 
+                    Click="btnBuscar_Click" ToolTip="Buscar Asuntos" Cursor="Hand">
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="15"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="BUSCAR ASUNTOS" HorizontalAlignment="Left"
+                               VerticalAlignment="Center"/>
+                    <Image VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Source="../Imagenes/Search1.png" Width="10"
+                           Grid.Column="2" Stretch="Fill" Height="10"/>
+                </Grid>
+            </Button>
+            <Popup Name="popup1" PopupAnimation="Scroll"  AllowsTransparency="True"
+                   Placement="Left"  IsOpen="False" StaysOpen="False"
+                   VerticalAlignment="Top" HorizontalAlignment="Left"
+                   Grid.Row="0" Grid.Column="1"
+                   PlacementTarget="{Binding ElementName=btnBuscar}"
+                   VerticalOffset="25" HorizontalOffset="130">
+                <my1:BuscarAsuntoView />
+            </Popup>
+
+        </Grid>
+
+        <Border BorderBrush="Silver" BorderThickness="1" Grid.Row="1" 
+                HorizontalAlignment="Stretch" Name="borderTitulo"
+                VerticalAlignment="Stretch" Background="{Binding BackgroundTitulo}">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Name="textBTituloGrid" Text="{Binding TituloGrid}" 
+                       Style="{StaticResource tBTituloGrid}" />
+        </Border>
+
+        <Grid Grid.Row="2">
+            <DataGrid ItemsSource="{Binding Asuntos, Mode=TwoWay}"
+                      SelectedItem="{Binding SelectedAsunto, Mode=TwoWay}"
+                      AutoGenerateColumns="False" HorizontalAlignment="Stretch" 
+                      Name="dataGridAsuntos" VerticalAlignment="Stretch"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      RowStyle="{StaticResource RowStyle}" Margin="0,0,5,0"
+                      Style="{StaticResource GridStyle2}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle_Effects}"
+                      Grid.Row="1" MouseDoubleClick="dataGridAsuntos_MouseDoubleClick">
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn Header="" Width="25" CanUserSort="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Height="25" Source="{Binding Prioridad.PathImagen}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Header="PRIORIDAD" Width="90" 
+                                Binding="{Binding Prioridad.PrioridadName}"/>
+
+                    <DataGridTextColumn IsReadOnly="True" Width="160*"
+                                        Binding="{Binding Titulo}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextAlignment="Left" TextWrapping="Wrap" 
+                                       Text="TÍTULO DEL ASUNTO" Margin="5,0"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="ToolTip" Value="{Binding Titulo}" />
+                                <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Width="80"
+                                        Binding="{Binding Folio}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextAlignment="Center" Text="FOLIO"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Width="140"
+                                        Binding="{Binding Signatarios}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextAlignment="Center" Text="SIGNATARIOS"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                                <Setter Property="ToolTip" Value="{Binding Signatarios}"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Width="140"
+                                        Binding="{Binding Turno.Destinatarios}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextAlignment="Center" Text="DESTINATARIOS"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                                <Setter Property="ToolTip" Value="{Binding Turno.Destinatarios}"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <!--<DataGridTextColumn IsReadOnly="True" Width="120" 
+                                        Binding="{Binding StatusAsunto.StatusName}">
+
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextWrapping="Wrap" TextAlignment="Center" 
+                                       Text="ESTATUS DEL ASUNTO"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>-->
+
+                    <DataGridTextColumn IsReadOnly="True" Width="120" 
+                                        Binding="{Binding RespuestaTurnos}">
+
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextWrapping="Wrap" TextAlignment="Center" 
+                                       Text="CON RESPUESTA"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Width="100"
+                                        Binding="{Binding FechaRecibido,StringFormat={}{0:dd/MM/yyyy}}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextWrapping="Wrap" TextAlignment="Center" 
+                                       Text="FECHA RECEPCIÓN"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn IsReadOnly="True" Width="120" 
+                                        Binding="{Binding FechaVencimiento,StringFormat={}{0:dd/MM/yyyy}}">
+
+                        <DataGridTextColumn.Header>
+                            <TextBlock TextWrapping="Wrap" TextAlignment="Center" 
+                                       Text="FECHA VENCIMIENTO"/>
+                        </DataGridTextColumn.Header>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="FontSize" Value="12" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Foreground" Value="#424242" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

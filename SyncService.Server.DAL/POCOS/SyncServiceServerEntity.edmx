@@ -1,0 +1,2845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_GestorDocumtsTestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="db_GestorDocumtsTestModelStoreContainer">
+          <EntitySet Name="APP_BANDEJA" EntityType="db_GestorDocumtsTestModel.Store.APP_BANDEJA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="APP_MENU" EntityType="db_GestorDocumtsTestModel.Store.APP_MENU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="APP_ROL" EntityType="db_GestorDocumtsTestModel.Store.APP_ROL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="APP_ROL_MENU" EntityType="db_GestorDocumtsTestModel.Store.APP_ROL_MENU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="APP_USUARIO" EntityType="db_GestorDocumtsTestModel.Store.APP_USUARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="APP_USUARIO_ROL" EntityType="db_GestorDocumtsTestModel.Store.APP_USUARIO_ROL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_DETERMINANTE" EntityType="db_GestorDocumtsTestModel.Store.CAT_DETERMINANTE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_INSTRUCCION" EntityType="db_GestorDocumtsTestModel.Store.CAT_INSTRUCCION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_ORGANIGRAMA" EntityType="db_GestorDocumtsTestModel.Store.CAT_ORGANIGRAMA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_PRIORIDAD" EntityType="db_GestorDocumtsTestModel.Store.CAT_PRIORIDAD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_STATUS_ASUNTO" EntityType="db_GestorDocumtsTestModel.Store.CAT_STATUS_ASUNTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_STATUS_TURNO" EntityType="db_GestorDocumtsTestModel.Store.CAT_STATUS_TURNO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_TIPO_DETERMINANTE" EntityType="db_GestorDocumtsTestModel.Store.CAT_TIPO_DETERMINANTE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_TIPO_DOCUMENTO" EntityType="db_GestorDocumtsTestModel.Store.CAT_TIPO_DOCUMENTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_TIPO_EXTENCION" EntityType="db_GestorDocumtsTestModel.Store.CAT_TIPO_EXTENCION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_TIPO_UNIDAD_NORMATIVA" EntityType="db_GestorDocumtsTestModel.Store.CAT_TIPO_UNIDAD_NORMATIVA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CAT_UBICACION" EntityType="db_GestorDocumtsTestModel.Store.CAT_UBICACION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GET_ASUNTO" EntityType="db_GestorDocumtsTestModel.Store.GET_ASUNTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GET_DOCUMENTOS" EntityType="db_GestorDocumtsTestModel.Store.GET_DOCUMENTOS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GET_EXPEDIENTE" EntityType="db_GestorDocumtsTestModel.Store.GET_EXPEDIENTE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GET_FECHA_VENCIMIENTO" EntityType="db_GestorDocumtsTestModel.Store.GET_FECHA_VENCIMIENTO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GET_TURNO" EntityType="db_GestorDocumtsTestModel.Store.GET_TURNO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="INF_ACCION" EntityType="db_GestorDocumtsTestModel.Store.INF_ACCION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="INF_FORM" EntityType="db_GestorDocumtsTestModel.Store.INF_FORM" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="INF_INFODOC" EntityType="db_GestorDocumtsTestModel.Store.INF_INFODOC" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MODIFIEDDATA" EntityType="db_GestorDocumtsTestModel.Store.MODIFIEDDATA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REL_DESTINATARIO" EntityType="db_GestorDocumtsTestModel.Store.REL_DESTINATARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REL_DESTINATARIO_CCP" EntityType="db_GestorDocumtsTestModel.Store.REL_DESTINATARIO_CCP" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REL_SIGNATARIO" EntityType="db_GestorDocumtsTestModel.Store.REL_SIGNATARIO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REL_SIGNATARIO_EXTERNO" EntityType="db_GestorDocumtsTestModel.Store.REL_SIGNATARIO_EXTERNO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SYNCTABLE" EntityType="db_GestorDocumtsTestModel.Store.SYNCTABLE" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="APP_MENU_APP_MENU_FK1" Association="db_GestorDocumtsTestModel.Store.APP_MENU_APP_MENU_FK1">
+            <End Role="APP_MENU" EntitySet="APP_MENU" />
+            <End Role="APP_MENU1" EntitySet="APP_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="APP_MENU_APP_ROL_MENU_FK1" Association="db_GestorDocumtsTestModel.Store.APP_MENU_APP_ROL_MENU_FK1">
+            <End Role="APP_MENU" EntitySet="APP_MENU" />
+            <End Role="APP_ROL_MENU" EntitySet="APP_ROL_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_APP_ROL_MENU_FK1" Association="db_GestorDocumtsTestModel.Store.APP_ROL_APP_ROL_MENU_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="APP_ROL_MENU" EntitySet="APP_ROL_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_APP_USUARIO_ROL_FK1" Association="db_GestorDocumtsTestModel.Store.APP_ROL_APP_USUARIO_ROL_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="APP_USUARIO_ROL" EntitySet="APP_USUARIO_ROL" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.Store.APP_ROL_GET_TURNO_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.Store.APP_ROL_INF_INFODOC_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_REL_DESTINATARIO_FK1" Association="db_GestorDocumtsTestModel.Store.APP_ROL_REL_DESTINATARIO_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="REL_DESTINATARIO" EntitySet="REL_DESTINATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="APP_USUARIO_APP_USUARIO_ROL_FK1" Association="db_GestorDocumtsTestModel.Store.APP_USUARIO_APP_USUARIO_ROL_FK1">
+            <End Role="APP_USUARIO" EntitySet="APP_USUARIO" />
+            <End Role="APP_USUARIO_ROL" EntitySet="APP_USUARIO_ROL" />
+          </AssociationSet>
+          <AssociationSet Name="APP_USUARIO_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.Store.APP_USUARIO_GET_TURNO_FK1">
+            <End Role="APP_USUARIO" EntitySet="APP_USUARIO" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="APP_USUARIO_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.Store.APP_USUARIO_INF_INFODOC_FK1">
+            <End Role="APP_USUARIO" EntitySet="APP_USUARIO" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1">
+            <End Role="CAT_DETERMINANTE" EntitySet="CAT_DETERMINANTE" />
+            <End Role="REL_SIGNATARIO_EXTERNO" EntitySet="REL_SIGNATARIO_EXTERNO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_DETERMINANTE_REL_SIGNATARIO_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_DETERMINANTE_REL_SIGNATARIO_FK1">
+            <End Role="CAT_DETERMINANTE" EntitySet="CAT_DETERMINANTE" />
+            <End Role="REL_SIGNATARIO" EntitySet="REL_SIGNATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_INSTRUCCION_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_INSTRUCCION_GET_ASUNTO_FK1">
+            <End Role="CAT_INSTRUCCION" EntitySet="CAT_INSTRUCCION" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_PRIORIDAD_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_PRIORIDAD_GET_ASUNTO_FK1">
+            <End Role="CAT_PRIORIDAD" EntitySet="CAT_PRIORIDAD" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_STATUS_ASUNTO_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_STATUS_ASUNTO_GET_ASUNTO_FK1">
+            <End Role="CAT_STATUS_ASUNTO" EntitySet="CAT_STATUS_ASUNTO" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_STATUS_TURNO_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_STATUS_TURNO_GET_TURNO_FK1">
+            <End Role="CAT_STATUS_TURNO" EntitySet="CAT_STATUS_TURNO" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1">
+            <End Role="CAT_TIPO_DETERMINANTE" EntitySet="CAT_TIPO_DETERMINANTE" />
+            <End Role="CAT_DETERMINANTE" EntitySet="CAT_DETERMINANTE" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1">
+            <End Role="CAT_TIPO_DOCUMENTO" EntitySet="CAT_TIPO_DOCUMENTO" />
+            <End Role="GET_DOCUMENTOS" EntitySet="GET_DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_UBICACION_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.Store.CAT_UBICACION_GET_ASUNTO_FK1">
+            <End Role="CAT_UBICACION" EntitySet="CAT_UBICACION" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__APP_BANDE__IdTur__534D60F1" Association="db_GestorDocumtsTestModel.Store.FK__APP_BANDE__IdTur__534D60F1">
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+            <End Role="APP_BANDEJA" EntitySet="APP_BANDEJA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MODIFIEDD__IdSin__6B24EA82" Association="db_GestorDocumtsTestModel.Store.FK__MODIFIEDD__IdSin__6B24EA82">
+            <End Role="SYNCTABLE" EntitySet="SYNCTABLE" />
+            <End Role="MODIFIEDDATA" EntitySet="MODIFIEDDATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA" Association="db_GestorDocumtsTestModel.Store.FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA">
+            <End Role="CAT_TIPO_UNIDAD_NORMATIVA" EntitySet="CAT_TIPO_UNIDAD_NORMATIVA" />
+            <End Role="CAT_ORGANIGRAMA" EntitySet="CAT_ORGANIGRAMA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REL_DESTINATARIO_CCP_APP_ROL" Association="db_GestorDocumtsTestModel.Store.FK_REL_DESTINATARIO_CCP_APP_ROL">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="REL_DESTINATARIO_CCP" EntitySet="REL_DESTINATARIO_CCP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REL_DESTINATARIO_CCP_GET_ASUNTO" Association="db_GestorDocumtsTestModel.Store.FK_REL_DESTINATARIO_CCP_GET_ASUNTO">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="REL_DESTINATARIO_CCP" EntitySet="REL_DESTINATARIO_CCP" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_GET_EXPEDIENTE_FK1" Association="db_GestorDocumtsTestModel.Store.GET_ASUNTO_GET_EXPEDIENTE_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="GET_EXPEDIENTE" EntitySet="GET_EXPEDIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1" Association="db_GestorDocumtsTestModel.Store.GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="GET_FECHA_VENCIMIENTO" EntitySet="GET_FECHA_VENCIMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.Store.GET_ASUNTO_GET_TURNO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1" Association="db_GestorDocumtsTestModel.Store.GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="REL_SIGNATARIO_EXTERNO" EntitySet="REL_SIGNATARIO_EXTERNO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_REL_SIGNATARIO_FK1" Association="db_GestorDocumtsTestModel.Store.GET_ASUNTO_REL_SIGNATARIO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="REL_SIGNATARIO" EntitySet="REL_SIGNATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_EXPEDIENTE_GET_DOCUMENTOS_FK1" Association="db_GestorDocumtsTestModel.Store.GET_EXPEDIENTE_GET_DOCUMENTOS_FK1">
+            <End Role="GET_EXPEDIENTE" EntitySet="GET_EXPEDIENTE" />
+            <End Role="GET_DOCUMENTOS" EntitySet="GET_DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="GET_TURNO_GET_DOCUMENTOS_FK1" Association="db_GestorDocumtsTestModel.Store.GET_TURNO_GET_DOCUMENTOS_FK1">
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+            <End Role="GET_DOCUMENTOS" EntitySet="GET_DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="GET_TURNO_REL_DESTINATARIO_FK1" Association="db_GestorDocumtsTestModel.Store.GET_TURNO_REL_DESTINATARIO_FK1">
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+            <End Role="REL_DESTINATARIO" EntitySet="REL_DESTINATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="INF_ACCION_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.Store.INF_ACCION_INF_INFODOC_FK1">
+            <End Role="INF_ACCION" EntitySet="INF_ACCION" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+          <AssociationSet Name="INF_FORM_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.Store.INF_FORM_INF_INFODOC_FK1">
+            <End Role="INF_FORM" EntitySet="INF_FORM" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="APP_BANDEJA">
+          <Key>
+            <PropertyRef Name="IdTurnoAnt" />
+          </Key>
+          <Property Name="IdTurnoAnt" Type="bigint" Nullable="false" />
+          <Property Name="IsSend" Type="bit" />
+        </EntityType>
+        <EntityType Name="APP_MENU">
+          <Key>
+            <PropertyRef Name="IdMenu" />
+          </Key>
+          <Property Name="IdMenu" Type="bigint" Nullable="false" />
+          <Property Name="IdMenuParent" Type="bigint" />
+          <Property Name="MenuName" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="LastModifiedDate" Type="bigint" />
+          <Property Name="IsModified" Type="bit" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+          <Property Name="PathMenu" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="APP_ROL">
+          <Key>
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdRol" Type="bigint" Nullable="false" />
+          <Property Name="RolName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="APP_ROL_MENU">
+          <Key>
+            <PropertyRef Name="IdRolMenu" />
+          </Key>
+          <Property Name="IdRolMenu" Type="bigint" Nullable="false" />
+          <Property Name="IdRol" Type="bigint" Nullable="false" />
+          <Property Name="IdMenu" Type="bigint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="APP_USUARIO">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="bigint" Nullable="false" />
+          <Property Name="UsuarioCorreo" Type="nvarchar" MaxLength="250" />
+          <Property Name="UsuarioPwd" Type="nvarchar" MaxLength="12" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Area" Type="nvarchar" MaxLength="250" />
+          <Property Name="Puesto" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="IsNuevoUsuario" Type="bit" Nullable="false" />
+          <Property Name="IsActivado" Type="bit" Nullable="false" />
+          <Property Name="IsFlag" Type="bit" />
+          <Property Name="IsFlagPass" Type="bit" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="APP_USUARIO_ROL">
+          <Key>
+            <PropertyRef Name="IdUsuarioRol" />
+          </Key>
+          <Property Name="IdUsuarioRol" Type="bigint" Nullable="false" />
+          <Property Name="IdUsuario" Type="bigint" Nullable="false" />
+          <Property Name="IdRol" Type="bigint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_DETERMINANTE">
+          <Key>
+            <PropertyRef Name="IdDeterminante" />
+          </Key>
+          <Property Name="IdDeterminante" Type="bigint" Nullable="false" />
+          <Property Name="CveDeterminante" Type="int" Nullable="false" />
+          <Property Name="Area" Type="nvarchar" MaxLength="250" />
+          <Property Name="PrefijoFolio" Type="nvarchar" MaxLength="64" />
+          <Property Name="DeterminanteName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="IdTipoDeterminante" Type="bigint" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_INSTRUCCION">
+          <Key>
+            <PropertyRef Name="IdInstruccion" />
+          </Key>
+          <Property Name="IdInstruccion" Type="bigint" Nullable="false" />
+          <Property Name="CveInstruccion" Type="int" Nullable="false" />
+          <Property Name="InstruccionName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_ORGANIGRAMA">
+          <Key>
+            <PropertyRef Name="IdJerarquia" />
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdJerarquia" Type="bigint" Nullable="false" />
+          <Property Name="IdJerarquiaParent" Type="bigint" />
+          <Property Name="JerarquiaName" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="LastModifiedDate" Type="bigint" />
+          <Property Name="IsModified" Type="bit" />
+          <Property Name="IdRol" Type="bigint" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+          <Property Name="IdTipoUnidadNormativa" Type="bigint" />
+          <Property Name="JerarquiaTitular" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="CAT_PRIORIDAD">
+          <Key>
+            <PropertyRef Name="IdPrioridad" />
+          </Key>
+          <Property Name="IdPrioridad" Type="bigint" Nullable="false" />
+          <Property Name="PrioridadName" Type="nvarchar" MaxLength="250" />
+          <Property Name="PathImagen" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_STATUS_ASUNTO">
+          <Key>
+            <PropertyRef Name="IdStatusAsunto" />
+          </Key>
+          <Property Name="IdStatusAsunto" Type="bigint" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="LastModifiedDate" Type="bigint" />
+          <Property Name="IsModified" Type="bit" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_STATUS_TURNO">
+          <Key>
+            <PropertyRef Name="IdStatusTurno" />
+          </Key>
+          <Property Name="IdStatusTurno" Type="bigint" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_DETERMINANTE">
+          <Key>
+            <PropertyRef Name="IdTipoDeterminante" />
+          </Key>
+          <Property Name="IdTipoDeterminante" Type="bigint" Nullable="false" />
+          <Property Name="TipoDeterminanteName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_DOCUMENTO">
+          <Key>
+            <PropertyRef Name="IdTipoDocumento" />
+          </Key>
+          <Property Name="IdTipoDocumento" Type="bigint" Nullable="false" />
+          <Property Name="TipoDocumentoName" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="LastModifiedDate" Type="bigint" />
+          <Property Name="IsModified" Type="bit" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_EXTENCION">
+          <Key>
+            <PropertyRef Name="IdTipoExtencion" />
+          </Key>
+          <Property Name="IdTipoExtencion" Type="bigint" Nullable="false" />
+          <Property Name="Extencion" Type="nvarchar" MaxLength="16" />
+          <Property Name="Path" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_UNIDAD_NORMATIVA">
+          <Key>
+            <PropertyRef Name="IdTipoUnidadNormativa" />
+          </Key>
+          <Property Name="IdTipoUnidadNormativa" Type="bigint" Nullable="false" />
+          <Property Name="TipoUnidadNormativaName" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bit" />
+        </EntityType>
+        <EntityType Name="CAT_UBICACION">
+          <Key>
+            <PropertyRef Name="IdUbicacion" />
+          </Key>
+          <Property Name="IdUbicacion" Type="bigint" Nullable="false" />
+          <Property Name="UbicacionName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GET_ASUNTO">
+          <Key>
+            <PropertyRef Name="IdAsunto" />
+          </Key>
+          <Property Name="IdAsunto" Type="bigint" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="FechaRecibido" Type="datetime" />
+          <Property Name="FechaDocumento" Type="datetime" />
+          <Property Name="ReferenciaDocumento" Type="nvarchar" MaxLength="250" />
+          <Property Name="Titulo" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="500" />
+          <Property Name="Alcance" Type="nvarchar" MaxLength="10" />
+          <Property Name="IdUbicacion" Type="bigint" />
+          <Property Name="IdInstruccion" Type="bigint" />
+          <Property Name="IdPrioridad" Type="bigint" />
+          <Property Name="IdStatusAsunto" Type="bigint" />
+          <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
+          <Property Name="Folio" Type="char" MaxLength="10" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="IsBorrador" Type="bit" Nullable="false" />
+          <Property Name="Contacto" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Anexos" Type="nvarchar" MaxLength="250" />
+          <Property Name="FechaAtendido" Type="datetime" />
+          <Property Name="Ubicacion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GET_DOCUMENTOS">
+          <Key>
+            <PropertyRef Name="IdDocumento" />
+          </Key>
+          <Property Name="IdDocumento" Type="bigint" Nullable="false" />
+          <Property Name="DocumentoName" Type="nvarchar" MaxLength="250" />
+          <Property Name="DocumentoPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="Extencion" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="IdTurno" Type="bigint" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="IdExpediente" Type="bigint" Nullable="false" />
+          <Property Name="IdTipoDocumento" Type="bigint" Nullable="false" />
+          <Property Name="IsDocumentoOriginal" Type="bit" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="GET_EXPEDIENTE">
+          <Key>
+            <PropertyRef Name="IdExpediente" />
+          </Key>
+          <Property Name="IdExpediente" Type="bigint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="IdAsunto" Type="bigint" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GET_FECHA_VENCIMIENTO">
+          <Key>
+            <PropertyRef Name="IdFechaVencimiento" />
+          </Key>
+          <Property Name="IdFechaVencimiento" Type="bigint" Nullable="false" />
+          <Property Name="IdAsunto" Type="bigint" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="IsActual" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GET_TURNO">
+          <Key>
+            <PropertyRef Name="IdTurno" />
+          </Key>
+          <Property Name="IdTurno" Type="bigint" Nullable="false" />
+          <Property Name="IdTurnoAnt" Type="bigint" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaEnvio" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="IdAsunto" Type="bigint" Nullable="false" />
+          <Property Name="IdStatusTurno" Type="bigint" Nullable="false" />
+          <Property Name="IdRol" Type="bigint" />
+          <Property Name="IdUsuario" Type="bigint" />
+          <Property Name="Comentario" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Respuesta" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+          <Property Name="IsAtendido" Type="bit" Nullable="false" />
+          <Property Name="IsTurnado" Type="bit" Nullable="false" />
+          <Property Name="IsBorrador" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INF_ACCION">
+          <Key>
+            <PropertyRef Name="IdAccion" />
+          </Key>
+          <Property Name="IdAccion" Type="bigint" Nullable="false" />
+          <Property Name="AccionName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INF_FORM">
+          <Key>
+            <PropertyRef Name="IdForm" />
+          </Key>
+          <Property Name="IdForm" Type="bigint" Nullable="false" />
+          <Property Name="FormName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INF_INFODOC">
+          <Key>
+            <PropertyRef Name="IdInfoDoc" />
+          </Key>
+          <Property Name="IdInfoDoc" Type="bigint" Nullable="false" />
+          <Property Name="IdRol" Type="bigint" Nullable="false" />
+          <Property Name="IdUsuario" Type="bigint" Nullable="false" />
+          <Property Name="IdForm" Type="bigint" Nullable="false" />
+          <Property Name="IdAccion" Type="bigint" Nullable="false" />
+          <Property Name="Fecha" Type="bigint" Nullable="false" />
+          <Property Name="IdRef" Type="bigint" Nullable="false" />
+          <Property Name="IpAddress" Type="nvarchar" MaxLength="60" />
+          <Property Name="MacAdress" Type="nvarchar" MaxLength="120" />
+          <Property Name="PcName" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MODIFIEDDATA">
+          <Key>
+            <PropertyRef Name="IdModifiedData" />
+          </Key>
+          <Property Name="IdModifiedData" Type="bigint" Nullable="false" />
+          <Property Name="IdSincTable" Type="bigint" />
+          <Property Name="IsModified" Type="bit" />
+          <Property Name="ServerModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="REL_DESTINATARIO">
+          <Key>
+            <PropertyRef Name="IdDestinatario" />
+          </Key>
+          <Property Name="IdRol" Type="bigint" Nullable="false" />
+          <Property Name="IdTurno" Type="bigint" Nullable="false" />
+          <Property Name="IdDestinatario" Type="bigint" Nullable="false" />
+          <Property Name="IsPrincipal" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="REL_DESTINATARIO_CCP">
+          <Key>
+            <PropertyRef Name="IdDestinatarioCcp" />
+          </Key>
+          <Property Name="IdDestinatarioCcp" Type="bigint" Nullable="false" />
+          <Property Name="IdRol" Type="bigint" Nullable="false" />
+          <Property Name="IdAsunto" Type="bigint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="REL_SIGNATARIO">
+          <Key>
+            <PropertyRef Name="IdSignatario" />
+          </Key>
+          <Property Name="IdAsunto" Type="bigint" Nullable="false" />
+          <Property Name="IdDeterminante" Type="bigint" Nullable="false" />
+          <Property Name="IdSignatario" Type="bigint" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="REL_SIGNATARIO_EXTERNO">
+          <Key>
+            <PropertyRef Name="IdSignatarioExterno" />
+          </Key>
+          <Property Name="IdAsunto" Type="bigint" Nullable="false" />
+          <Property Name="IdDeterminante" Type="bigint" Nullable="false" />
+          <Property Name="IdSignatarioExterno" Type="bigint" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsModified" Type="bit" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="bigint" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="bigint" />
+        </EntityType>
+        <EntityType Name="SYNCTABLE">
+          <Key>
+            <PropertyRef Name="IdSincTable" />
+          </Key>
+          <Property Name="IdSincTable" Type="bigint" Nullable="false" />
+          <Property Name="SincTableName" Type="nvarchar(max)" />
+          <Property Name="OrderTable" Type="int" />
+        </EntityType>
+        <Association Name="APP_MENU_APP_MENU_FK1">
+          <End Role="APP_MENU" Type="db_GestorDocumtsTestModel.Store.APP_MENU" Multiplicity="0..1" />
+          <End Role="APP_MENU1" Type="db_GestorDocumtsTestModel.Store.APP_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_MENU">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="APP_MENU1">
+              <PropertyRef Name="IdMenuParent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_MENU_APP_ROL_MENU_FK1">
+          <End Role="APP_MENU" Type="db_GestorDocumtsTestModel.Store.APP_MENU" Multiplicity="1" />
+          <End Role="APP_ROL_MENU" Type="db_GestorDocumtsTestModel.Store.APP_ROL_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_MENU">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="APP_ROL_MENU">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_APP_ROL_MENU_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.Store.APP_ROL" Multiplicity="1" />
+          <End Role="APP_ROL_MENU" Type="db_GestorDocumtsTestModel.Store.APP_ROL_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="APP_ROL_MENU">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_APP_USUARIO_ROL_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.Store.APP_ROL" Multiplicity="1" />
+          <End Role="APP_USUARIO_ROL" Type="db_GestorDocumtsTestModel.Store.APP_USUARIO_ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="APP_USUARIO_ROL">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_GET_TURNO_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.Store.APP_ROL" Multiplicity="0..1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.Store.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_INF_INFODOC_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.Store.APP_ROL" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.Store.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_REL_DESTINATARIO_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.Store.APP_ROL" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO" Type="db_GestorDocumtsTestModel.Store.REL_DESTINATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_USUARIO_APP_USUARIO_ROL_FK1">
+          <End Role="APP_USUARIO" Type="db_GestorDocumtsTestModel.Store.APP_USUARIO" Multiplicity="1" />
+          <End Role="APP_USUARIO_ROL" Type="db_GestorDocumtsTestModel.Store.APP_USUARIO_ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_USUARIO">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="APP_USUARIO_ROL">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_USUARIO_GET_TURNO_FK1">
+          <End Role="APP_USUARIO" Type="db_GestorDocumtsTestModel.Store.APP_USUARIO" Multiplicity="0..1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.Store.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_USUARIO">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_USUARIO_INF_INFODOC_FK1">
+          <End Role="APP_USUARIO" Type="db_GestorDocumtsTestModel.Store.APP_USUARIO" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.Store.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_USUARIO">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1">
+          <End Role="CAT_DETERMINANTE" Type="db_GestorDocumtsTestModel.Store.CAT_DETERMINANTE" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO_EXTERNO" Type="db_GestorDocumtsTestModel.Store.REL_SIGNATARIO_EXTERNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_DETERMINANTE">
+              <PropertyRef Name="IdDeterminante" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO_EXTERNO">
+              <PropertyRef Name="IdDeterminante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_DETERMINANTE_REL_SIGNATARIO_FK1">
+          <End Role="CAT_DETERMINANTE" Type="db_GestorDocumtsTestModel.Store.CAT_DETERMINANTE" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO" Type="db_GestorDocumtsTestModel.Store.REL_SIGNATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_DETERMINANTE">
+              <PropertyRef Name="IdDeterminante" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO">
+              <PropertyRef Name="IdDeterminante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_INSTRUCCION_GET_ASUNTO_FK1">
+          <End Role="CAT_INSTRUCCION" Type="db_GestorDocumtsTestModel.Store.CAT_INSTRUCCION" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_INSTRUCCION">
+              <PropertyRef Name="IdInstruccion" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdInstruccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_PRIORIDAD_GET_ASUNTO_FK1">
+          <End Role="CAT_PRIORIDAD" Type="db_GestorDocumtsTestModel.Store.CAT_PRIORIDAD" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_PRIORIDAD">
+              <PropertyRef Name="IdPrioridad" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdPrioridad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_STATUS_ASUNTO_GET_ASUNTO_FK1">
+          <End Role="CAT_STATUS_ASUNTO" Type="db_GestorDocumtsTestModel.Store.CAT_STATUS_ASUNTO" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_STATUS_ASUNTO">
+              <PropertyRef Name="IdStatusAsunto" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdStatusAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_STATUS_TURNO_GET_TURNO_FK1">
+          <End Role="CAT_STATUS_TURNO" Type="db_GestorDocumtsTestModel.Store.CAT_STATUS_TURNO" Multiplicity="1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.Store.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_STATUS_TURNO">
+              <PropertyRef Name="IdStatusTurno" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdStatusTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1">
+          <End Role="CAT_TIPO_DETERMINANTE" Type="db_GestorDocumtsTestModel.Store.CAT_TIPO_DETERMINANTE" Multiplicity="1" />
+          <End Role="CAT_DETERMINANTE" Type="db_GestorDocumtsTestModel.Store.CAT_DETERMINANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_TIPO_DETERMINANTE">
+              <PropertyRef Name="IdTipoDeterminante" />
+            </Principal>
+            <Dependent Role="CAT_DETERMINANTE">
+              <PropertyRef Name="IdTipoDeterminante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1">
+          <End Role="CAT_TIPO_DOCUMENTO" Type="db_GestorDocumtsTestModel.Store.CAT_TIPO_DOCUMENTO" Multiplicity="1" />
+          <End Role="GET_DOCUMENTOS" Type="db_GestorDocumtsTestModel.Store.GET_DOCUMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_TIPO_DOCUMENTO">
+              <PropertyRef Name="IdTipoDocumento" />
+            </Principal>
+            <Dependent Role="GET_DOCUMENTOS">
+              <PropertyRef Name="IdTipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_UBICACION_GET_ASUNTO_FK1">
+          <End Role="CAT_UBICACION" Type="db_GestorDocumtsTestModel.Store.CAT_UBICACION" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_UBICACION">
+              <PropertyRef Name="IdUbicacion" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdUbicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__APP_BANDE__IdTur__534D60F1">
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.Store.GET_TURNO" Multiplicity="1" />
+          <End Role="APP_BANDEJA" Type="db_GestorDocumtsTestModel.Store.APP_BANDEJA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GET_TURNO">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="APP_BANDEJA">
+              <PropertyRef Name="IdTurnoAnt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MODIFIEDD__IdSin__6B24EA82">
+          <End Role="SYNCTABLE" Type="db_GestorDocumtsTestModel.Store.SYNCTABLE" Multiplicity="0..1" />
+          <End Role="MODIFIEDDATA" Type="db_GestorDocumtsTestModel.Store.MODIFIEDDATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYNCTABLE">
+              <PropertyRef Name="IdSincTable" />
+            </Principal>
+            <Dependent Role="MODIFIEDDATA">
+              <PropertyRef Name="IdSincTable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA">
+          <End Role="CAT_TIPO_UNIDAD_NORMATIVA" Type="db_GestorDocumtsTestModel.Store.CAT_TIPO_UNIDAD_NORMATIVA" Multiplicity="0..1" />
+          <End Role="CAT_ORGANIGRAMA" Type="db_GestorDocumtsTestModel.Store.CAT_ORGANIGRAMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_TIPO_UNIDAD_NORMATIVA">
+              <PropertyRef Name="IdTipoUnidadNormativa" />
+            </Principal>
+            <Dependent Role="CAT_ORGANIGRAMA">
+              <PropertyRef Name="IdTipoUnidadNormativa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REL_DESTINATARIO_CCP_APP_ROL">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.Store.APP_ROL" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO_CCP" Type="db_GestorDocumtsTestModel.Store.REL_DESTINATARIO_CCP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO_CCP">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REL_DESTINATARIO_CCP_GET_ASUNTO">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO_CCP" Type="db_GestorDocumtsTestModel.Store.REL_DESTINATARIO_CCP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO_CCP">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_GET_EXPEDIENTE_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="0..1" />
+          <End Role="GET_EXPEDIENTE" Type="db_GestorDocumtsTestModel.Store.GET_EXPEDIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="GET_EXPEDIENTE">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="1" />
+          <End Role="GET_FECHA_VENCIMIENTO" Type="db_GestorDocumtsTestModel.Store.GET_FECHA_VENCIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="GET_FECHA_VENCIMIENTO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_GET_TURNO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.Store.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO_EXTERNO" Type="db_GestorDocumtsTestModel.Store.REL_SIGNATARIO_EXTERNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO_EXTERNO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_REL_SIGNATARIO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.Store.GET_ASUNTO" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO" Type="db_GestorDocumtsTestModel.Store.REL_SIGNATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_EXPEDIENTE_GET_DOCUMENTOS_FK1">
+          <End Role="GET_EXPEDIENTE" Type="db_GestorDocumtsTestModel.Store.GET_EXPEDIENTE" Multiplicity="1" />
+          <End Role="GET_DOCUMENTOS" Type="db_GestorDocumtsTestModel.Store.GET_DOCUMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_EXPEDIENTE">
+              <PropertyRef Name="IdExpediente" />
+            </Principal>
+            <Dependent Role="GET_DOCUMENTOS">
+              <PropertyRef Name="IdExpediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_TURNO_GET_DOCUMENTOS_FK1">
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.Store.GET_TURNO" Multiplicity="0..1" />
+          <End Role="GET_DOCUMENTOS" Type="db_GestorDocumtsTestModel.Store.GET_DOCUMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_TURNO">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="GET_DOCUMENTOS">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_TURNO_REL_DESTINATARIO_FK1">
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.Store.GET_TURNO" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO" Type="db_GestorDocumtsTestModel.Store.REL_DESTINATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_TURNO">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="INF_ACCION_INF_INFODOC_FK1">
+          <End Role="INF_ACCION" Type="db_GestorDocumtsTestModel.Store.INF_ACCION" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.Store.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INF_ACCION">
+              <PropertyRef Name="IdAccion" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdAccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="INF_FORM_INF_INFODOC_FK1">
+          <End Role="INF_FORM" Type="db_GestorDocumtsTestModel.Store.INF_FORM" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.Store.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INF_FORM">
+              <PropertyRef Name="IdForm" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdForm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ConvertChar" ReturnType="nvarchar(max)" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="campo" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="GetAsuntos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Prioridad" Type="bigint" Mode="In" />
+          <Parameter Name="StatusAsunto" Type="bigint" Mode="In" />
+          <Parameter Name="Destinatario" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Signatario" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="RangoFechaDesde" Type="datetime" Mode="In" />
+          <Parameter Name="RangoFechaHasta" Type="datetime" Mode="In" />
+          <Parameter Name="ReferenciaDocumento" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ReplaceChar" ReturnType="nvarchar(max)" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="campo" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_GetMax" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Tabla" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_GetMaxsServer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="jsonTable" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="tblName" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_GetTableNameModifiedData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="JsonTable" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_TABLE_JSON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Tabla" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_TABLE_JSON_MODIFIEDDATA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Tabla" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SpConfirmSincRows" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="JSON" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="nomTbl" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SpUpsertServerRows" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="json" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="nomTbl" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_GestorDocumtsTestModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SyncServiceServerEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APP_BANDEJA" EntityType="db_GestorDocumtsTestModel.APP_BANDEJA" />
+          <EntitySet Name="APP_MENU" EntityType="db_GestorDocumtsTestModel.APP_MENU" />
+          <EntitySet Name="APP_ROL" EntityType="db_GestorDocumtsTestModel.APP_ROL" />
+          <EntitySet Name="APP_ROL_MENU" EntityType="db_GestorDocumtsTestModel.APP_ROL_MENU" />
+          <EntitySet Name="APP_USUARIO" EntityType="db_GestorDocumtsTestModel.APP_USUARIO" />
+          <EntitySet Name="APP_USUARIO_ROL" EntityType="db_GestorDocumtsTestModel.APP_USUARIO_ROL" />
+          <EntitySet Name="CAT_DETERMINANTE" EntityType="db_GestorDocumtsTestModel.CAT_DETERMINANTE" />
+          <EntitySet Name="CAT_INSTRUCCION" EntityType="db_GestorDocumtsTestModel.CAT_INSTRUCCION" />
+          <EntitySet Name="CAT_ORGANIGRAMA" EntityType="db_GestorDocumtsTestModel.CAT_ORGANIGRAMA" />
+          <EntitySet Name="CAT_PRIORIDAD" EntityType="db_GestorDocumtsTestModel.CAT_PRIORIDAD" />
+          <EntitySet Name="CAT_STATUS_ASUNTO" EntityType="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO" />
+          <EntitySet Name="CAT_STATUS_TURNO" EntityType="db_GestorDocumtsTestModel.CAT_STATUS_TURNO" />
+          <EntitySet Name="CAT_TIPO_DETERMINANTE" EntityType="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE" />
+          <EntitySet Name="CAT_TIPO_DOCUMENTO" EntityType="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO" />
+          <EntitySet Name="CAT_TIPO_EXTENCION" EntityType="db_GestorDocumtsTestModel.CAT_TIPO_EXTENCION" />
+          <EntitySet Name="CAT_TIPO_UNIDAD_NORMATIVA" EntityType="db_GestorDocumtsTestModel.CAT_TIPO_UNIDAD_NORMATIVA" />
+          <EntitySet Name="CAT_UBICACION" EntityType="db_GestorDocumtsTestModel.CAT_UBICACION" />
+          <EntitySet Name="GET_ASUNTO" EntityType="db_GestorDocumtsTestModel.GET_ASUNTO" />
+          <EntitySet Name="GET_DOCUMENTOS" EntityType="db_GestorDocumtsTestModel.GET_DOCUMENTOS" />
+          <EntitySet Name="GET_EXPEDIENTE" EntityType="db_GestorDocumtsTestModel.GET_EXPEDIENTE" />
+          <EntitySet Name="GET_FECHA_VENCIMIENTO" EntityType="db_GestorDocumtsTestModel.GET_FECHA_VENCIMIENTO" />
+          <EntitySet Name="GET_TURNO" EntityType="db_GestorDocumtsTestModel.GET_TURNO" />
+          <EntitySet Name="INF_ACCION" EntityType="db_GestorDocumtsTestModel.INF_ACCION" />
+          <EntitySet Name="INF_FORM" EntityType="db_GestorDocumtsTestModel.INF_FORM" />
+          <EntitySet Name="INF_INFODOC" EntityType="db_GestorDocumtsTestModel.INF_INFODOC" />
+          <EntitySet Name="MODIFIEDDATAs" EntityType="db_GestorDocumtsTestModel.MODIFIEDDATA" />
+          <EntitySet Name="REL_DESTINATARIO" EntityType="db_GestorDocumtsTestModel.REL_DESTINATARIO" />
+          <EntitySet Name="REL_DESTINATARIO_CCP" EntityType="db_GestorDocumtsTestModel.REL_DESTINATARIO_CCP" />
+          <EntitySet Name="REL_SIGNATARIO" EntityType="db_GestorDocumtsTestModel.REL_SIGNATARIO" />
+          <EntitySet Name="REL_SIGNATARIO_EXTERNO" EntityType="db_GestorDocumtsTestModel.REL_SIGNATARIO_EXTERNO" />
+          <EntitySet Name="SYNCTABLEs" EntityType="db_GestorDocumtsTestModel.SYNCTABLE" />
+          <AssociationSet Name="FK__APP_BANDE__IdTur__534D60F1" Association="db_GestorDocumtsTestModel.FK__APP_BANDE__IdTur__534D60F1">
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+            <End Role="APP_BANDEJA" EntitySet="APP_BANDEJA" />
+          </AssociationSet>
+          <AssociationSet Name="APP_MENU_APP_MENU_FK1" Association="db_GestorDocumtsTestModel.APP_MENU_APP_MENU_FK1">
+            <End Role="APP_MENU" EntitySet="APP_MENU" />
+            <End Role="APP_MENU1" EntitySet="APP_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="APP_MENU_APP_ROL_MENU_FK1" Association="db_GestorDocumtsTestModel.APP_MENU_APP_ROL_MENU_FK1">
+            <End Role="APP_MENU" EntitySet="APP_MENU" />
+            <End Role="APP_ROL_MENU" EntitySet="APP_ROL_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_APP_ROL_MENU_FK1" Association="db_GestorDocumtsTestModel.APP_ROL_APP_ROL_MENU_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="APP_ROL_MENU" EntitySet="APP_ROL_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_APP_USUARIO_ROL_FK1" Association="db_GestorDocumtsTestModel.APP_ROL_APP_USUARIO_ROL_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="APP_USUARIO_ROL" EntitySet="APP_USUARIO_ROL" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.APP_ROL_GET_TURNO_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.APP_ROL_INF_INFODOC_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+          <AssociationSet Name="APP_ROL_REL_DESTINATARIO_FK1" Association="db_GestorDocumtsTestModel.APP_ROL_REL_DESTINATARIO_FK1">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="REL_DESTINATARIO" EntitySet="REL_DESTINATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REL_DESTINATARIO_CCP_APP_ROL" Association="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_APP_ROL">
+            <End Role="APP_ROL" EntitySet="APP_ROL" />
+            <End Role="REL_DESTINATARIO_CCP" EntitySet="REL_DESTINATARIO_CCP" />
+          </AssociationSet>
+          <AssociationSet Name="APP_USUARIO_APP_USUARIO_ROL_FK1" Association="db_GestorDocumtsTestModel.APP_USUARIO_APP_USUARIO_ROL_FK1">
+            <End Role="APP_USUARIO" EntitySet="APP_USUARIO" />
+            <End Role="APP_USUARIO_ROL" EntitySet="APP_USUARIO_ROL" />
+          </AssociationSet>
+          <AssociationSet Name="APP_USUARIO_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.APP_USUARIO_GET_TURNO_FK1">
+            <End Role="APP_USUARIO" EntitySet="APP_USUARIO" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="APP_USUARIO_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.APP_USUARIO_INF_INFODOC_FK1">
+            <End Role="APP_USUARIO" EntitySet="APP_USUARIO" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1" Association="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1">
+            <End Role="CAT_DETERMINANTE" EntitySet="CAT_DETERMINANTE" />
+            <End Role="REL_SIGNATARIO_EXTERNO" EntitySet="REL_SIGNATARIO_EXTERNO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_DETERMINANTE_REL_SIGNATARIO_FK1" Association="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_FK1">
+            <End Role="CAT_DETERMINANTE" EntitySet="CAT_DETERMINANTE" />
+            <End Role="REL_SIGNATARIO" EntitySet="REL_SIGNATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1" Association="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1">
+            <End Role="CAT_TIPO_DETERMINANTE" EntitySet="CAT_TIPO_DETERMINANTE" />
+            <End Role="CAT_DETERMINANTE" EntitySet="CAT_DETERMINANTE" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_INSTRUCCION_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.CAT_INSTRUCCION_GET_ASUNTO_FK1">
+            <End Role="CAT_INSTRUCCION" EntitySet="CAT_INSTRUCCION" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA" Association="db_GestorDocumtsTestModel.FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA">
+            <End Role="CAT_TIPO_UNIDAD_NORMATIVA" EntitySet="CAT_TIPO_UNIDAD_NORMATIVA" />
+            <End Role="CAT_ORGANIGRAMA" EntitySet="CAT_ORGANIGRAMA" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_PRIORIDAD_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.CAT_PRIORIDAD_GET_ASUNTO_FK1">
+            <End Role="CAT_PRIORIDAD" EntitySet="CAT_PRIORIDAD" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_STATUS_ASUNTO_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO_GET_ASUNTO_FK1">
+            <End Role="CAT_STATUS_ASUNTO" EntitySet="CAT_STATUS_ASUNTO" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_STATUS_TURNO_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.CAT_STATUS_TURNO_GET_TURNO_FK1">
+            <End Role="CAT_STATUS_TURNO" EntitySet="CAT_STATUS_TURNO" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1" Association="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1">
+            <End Role="CAT_TIPO_DOCUMENTO" EntitySet="CAT_TIPO_DOCUMENTO" />
+            <End Role="GET_DOCUMENTOS" EntitySet="GET_DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="CAT_UBICACION_GET_ASUNTO_FK1" Association="db_GestorDocumtsTestModel.CAT_UBICACION_GET_ASUNTO_FK1">
+            <End Role="CAT_UBICACION" EntitySet="CAT_UBICACION" />
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REL_DESTINATARIO_CCP_GET_ASUNTO" Association="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_GET_ASUNTO">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="REL_DESTINATARIO_CCP" EntitySet="REL_DESTINATARIO_CCP" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_GET_EXPEDIENTE_FK1" Association="db_GestorDocumtsTestModel.GET_ASUNTO_GET_EXPEDIENTE_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="GET_EXPEDIENTE" EntitySet="GET_EXPEDIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1" Association="db_GestorDocumtsTestModel.GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="GET_FECHA_VENCIMIENTO" EntitySet="GET_FECHA_VENCIMIENTO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_GET_TURNO_FK1" Association="db_GestorDocumtsTestModel.GET_ASUNTO_GET_TURNO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1" Association="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="REL_SIGNATARIO_EXTERNO" EntitySet="REL_SIGNATARIO_EXTERNO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_ASUNTO_REL_SIGNATARIO_FK1" Association="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_FK1">
+            <End Role="GET_ASUNTO" EntitySet="GET_ASUNTO" />
+            <End Role="REL_SIGNATARIO" EntitySet="REL_SIGNATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="GET_EXPEDIENTE_GET_DOCUMENTOS_FK1" Association="db_GestorDocumtsTestModel.GET_EXPEDIENTE_GET_DOCUMENTOS_FK1">
+            <End Role="GET_EXPEDIENTE" EntitySet="GET_EXPEDIENTE" />
+            <End Role="GET_DOCUMENTOS" EntitySet="GET_DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="GET_TURNO_GET_DOCUMENTOS_FK1" Association="db_GestorDocumtsTestModel.GET_TURNO_GET_DOCUMENTOS_FK1">
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+            <End Role="GET_DOCUMENTOS" EntitySet="GET_DOCUMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="GET_TURNO_REL_DESTINATARIO_FK1" Association="db_GestorDocumtsTestModel.GET_TURNO_REL_DESTINATARIO_FK1">
+            <End Role="GET_TURNO" EntitySet="GET_TURNO" />
+            <End Role="REL_DESTINATARIO" EntitySet="REL_DESTINATARIO" />
+          </AssociationSet>
+          <AssociationSet Name="INF_ACCION_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.INF_ACCION_INF_INFODOC_FK1">
+            <End Role="INF_ACCION" EntitySet="INF_ACCION" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+          <AssociationSet Name="INF_FORM_INF_INFODOC_FK1" Association="db_GestorDocumtsTestModel.INF_FORM_INF_INFODOC_FK1">
+            <End Role="INF_FORM" EntitySet="INF_FORM" />
+            <End Role="INF_INFODOC" EntitySet="INF_INFODOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MODIFIEDD__IdSin__6B24EA82" Association="db_GestorDocumtsTestModel.FK__MODIFIEDD__IdSin__6B24EA82">
+            <End Role="SYNCTABLE" EntitySet="SYNCTABLEs" />
+            <End Role="MODIFIEDDATA" EntitySet="MODIFIEDDATAs" />
+          </AssociationSet>
+          <FunctionImport Name="SP_GetMax" ReturnType="Collection(String)">
+            <Parameter Name="Tabla" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetMaxsServer" ReturnType="Collection(String)">
+            <Parameter Name="jsonTable" Mode="In" Type="String" />
+            <Parameter Name="tblName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetTableNameModifiedData" ReturnType="Collection(String)">
+            <Parameter Name="JsonTable" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_TABLE_JSON" ReturnType="Collection(String)">
+            <Parameter Name="Tabla" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_TABLE_JSON_MODIFIEDDATA" ReturnType="Collection(String)">
+            <Parameter Name="Tabla" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SpConfirmSincRows" ReturnType="Collection(String)">
+            <Parameter Name="JSON" Mode="In" Type="String" />
+            <Parameter Name="nomTbl" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SpUpsertServerRows" ReturnType="Collection(String)">
+            <Parameter Name="json" Mode="In" Type="String" />
+            <Parameter Name="nomTbl" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="APP_BANDEJA">
+          <Key>
+            <PropertyRef Name="IdTurnoAnt" />
+          </Key>
+          <Property Name="IdTurnoAnt" Type="Int64" Nullable="false" />
+          <Property Name="IsSend" Type="Boolean" />
+          <NavigationProperty Name="GET_TURNO" Relationship="db_GestorDocumtsTestModel.FK__APP_BANDE__IdTur__534D60F1" FromRole="APP_BANDEJA" ToRole="GET_TURNO" />
+        </EntityType>
+        <EntityType Name="APP_MENU">
+          <Key>
+            <PropertyRef Name="IdMenu" />
+          </Key>
+          <Property Name="IdMenu" Type="Int64" Nullable="false" />
+          <Property Name="IdMenuParent" Type="Int64" />
+          <Property Name="MenuName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="LastModifiedDate" Type="Int64" />
+          <Property Name="IsModified" Type="Boolean" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <Property Name="PathMenu" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="APP_MENU1" Relationship="db_GestorDocumtsTestModel.APP_MENU_APP_MENU_FK1" FromRole="APP_MENU" ToRole="APP_MENU1" />
+          <NavigationProperty Name="APP_MENU2" Relationship="db_GestorDocumtsTestModel.APP_MENU_APP_MENU_FK1" FromRole="APP_MENU1" ToRole="APP_MENU" />
+          <NavigationProperty Name="APP_ROL_MENU" Relationship="db_GestorDocumtsTestModel.APP_MENU_APP_ROL_MENU_FK1" FromRole="APP_MENU" ToRole="APP_ROL_MENU" />
+        </EntityType>
+        <EntityType Name="APP_ROL">
+          <Key>
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdRol" Type="Int64" Nullable="false" />
+          <Property Name="RolName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <NavigationProperty Name="APP_ROL_MENU" Relationship="db_GestorDocumtsTestModel.APP_ROL_APP_ROL_MENU_FK1" FromRole="APP_ROL" ToRole="APP_ROL_MENU" />
+          <NavigationProperty Name="APP_USUARIO_ROL" Relationship="db_GestorDocumtsTestModel.APP_ROL_APP_USUARIO_ROL_FK1" FromRole="APP_ROL" ToRole="APP_USUARIO_ROL" />
+          <NavigationProperty Name="GET_TURNO" Relationship="db_GestorDocumtsTestModel.APP_ROL_GET_TURNO_FK1" FromRole="APP_ROL" ToRole="GET_TURNO" />
+          <NavigationProperty Name="INF_INFODOC" Relationship="db_GestorDocumtsTestModel.APP_ROL_INF_INFODOC_FK1" FromRole="APP_ROL" ToRole="INF_INFODOC" />
+          <NavigationProperty Name="REL_DESTINATARIO" Relationship="db_GestorDocumtsTestModel.APP_ROL_REL_DESTINATARIO_FK1" FromRole="APP_ROL" ToRole="REL_DESTINATARIO" />
+          <NavigationProperty Name="REL_DESTINATARIO_CCP" Relationship="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_APP_ROL" FromRole="APP_ROL" ToRole="REL_DESTINATARIO_CCP" />
+        </EntityType>
+        <EntityType Name="APP_ROL_MENU">
+          <Key>
+            <PropertyRef Name="IdRolMenu" />
+          </Key>
+          <Property Name="IdRolMenu" Type="Int64" Nullable="false" />
+          <Property Name="IdRol" Type="Int64" Nullable="false" />
+          <Property Name="IdMenu" Type="Int64" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="APP_MENU" Relationship="db_GestorDocumtsTestModel.APP_MENU_APP_ROL_MENU_FK1" FromRole="APP_ROL_MENU" ToRole="APP_MENU" />
+          <NavigationProperty Name="APP_ROL" Relationship="db_GestorDocumtsTestModel.APP_ROL_APP_ROL_MENU_FK1" FromRole="APP_ROL_MENU" ToRole="APP_ROL" />
+        </EntityType>
+        <EntityType Name="APP_USUARIO">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int64" Nullable="false" />
+          <Property Name="UsuarioCorreo" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioPwd" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Area" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Puesto" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="IsNuevoUsuario" Type="Boolean" Nullable="false" />
+          <Property Name="IsActivado" Type="Boolean" Nullable="false" />
+          <Property Name="IsFlag" Type="Boolean" />
+          <Property Name="IsFlagPass" Type="Boolean" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="APP_USUARIO_ROL" Relationship="db_GestorDocumtsTestModel.APP_USUARIO_APP_USUARIO_ROL_FK1" FromRole="APP_USUARIO" ToRole="APP_USUARIO_ROL" />
+          <NavigationProperty Name="GET_TURNO" Relationship="db_GestorDocumtsTestModel.APP_USUARIO_GET_TURNO_FK1" FromRole="APP_USUARIO" ToRole="GET_TURNO" />
+          <NavigationProperty Name="INF_INFODOC" Relationship="db_GestorDocumtsTestModel.APP_USUARIO_INF_INFODOC_FK1" FromRole="APP_USUARIO" ToRole="INF_INFODOC" />
+        </EntityType>
+        <EntityType Name="APP_USUARIO_ROL">
+          <Key>
+            <PropertyRef Name="IdUsuarioRol" />
+          </Key>
+          <Property Name="IdUsuarioRol" Type="Int64" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int64" Nullable="false" />
+          <Property Name="IdRol" Type="Int64" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="APP_ROL" Relationship="db_GestorDocumtsTestModel.APP_ROL_APP_USUARIO_ROL_FK1" FromRole="APP_USUARIO_ROL" ToRole="APP_ROL" />
+          <NavigationProperty Name="APP_USUARIO" Relationship="db_GestorDocumtsTestModel.APP_USUARIO_APP_USUARIO_ROL_FK1" FromRole="APP_USUARIO_ROL" ToRole="APP_USUARIO" />
+        </EntityType>
+        <EntityType Name="CAT_DETERMINANTE">
+          <Key>
+            <PropertyRef Name="IdDeterminante" />
+          </Key>
+          <Property Name="IdDeterminante" Type="Int64" Nullable="false" />
+          <Property Name="CveDeterminante" Type="Int32" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="PrefijoFolio" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="DeterminanteName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="IdTipoDeterminante" Type="Int64" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="REL_SIGNATARIO_EXTERNO" Relationship="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1" FromRole="CAT_DETERMINANTE" ToRole="REL_SIGNATARIO_EXTERNO" />
+          <NavigationProperty Name="REL_SIGNATARIO" Relationship="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_FK1" FromRole="CAT_DETERMINANTE" ToRole="REL_SIGNATARIO" />
+          <NavigationProperty Name="CAT_TIPO_DETERMINANTE" Relationship="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1" FromRole="CAT_DETERMINANTE" ToRole="CAT_TIPO_DETERMINANTE" />
+        </EntityType>
+        <EntityType Name="CAT_INSTRUCCION">
+          <Key>
+            <PropertyRef Name="IdInstruccion" />
+          </Key>
+          <Property Name="IdInstruccion" Type="Int64" Nullable="false" />
+          <Property Name="CveInstruccion" Type="Int32" Nullable="false" />
+          <Property Name="InstruccionName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.CAT_INSTRUCCION_GET_ASUNTO_FK1" FromRole="CAT_INSTRUCCION" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="CAT_ORGANIGRAMA">
+          <Key>
+            <PropertyRef Name="IdJerarquia" />
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdJerarquia" Type="Int64" Nullable="false" />
+          <Property Name="IdJerarquiaParent" Type="Int64" />
+          <Property Name="JerarquiaName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="LastModifiedDate" Type="Int64" />
+          <Property Name="IsModified" Type="Boolean" />
+          <Property Name="IdRol" Type="Int64" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <Property Name="IdTipoUnidadNormativa" Type="Int64" />
+          <Property Name="JerarquiaTitular" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CAT_TIPO_UNIDAD_NORMATIVA" Relationship="db_GestorDocumtsTestModel.FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA" FromRole="CAT_ORGANIGRAMA" ToRole="CAT_TIPO_UNIDAD_NORMATIVA" />
+        </EntityType>
+        <EntityType Name="CAT_PRIORIDAD">
+          <Key>
+            <PropertyRef Name="IdPrioridad" />
+          </Key>
+          <Property Name="IdPrioridad" Type="Int64" Nullable="false" />
+          <Property Name="PrioridadName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="PathImagen" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.CAT_PRIORIDAD_GET_ASUNTO_FK1" FromRole="CAT_PRIORIDAD" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="CAT_STATUS_ASUNTO">
+          <Key>
+            <PropertyRef Name="IdStatusAsunto" />
+          </Key>
+          <Property Name="IdStatusAsunto" Type="Int64" Nullable="false" />
+          <Property Name="StatusName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="LastModifiedDate" Type="Int64" />
+          <Property Name="IsModified" Type="Boolean" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO_GET_ASUNTO_FK1" FromRole="CAT_STATUS_ASUNTO" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="CAT_STATUS_TURNO">
+          <Key>
+            <PropertyRef Name="IdStatusTurno" />
+          </Key>
+          <Property Name="IdStatusTurno" Type="Int64" Nullable="false" />
+          <Property Name="StatusName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_TURNO" Relationship="db_GestorDocumtsTestModel.CAT_STATUS_TURNO_GET_TURNO_FK1" FromRole="CAT_STATUS_TURNO" ToRole="GET_TURNO" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_DETERMINANTE">
+          <Key>
+            <PropertyRef Name="IdTipoDeterminante" />
+          </Key>
+          <Property Name="IdTipoDeterminante" Type="Int64" Nullable="false" />
+          <Property Name="TipoDeterminanteName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="CAT_DETERMINANTE" Relationship="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1" FromRole="CAT_TIPO_DETERMINANTE" ToRole="CAT_DETERMINANTE" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_DOCUMENTO">
+          <Key>
+            <PropertyRef Name="IdTipoDocumento" />
+          </Key>
+          <Property Name="IdTipoDocumento" Type="Int64" Nullable="false" />
+          <Property Name="TipoDocumentoName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="LastModifiedDate" Type="Int64" />
+          <Property Name="IsModified" Type="Boolean" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_DOCUMENTOS" Relationship="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1" FromRole="CAT_TIPO_DOCUMENTO" ToRole="GET_DOCUMENTOS" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_EXTENCION">
+          <Key>
+            <PropertyRef Name="IdTipoExtencion" />
+          </Key>
+          <Property Name="IdTipoExtencion" Type="Int64" Nullable="false" />
+          <Property Name="Extencion" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Path" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+        </EntityType>
+        <EntityType Name="CAT_TIPO_UNIDAD_NORMATIVA">
+          <Key>
+            <PropertyRef Name="IdTipoUnidadNormativa" />
+          </Key>
+          <Property Name="IdTipoUnidadNormativa" Type="Int64" Nullable="false" />
+          <Property Name="TipoUnidadNormativaName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Boolean" />
+          <NavigationProperty Name="CAT_ORGANIGRAMA" Relationship="db_GestorDocumtsTestModel.FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA" FromRole="CAT_TIPO_UNIDAD_NORMATIVA" ToRole="CAT_ORGANIGRAMA" />
+        </EntityType>
+        <EntityType Name="CAT_UBICACION">
+          <Key>
+            <PropertyRef Name="IdUbicacion" />
+          </Key>
+          <Property Name="IdUbicacion" Type="Int64" Nullable="false" />
+          <Property Name="UbicacionName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.CAT_UBICACION_GET_ASUNTO_FK1" FromRole="CAT_UBICACION" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="GET_ASUNTO">
+          <Key>
+            <PropertyRef Name="IdAsunto" />
+          </Key>
+          <Property Name="IdAsunto" Type="Int64" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" />
+          <Property Name="FechaRecibido" Type="DateTime" />
+          <Property Name="FechaDocumento" Type="DateTime" />
+          <Property Name="ReferenciaDocumento" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Alcance" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IdUbicacion" Type="Int64" />
+          <Property Name="IdInstruccion" Type="Int64" />
+          <Property Name="IdPrioridad" Type="Int64" />
+          <Property Name="IdStatusAsunto" Type="Int64" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" />
+          <Property Name="Folio" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="IsBorrador" Type="Boolean" Nullable="false" />
+          <Property Name="Contacto" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="Anexos" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="FechaAtendido" Type="DateTime" />
+          <Property Name="Ubicacion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CAT_INSTRUCCION" Relationship="db_GestorDocumtsTestModel.CAT_INSTRUCCION_GET_ASUNTO_FK1" FromRole="GET_ASUNTO" ToRole="CAT_INSTRUCCION" />
+          <NavigationProperty Name="CAT_PRIORIDAD" Relationship="db_GestorDocumtsTestModel.CAT_PRIORIDAD_GET_ASUNTO_FK1" FromRole="GET_ASUNTO" ToRole="CAT_PRIORIDAD" />
+          <NavigationProperty Name="CAT_STATUS_ASUNTO" Relationship="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO_GET_ASUNTO_FK1" FromRole="GET_ASUNTO" ToRole="CAT_STATUS_ASUNTO" />
+          <NavigationProperty Name="CAT_UBICACION" Relationship="db_GestorDocumtsTestModel.CAT_UBICACION_GET_ASUNTO_FK1" FromRole="GET_ASUNTO" ToRole="CAT_UBICACION" />
+          <NavigationProperty Name="REL_DESTINATARIO_CCP" Relationship="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_GET_ASUNTO" FromRole="GET_ASUNTO" ToRole="REL_DESTINATARIO_CCP" />
+          <NavigationProperty Name="GET_EXPEDIENTE" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_GET_EXPEDIENTE_FK1" FromRole="GET_ASUNTO" ToRole="GET_EXPEDIENTE" />
+          <NavigationProperty Name="GET_FECHA_VENCIMIENTO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1" FromRole="GET_ASUNTO" ToRole="GET_FECHA_VENCIMIENTO" />
+          <NavigationProperty Name="GET_TURNO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_GET_TURNO_FK1" FromRole="GET_ASUNTO" ToRole="GET_TURNO" />
+          <NavigationProperty Name="REL_SIGNATARIO_EXTERNO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1" FromRole="GET_ASUNTO" ToRole="REL_SIGNATARIO_EXTERNO" />
+          <NavigationProperty Name="REL_SIGNATARIO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_FK1" FromRole="GET_ASUNTO" ToRole="REL_SIGNATARIO" />
+        </EntityType>
+        <EntityType Name="GET_DOCUMENTOS">
+          <Key>
+            <PropertyRef Name="IdDocumento" />
+          </Key>
+          <Property Name="IdDocumento" Type="Int64" Nullable="false" />
+          <Property Name="DocumentoName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="DocumentoPath" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Extencion" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="IdTurno" Type="Int64" />
+          <Property Name="Fecha" Type="DateTime" />
+          <Property Name="IdExpediente" Type="Int64" Nullable="false" />
+          <Property Name="IdTipoDocumento" Type="Int64" Nullable="false" />
+          <Property Name="IsDocumentoOriginal" Type="Boolean" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <NavigationProperty Name="CAT_TIPO_DOCUMENTO" Relationship="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1" FromRole="GET_DOCUMENTOS" ToRole="CAT_TIPO_DOCUMENTO" />
+          <NavigationProperty Name="GET_EXPEDIENTE" Relationship="db_GestorDocumtsTestModel.GET_EXPEDIENTE_GET_DOCUMENTOS_FK1" FromRole="GET_DOCUMENTOS" ToRole="GET_EXPEDIENTE" />
+          <NavigationProperty Name="GET_TURNO" Relationship="db_GestorDocumtsTestModel.GET_TURNO_GET_DOCUMENTOS_FK1" FromRole="GET_DOCUMENTOS" ToRole="GET_TURNO" />
+        </EntityType>
+        <EntityType Name="GET_EXPEDIENTE">
+          <Key>
+            <PropertyRef Name="IdExpediente" />
+          </Key>
+          <Property Name="IdExpediente" Type="Int64" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="IdAsunto" Type="Int64" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_GET_EXPEDIENTE_FK1" FromRole="GET_EXPEDIENTE" ToRole="GET_ASUNTO" />
+          <NavigationProperty Name="GET_DOCUMENTOS" Relationship="db_GestorDocumtsTestModel.GET_EXPEDIENTE_GET_DOCUMENTOS_FK1" FromRole="GET_EXPEDIENTE" ToRole="GET_DOCUMENTOS" />
+        </EntityType>
+        <EntityType Name="GET_FECHA_VENCIMIENTO">
+          <Key>
+            <PropertyRef Name="IdFechaVencimiento" />
+          </Key>
+          <Property Name="IdFechaVencimiento" Type="Int64" Nullable="false" />
+          <Property Name="IdAsunto" Type="Int64" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="IsActual" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1" FromRole="GET_FECHA_VENCIMIENTO" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="GET_TURNO">
+          <Key>
+            <PropertyRef Name="IdTurno" />
+          </Key>
+          <Property Name="IdTurno" Type="Int64" Nullable="false" />
+          <Property Name="IdTurnoAnt" Type="Int64" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="FechaEnvio" Type="DateTime" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="IdAsunto" Type="Int64" Nullable="false" />
+          <Property Name="IdStatusTurno" Type="Int64" Nullable="false" />
+          <Property Name="IdRol" Type="Int64" />
+          <Property Name="IdUsuario" Type="Int64" />
+          <Property Name="Comentario" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="Respuesta" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <Property Name="IsAtendido" Type="Boolean" Nullable="false" />
+          <Property Name="IsTurnado" Type="Boolean" Nullable="false" />
+          <Property Name="IsBorrador" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="APP_BANDEJA" Relationship="db_GestorDocumtsTestModel.FK__APP_BANDE__IdTur__534D60F1" FromRole="GET_TURNO" ToRole="APP_BANDEJA" />
+          <NavigationProperty Name="APP_ROL" Relationship="db_GestorDocumtsTestModel.APP_ROL_GET_TURNO_FK1" FromRole="GET_TURNO" ToRole="APP_ROL" />
+          <NavigationProperty Name="APP_USUARIO" Relationship="db_GestorDocumtsTestModel.APP_USUARIO_GET_TURNO_FK1" FromRole="GET_TURNO" ToRole="APP_USUARIO" />
+          <NavigationProperty Name="CAT_STATUS_TURNO" Relationship="db_GestorDocumtsTestModel.CAT_STATUS_TURNO_GET_TURNO_FK1" FromRole="GET_TURNO" ToRole="CAT_STATUS_TURNO" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_GET_TURNO_FK1" FromRole="GET_TURNO" ToRole="GET_ASUNTO" />
+          <NavigationProperty Name="GET_DOCUMENTOS" Relationship="db_GestorDocumtsTestModel.GET_TURNO_GET_DOCUMENTOS_FK1" FromRole="GET_TURNO" ToRole="GET_DOCUMENTOS" />
+          <NavigationProperty Name="REL_DESTINATARIO" Relationship="db_GestorDocumtsTestModel.GET_TURNO_REL_DESTINATARIO_FK1" FromRole="GET_TURNO" ToRole="REL_DESTINATARIO" />
+        </EntityType>
+        <EntityType Name="INF_ACCION">
+          <Key>
+            <PropertyRef Name="IdAccion" />
+          </Key>
+          <Property Name="IdAccion" Type="Int64" Nullable="false" />
+          <Property Name="AccionName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="INF_INFODOC" Relationship="db_GestorDocumtsTestModel.INF_ACCION_INF_INFODOC_FK1" FromRole="INF_ACCION" ToRole="INF_INFODOC" />
+        </EntityType>
+        <EntityType Name="INF_FORM">
+          <Key>
+            <PropertyRef Name="IdForm" />
+          </Key>
+          <Property Name="IdForm" Type="Int64" Nullable="false" />
+          <Property Name="FormName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="INF_INFODOC" Relationship="db_GestorDocumtsTestModel.INF_FORM_INF_INFODOC_FK1" FromRole="INF_FORM" ToRole="INF_INFODOC" />
+        </EntityType>
+        <EntityType Name="INF_INFODOC">
+          <Key>
+            <PropertyRef Name="IdInfoDoc" />
+          </Key>
+          <Property Name="IdInfoDoc" Type="Int64" Nullable="false" />
+          <Property Name="IdRol" Type="Int64" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int64" Nullable="false" />
+          <Property Name="IdForm" Type="Int64" Nullable="false" />
+          <Property Name="IdAccion" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="Int64" Nullable="false" />
+          <Property Name="IdRef" Type="Int64" Nullable="false" />
+          <Property Name="IpAddress" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="MacAdress" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+          <Property Name="PcName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="APP_ROL" Relationship="db_GestorDocumtsTestModel.APP_ROL_INF_INFODOC_FK1" FromRole="INF_INFODOC" ToRole="APP_ROL" />
+          <NavigationProperty Name="APP_USUARIO" Relationship="db_GestorDocumtsTestModel.APP_USUARIO_INF_INFODOC_FK1" FromRole="INF_INFODOC" ToRole="APP_USUARIO" />
+          <NavigationProperty Name="INF_ACCION" Relationship="db_GestorDocumtsTestModel.INF_ACCION_INF_INFODOC_FK1" FromRole="INF_INFODOC" ToRole="INF_ACCION" />
+          <NavigationProperty Name="INF_FORM" Relationship="db_GestorDocumtsTestModel.INF_FORM_INF_INFODOC_FK1" FromRole="INF_INFODOC" ToRole="INF_FORM" />
+        </EntityType>
+        <EntityType Name="MODIFIEDDATA">
+          <Key>
+            <PropertyRef Name="IdModifiedData" />
+          </Key>
+          <Property Name="IdModifiedData" Type="Int64" Nullable="false" />
+          <Property Name="IdSincTable" Type="Int64" />
+          <Property Name="IsModified" Type="Boolean" />
+          <Property Name="ServerModifiedDate" Type="Int64" />
+          <NavigationProperty Name="SYNCTABLE" Relationship="db_GestorDocumtsTestModel.FK__MODIFIEDD__IdSin__6B24EA82" FromRole="MODIFIEDDATA" ToRole="SYNCTABLE" />
+        </EntityType>
+        <EntityType Name="REL_DESTINATARIO">
+          <Key>
+            <PropertyRef Name="IdDestinatario" />
+          </Key>
+          <Property Name="IdRol" Type="Int64" Nullable="false" />
+          <Property Name="IdTurno" Type="Int64" Nullable="false" />
+          <Property Name="IdDestinatario" Type="Int64" Nullable="false" />
+          <Property Name="IsPrincipal" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <NavigationProperty Name="APP_ROL" Relationship="db_GestorDocumtsTestModel.APP_ROL_REL_DESTINATARIO_FK1" FromRole="REL_DESTINATARIO" ToRole="APP_ROL" />
+          <NavigationProperty Name="GET_TURNO" Relationship="db_GestorDocumtsTestModel.GET_TURNO_REL_DESTINATARIO_FK1" FromRole="REL_DESTINATARIO" ToRole="GET_TURNO" />
+        </EntityType>
+        <EntityType Name="REL_DESTINATARIO_CCP">
+          <Key>
+            <PropertyRef Name="IdDestinatarioCcp" />
+          </Key>
+          <Property Name="IdDestinatarioCcp" Type="Int64" Nullable="false" />
+          <Property Name="IdRol" Type="Int64" Nullable="false" />
+          <Property Name="IdAsunto" Type="Int64" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <NavigationProperty Name="APP_ROL" Relationship="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_APP_ROL" FromRole="REL_DESTINATARIO_CCP" ToRole="APP_ROL" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_GET_ASUNTO" FromRole="REL_DESTINATARIO_CCP" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="REL_SIGNATARIO">
+          <Key>
+            <PropertyRef Name="IdSignatario" />
+          </Key>
+          <Property Name="IdAsunto" Type="Int64" Nullable="false" />
+          <Property Name="IdDeterminante" Type="Int64" Nullable="false" />
+          <Property Name="IdSignatario" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <NavigationProperty Name="CAT_DETERMINANTE" Relationship="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_FK1" FromRole="REL_SIGNATARIO" ToRole="CAT_DETERMINANTE" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_FK1" FromRole="REL_SIGNATARIO" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="REL_SIGNATARIO_EXTERNO">
+          <Key>
+            <PropertyRef Name="IdSignatarioExterno" />
+          </Key>
+          <Property Name="IdAsunto" Type="Int64" Nullable="false" />
+          <Property Name="IdDeterminante" Type="Int64" Nullable="false" />
+          <Property Name="IdSignatarioExterno" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsModified" Type="Boolean" Nullable="false" />
+          <Property Name="LastModifiedDate" Type="Int64" Nullable="false" />
+          <Property Name="ServerLastModifiedDate" Type="Int64" />
+          <NavigationProperty Name="CAT_DETERMINANTE" Relationship="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1" FromRole="REL_SIGNATARIO_EXTERNO" ToRole="CAT_DETERMINANTE" />
+          <NavigationProperty Name="GET_ASUNTO" Relationship="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1" FromRole="REL_SIGNATARIO_EXTERNO" ToRole="GET_ASUNTO" />
+        </EntityType>
+        <EntityType Name="SYNCTABLE">
+          <Key>
+            <PropertyRef Name="IdSincTable" />
+          </Key>
+          <Property Name="IdSincTable" Type="Int64" Nullable="false" />
+          <Property Name="SincTableName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OrderTable" Type="Int32" />
+          <NavigationProperty Name="MODIFIEDDATAs" Relationship="db_GestorDocumtsTestModel.FK__MODIFIEDD__IdSin__6B24EA82" FromRole="SYNCTABLE" ToRole="MODIFIEDDATA" />
+        </EntityType>
+        <Association Name="FK__APP_BANDE__IdTur__534D60F1">
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.GET_TURNO" Multiplicity="1" />
+          <End Role="APP_BANDEJA" Type="db_GestorDocumtsTestModel.APP_BANDEJA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="GET_TURNO">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="APP_BANDEJA">
+              <PropertyRef Name="IdTurnoAnt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_MENU_APP_MENU_FK1">
+          <End Role="APP_MENU" Type="db_GestorDocumtsTestModel.APP_MENU" Multiplicity="0..1" />
+          <End Role="APP_MENU1" Type="db_GestorDocumtsTestModel.APP_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_MENU">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="APP_MENU1">
+              <PropertyRef Name="IdMenuParent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_MENU_APP_ROL_MENU_FK1">
+          <End Role="APP_MENU" Type="db_GestorDocumtsTestModel.APP_MENU" Multiplicity="1" />
+          <End Role="APP_ROL_MENU" Type="db_GestorDocumtsTestModel.APP_ROL_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_MENU">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="APP_ROL_MENU">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_APP_ROL_MENU_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.APP_ROL" Multiplicity="1" />
+          <End Role="APP_ROL_MENU" Type="db_GestorDocumtsTestModel.APP_ROL_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="APP_ROL_MENU">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_APP_USUARIO_ROL_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.APP_ROL" Multiplicity="1" />
+          <End Role="APP_USUARIO_ROL" Type="db_GestorDocumtsTestModel.APP_USUARIO_ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="APP_USUARIO_ROL">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_GET_TURNO_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.APP_ROL" Multiplicity="0..1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_INF_INFODOC_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.APP_ROL" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_ROL_REL_DESTINATARIO_FK1">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.APP_ROL" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO" Type="db_GestorDocumtsTestModel.REL_DESTINATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REL_DESTINATARIO_CCP_APP_ROL">
+          <End Role="APP_ROL" Type="db_GestorDocumtsTestModel.APP_ROL" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO_CCP" Type="db_GestorDocumtsTestModel.REL_DESTINATARIO_CCP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_ROL">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO_CCP">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_USUARIO_APP_USUARIO_ROL_FK1">
+          <End Role="APP_USUARIO" Type="db_GestorDocumtsTestModel.APP_USUARIO" Multiplicity="1" />
+          <End Role="APP_USUARIO_ROL" Type="db_GestorDocumtsTestModel.APP_USUARIO_ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_USUARIO">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="APP_USUARIO_ROL">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_USUARIO_GET_TURNO_FK1">
+          <End Role="APP_USUARIO" Type="db_GestorDocumtsTestModel.APP_USUARIO" Multiplicity="0..1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_USUARIO">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="APP_USUARIO_INF_INFODOC_FK1">
+          <End Role="APP_USUARIO" Type="db_GestorDocumtsTestModel.APP_USUARIO" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APP_USUARIO">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1">
+          <End Role="CAT_DETERMINANTE" Type="db_GestorDocumtsTestModel.CAT_DETERMINANTE" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO_EXTERNO" Type="db_GestorDocumtsTestModel.REL_SIGNATARIO_EXTERNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_DETERMINANTE">
+              <PropertyRef Name="IdDeterminante" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO_EXTERNO">
+              <PropertyRef Name="IdDeterminante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_DETERMINANTE_REL_SIGNATARIO_FK1">
+          <End Role="CAT_DETERMINANTE" Type="db_GestorDocumtsTestModel.CAT_DETERMINANTE" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO" Type="db_GestorDocumtsTestModel.REL_SIGNATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_DETERMINANTE">
+              <PropertyRef Name="IdDeterminante" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO">
+              <PropertyRef Name="IdDeterminante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1">
+          <End Role="CAT_TIPO_DETERMINANTE" Type="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE" Multiplicity="1" />
+          <End Role="CAT_DETERMINANTE" Type="db_GestorDocumtsTestModel.CAT_DETERMINANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_TIPO_DETERMINANTE">
+              <PropertyRef Name="IdTipoDeterminante" />
+            </Principal>
+            <Dependent Role="CAT_DETERMINANTE">
+              <PropertyRef Name="IdTipoDeterminante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_INSTRUCCION_GET_ASUNTO_FK1">
+          <End Role="CAT_INSTRUCCION" Type="db_GestorDocumtsTestModel.CAT_INSTRUCCION" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_INSTRUCCION">
+              <PropertyRef Name="IdInstruccion" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdInstruccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA">
+          <End Role="CAT_TIPO_UNIDAD_NORMATIVA" Type="db_GestorDocumtsTestModel.CAT_TIPO_UNIDAD_NORMATIVA" Multiplicity="0..1" />
+          <End Role="CAT_ORGANIGRAMA" Type="db_GestorDocumtsTestModel.CAT_ORGANIGRAMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_TIPO_UNIDAD_NORMATIVA">
+              <PropertyRef Name="IdTipoUnidadNormativa" />
+            </Principal>
+            <Dependent Role="CAT_ORGANIGRAMA">
+              <PropertyRef Name="IdTipoUnidadNormativa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_PRIORIDAD_GET_ASUNTO_FK1">
+          <End Role="CAT_PRIORIDAD" Type="db_GestorDocumtsTestModel.CAT_PRIORIDAD" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_PRIORIDAD">
+              <PropertyRef Name="IdPrioridad" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdPrioridad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_STATUS_ASUNTO_GET_ASUNTO_FK1">
+          <End Role="CAT_STATUS_ASUNTO" Type="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_STATUS_ASUNTO">
+              <PropertyRef Name="IdStatusAsunto" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdStatusAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_STATUS_TURNO_GET_TURNO_FK1">
+          <End Role="CAT_STATUS_TURNO" Type="db_GestorDocumtsTestModel.CAT_STATUS_TURNO" Multiplicity="1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_STATUS_TURNO">
+              <PropertyRef Name="IdStatusTurno" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdStatusTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1">
+          <End Role="CAT_TIPO_DOCUMENTO" Type="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO" Multiplicity="1" />
+          <End Role="GET_DOCUMENTOS" Type="db_GestorDocumtsTestModel.GET_DOCUMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_TIPO_DOCUMENTO">
+              <PropertyRef Name="IdTipoDocumento" />
+            </Principal>
+            <Dependent Role="GET_DOCUMENTOS">
+              <PropertyRef Name="IdTipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CAT_UBICACION_GET_ASUNTO_FK1">
+          <End Role="CAT_UBICACION" Type="db_GestorDocumtsTestModel.CAT_UBICACION" Multiplicity="0..1" />
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CAT_UBICACION">
+              <PropertyRef Name="IdUbicacion" />
+            </Principal>
+            <Dependent Role="GET_ASUNTO">
+              <PropertyRef Name="IdUbicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REL_DESTINATARIO_CCP_GET_ASUNTO">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO_CCP" Type="db_GestorDocumtsTestModel.REL_DESTINATARIO_CCP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO_CCP">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_GET_EXPEDIENTE_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="0..1" />
+          <End Role="GET_EXPEDIENTE" Type="db_GestorDocumtsTestModel.GET_EXPEDIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="GET_EXPEDIENTE">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="1" />
+          <End Role="GET_FECHA_VENCIMIENTO" Type="db_GestorDocumtsTestModel.GET_FECHA_VENCIMIENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="GET_FECHA_VENCIMIENTO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_GET_TURNO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="1" />
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.GET_TURNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="GET_TURNO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO_EXTERNO" Type="db_GestorDocumtsTestModel.REL_SIGNATARIO_EXTERNO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO_EXTERNO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_ASUNTO_REL_SIGNATARIO_FK1">
+          <End Role="GET_ASUNTO" Type="db_GestorDocumtsTestModel.GET_ASUNTO" Multiplicity="1" />
+          <End Role="REL_SIGNATARIO" Type="db_GestorDocumtsTestModel.REL_SIGNATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_ASUNTO">
+              <PropertyRef Name="IdAsunto" />
+            </Principal>
+            <Dependent Role="REL_SIGNATARIO">
+              <PropertyRef Name="IdAsunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_EXPEDIENTE_GET_DOCUMENTOS_FK1">
+          <End Role="GET_EXPEDIENTE" Type="db_GestorDocumtsTestModel.GET_EXPEDIENTE" Multiplicity="1" />
+          <End Role="GET_DOCUMENTOS" Type="db_GestorDocumtsTestModel.GET_DOCUMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_EXPEDIENTE">
+              <PropertyRef Name="IdExpediente" />
+            </Principal>
+            <Dependent Role="GET_DOCUMENTOS">
+              <PropertyRef Name="IdExpediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_TURNO_GET_DOCUMENTOS_FK1">
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.GET_TURNO" Multiplicity="0..1" />
+          <End Role="GET_DOCUMENTOS" Type="db_GestorDocumtsTestModel.GET_DOCUMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_TURNO">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="GET_DOCUMENTOS">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GET_TURNO_REL_DESTINATARIO_FK1">
+          <End Role="GET_TURNO" Type="db_GestorDocumtsTestModel.GET_TURNO" Multiplicity="1" />
+          <End Role="REL_DESTINATARIO" Type="db_GestorDocumtsTestModel.REL_DESTINATARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GET_TURNO">
+              <PropertyRef Name="IdTurno" />
+            </Principal>
+            <Dependent Role="REL_DESTINATARIO">
+              <PropertyRef Name="IdTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="INF_ACCION_INF_INFODOC_FK1">
+          <End Role="INF_ACCION" Type="db_GestorDocumtsTestModel.INF_ACCION" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INF_ACCION">
+              <PropertyRef Name="IdAccion" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdAccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="INF_FORM_INF_INFODOC_FK1">
+          <End Role="INF_FORM" Type="db_GestorDocumtsTestModel.INF_FORM" Multiplicity="1" />
+          <End Role="INF_INFODOC" Type="db_GestorDocumtsTestModel.INF_INFODOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INF_FORM">
+              <PropertyRef Name="IdForm" />
+            </Principal>
+            <Dependent Role="INF_INFODOC">
+              <PropertyRef Name="IdForm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MODIFIEDD__IdSin__6B24EA82">
+          <End Role="SYNCTABLE" Type="db_GestorDocumtsTestModel.SYNCTABLE" Multiplicity="0..1" />
+          <End Role="MODIFIEDDATA" Type="db_GestorDocumtsTestModel.MODIFIEDDATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYNCTABLE">
+              <PropertyRef Name="IdSincTable" />
+            </Principal>
+            <Dependent Role="MODIFIEDDATA">
+              <PropertyRef Name="IdSincTable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_GestorDocumtsTestModelStoreContainer" CdmEntityContainer="SyncServiceServerEntity">
+          <EntitySetMapping Name="APP_BANDEJA">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.APP_BANDEJA">
+              <MappingFragment StoreEntitySet="APP_BANDEJA">
+                <ScalarProperty Name="IdTurnoAnt" ColumnName="IdTurnoAnt" />
+                <ScalarProperty Name="IsSend" ColumnName="IsSend" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APP_MENU">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.APP_MENU">
+              <MappingFragment StoreEntitySet="APP_MENU">
+                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+                <ScalarProperty Name="IdMenuParent" ColumnName="IdMenuParent" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+                <ScalarProperty Name="PathMenu" ColumnName="PathMenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APP_ROL">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.APP_ROL">
+              <MappingFragment StoreEntitySet="APP_ROL">
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="RolName" ColumnName="RolName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APP_ROL_MENU">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.APP_ROL_MENU">
+              <MappingFragment StoreEntitySet="APP_ROL_MENU">
+                <ScalarProperty Name="IdRolMenu" ColumnName="IdRolMenu" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APP_USUARIO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.APP_USUARIO">
+              <MappingFragment StoreEntitySet="APP_USUARIO">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="UsuarioCorreo" ColumnName="UsuarioCorreo" />
+                <ScalarProperty Name="UsuarioPwd" ColumnName="UsuarioPwd" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IsNuevoUsuario" ColumnName="IsNuevoUsuario" />
+                <ScalarProperty Name="IsActivado" ColumnName="IsActivado" />
+                <ScalarProperty Name="IsFlag" ColumnName="IsFlag" />
+                <ScalarProperty Name="IsFlagPass" ColumnName="IsFlagPass" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APP_USUARIO_ROL">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.APP_USUARIO_ROL">
+              <MappingFragment StoreEntitySet="APP_USUARIO_ROL">
+                <ScalarProperty Name="IdUsuarioRol" ColumnName="IdUsuarioRol" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_DETERMINANTE">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_DETERMINANTE">
+              <MappingFragment StoreEntitySet="CAT_DETERMINANTE">
+                <ScalarProperty Name="IdDeterminante" ColumnName="IdDeterminante" />
+                <ScalarProperty Name="CveDeterminante" ColumnName="CveDeterminante" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="PrefijoFolio" ColumnName="PrefijoFolio" />
+                <ScalarProperty Name="DeterminanteName" ColumnName="DeterminanteName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IdTipoDeterminante" ColumnName="IdTipoDeterminante" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_INSTRUCCION">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_INSTRUCCION">
+              <MappingFragment StoreEntitySet="CAT_INSTRUCCION">
+                <ScalarProperty Name="IdInstruccion" ColumnName="IdInstruccion" />
+                <ScalarProperty Name="CveInstruccion" ColumnName="CveInstruccion" />
+                <ScalarProperty Name="InstruccionName" ColumnName="InstruccionName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_ORGANIGRAMA">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_ORGANIGRAMA">
+              <MappingFragment StoreEntitySet="CAT_ORGANIGRAMA">
+                <ScalarProperty Name="IdJerarquia" ColumnName="IdJerarquia" />
+                <ScalarProperty Name="IdJerarquiaParent" ColumnName="IdJerarquiaParent" />
+                <ScalarProperty Name="JerarquiaName" ColumnName="JerarquiaName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+                <ScalarProperty Name="IdTipoUnidadNormativa" ColumnName="IdTipoUnidadNormativa" />
+                <ScalarProperty Name="JerarquiaTitular" ColumnName="JerarquiaTitular" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_PRIORIDAD">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_PRIORIDAD">
+              <MappingFragment StoreEntitySet="CAT_PRIORIDAD">
+                <ScalarProperty Name="IdPrioridad" ColumnName="IdPrioridad" />
+                <ScalarProperty Name="PrioridadName" ColumnName="PrioridadName" />
+                <ScalarProperty Name="PathImagen" ColumnName="PathImagen" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_STATUS_ASUNTO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO">
+              <MappingFragment StoreEntitySet="CAT_STATUS_ASUNTO">
+                <ScalarProperty Name="IdStatusAsunto" ColumnName="IdStatusAsunto" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_STATUS_TURNO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_STATUS_TURNO">
+              <MappingFragment StoreEntitySet="CAT_STATUS_TURNO">
+                <ScalarProperty Name="IdStatusTurno" ColumnName="IdStatusTurno" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_TIPO_DETERMINANTE">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE">
+              <MappingFragment StoreEntitySet="CAT_TIPO_DETERMINANTE">
+                <ScalarProperty Name="IdTipoDeterminante" ColumnName="IdTipoDeterminante" />
+                <ScalarProperty Name="TipoDeterminanteName" ColumnName="TipoDeterminanteName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_TIPO_DOCUMENTO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO">
+              <MappingFragment StoreEntitySet="CAT_TIPO_DOCUMENTO">
+                <ScalarProperty Name="IdTipoDocumento" ColumnName="IdTipoDocumento" />
+                <ScalarProperty Name="TipoDocumentoName" ColumnName="TipoDocumentoName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_TIPO_EXTENCION">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_TIPO_EXTENCION">
+              <MappingFragment StoreEntitySet="CAT_TIPO_EXTENCION">
+                <ScalarProperty Name="IdTipoExtencion" ColumnName="IdTipoExtencion" />
+                <ScalarProperty Name="Extencion" ColumnName="Extencion" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_TIPO_UNIDAD_NORMATIVA">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_TIPO_UNIDAD_NORMATIVA">
+              <MappingFragment StoreEntitySet="CAT_TIPO_UNIDAD_NORMATIVA">
+                <ScalarProperty Name="IdTipoUnidadNormativa" ColumnName="IdTipoUnidadNormativa" />
+                <ScalarProperty Name="TipoUnidadNormativaName" ColumnName="TipoUnidadNormativaName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAT_UBICACION">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.CAT_UBICACION">
+              <MappingFragment StoreEntitySet="CAT_UBICACION">
+                <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+                <ScalarProperty Name="UbicacionName" ColumnName="UbicacionName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GET_ASUNTO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.GET_ASUNTO">
+              <MappingFragment StoreEntitySet="GET_ASUNTO">
+                <ScalarProperty Name="IdAsunto" ColumnName="IdAsunto" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaRecibido" ColumnName="FechaRecibido" />
+                <ScalarProperty Name="FechaDocumento" ColumnName="FechaDocumento" />
+                <ScalarProperty Name="ReferenciaDocumento" ColumnName="ReferenciaDocumento" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Alcance" ColumnName="Alcance" />
+                <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+                <ScalarProperty Name="IdInstruccion" ColumnName="IdInstruccion" />
+                <ScalarProperty Name="IdPrioridad" ColumnName="IdPrioridad" />
+                <ScalarProperty Name="IdStatusAsunto" ColumnName="IdStatusAsunto" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IsBorrador" ColumnName="IsBorrador" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="Anexos" ColumnName="Anexos" />
+                <ScalarProperty Name="FechaAtendido" ColumnName="FechaAtendido" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GET_DOCUMENTOS">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.GET_DOCUMENTOS">
+              <MappingFragment StoreEntitySet="GET_DOCUMENTOS">
+                <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+                <ScalarProperty Name="DocumentoName" ColumnName="DocumentoName" />
+                <ScalarProperty Name="DocumentoPath" ColumnName="DocumentoPath" />
+                <ScalarProperty Name="Extencion" ColumnName="Extencion" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IdTurno" ColumnName="IdTurno" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdExpediente" ColumnName="IdExpediente" />
+                <ScalarProperty Name="IdTipoDocumento" ColumnName="IdTipoDocumento" />
+                <ScalarProperty Name="IsDocumentoOriginal" ColumnName="IsDocumentoOriginal" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GET_EXPEDIENTE">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.GET_EXPEDIENTE">
+              <MappingFragment StoreEntitySet="GET_EXPEDIENTE">
+                <ScalarProperty Name="IdExpediente" ColumnName="IdExpediente" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IdAsunto" ColumnName="IdAsunto" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GET_FECHA_VENCIMIENTO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.GET_FECHA_VENCIMIENTO">
+              <MappingFragment StoreEntitySet="GET_FECHA_VENCIMIENTO">
+                <ScalarProperty Name="IdFechaVencimiento" ColumnName="IdFechaVencimiento" />
+                <ScalarProperty Name="IdAsunto" ColumnName="IdAsunto" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IsActual" ColumnName="IsActual" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GET_TURNO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.GET_TURNO">
+              <MappingFragment StoreEntitySet="GET_TURNO">
+                <ScalarProperty Name="IdTurno" ColumnName="IdTurno" />
+                <ScalarProperty Name="IdTurnoAnt" ColumnName="IdTurnoAnt" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaEnvio" ColumnName="FechaEnvio" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="IdAsunto" ColumnName="IdAsunto" />
+                <ScalarProperty Name="IdStatusTurno" ColumnName="IdStatusTurno" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+                <ScalarProperty Name="IsAtendido" ColumnName="IsAtendido" />
+                <ScalarProperty Name="IsTurnado" ColumnName="IsTurnado" />
+                <ScalarProperty Name="IsBorrador" ColumnName="IsBorrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INF_ACCION">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.INF_ACCION">
+              <MappingFragment StoreEntitySet="INF_ACCION">
+                <ScalarProperty Name="IdAccion" ColumnName="IdAccion" />
+                <ScalarProperty Name="AccionName" ColumnName="AccionName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INF_FORM">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.INF_FORM">
+              <MappingFragment StoreEntitySet="INF_FORM">
+                <ScalarProperty Name="IdForm" ColumnName="IdForm" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INF_INFODOC">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.INF_INFODOC">
+              <MappingFragment StoreEntitySet="INF_INFODOC">
+                <ScalarProperty Name="IdInfoDoc" ColumnName="IdInfoDoc" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdForm" ColumnName="IdForm" />
+                <ScalarProperty Name="IdAccion" ColumnName="IdAccion" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdRef" ColumnName="IdRef" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="MacAdress" ColumnName="MacAdress" />
+                <ScalarProperty Name="PcName" ColumnName="PcName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MODIFIEDDATAs">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.MODIFIEDDATA">
+              <MappingFragment StoreEntitySet="MODIFIEDDATA">
+                <ScalarProperty Name="IdModifiedData" ColumnName="IdModifiedData" />
+                <ScalarProperty Name="IdSincTable" ColumnName="IdSincTable" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerModifiedDate" ColumnName="ServerModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REL_DESTINATARIO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.REL_DESTINATARIO">
+              <MappingFragment StoreEntitySet="REL_DESTINATARIO">
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="IdTurno" ColumnName="IdTurno" />
+                <ScalarProperty Name="IdDestinatario" ColumnName="IdDestinatario" />
+                <ScalarProperty Name="IsPrincipal" ColumnName="IsPrincipal" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REL_DESTINATARIO_CCP">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.REL_DESTINATARIO_CCP">
+              <MappingFragment StoreEntitySet="REL_DESTINATARIO_CCP">
+                <ScalarProperty Name="IdDestinatarioCcp" ColumnName="IdDestinatarioCcp" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+                <ScalarProperty Name="IdAsunto" ColumnName="IdAsunto" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REL_SIGNATARIO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.REL_SIGNATARIO">
+              <MappingFragment StoreEntitySet="REL_SIGNATARIO">
+                <ScalarProperty Name="IdAsunto" ColumnName="IdAsunto" />
+                <ScalarProperty Name="IdDeterminante" ColumnName="IdDeterminante" />
+                <ScalarProperty Name="IdSignatario" ColumnName="IdSignatario" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REL_SIGNATARIO_EXTERNO">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.REL_SIGNATARIO_EXTERNO">
+              <MappingFragment StoreEntitySet="REL_SIGNATARIO_EXTERNO">
+                <ScalarProperty Name="IdAsunto" ColumnName="IdAsunto" />
+                <ScalarProperty Name="IdDeterminante" ColumnName="IdDeterminante" />
+                <ScalarProperty Name="IdSignatarioExterno" ColumnName="IdSignatarioExterno" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="ServerLastModifiedDate" ColumnName="ServerLastModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYNCTABLEs">
+            <EntityTypeMapping TypeName="db_GestorDocumtsTestModel.SYNCTABLE">
+              <MappingFragment StoreEntitySet="SYNCTABLE">
+                <ScalarProperty Name="IdSincTable" ColumnName="IdSincTable" />
+                <ScalarProperty Name="SincTableName" ColumnName="SincTableName" />
+                <ScalarProperty Name="OrderTable" ColumnName="OrderTable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetMax" FunctionName="db_GestorDocumtsTestModel.Store.SP_GetMax" />
+          <FunctionImportMapping FunctionImportName="SP_GetMaxsServer" FunctionName="db_GestorDocumtsTestModel.Store.SP_GetMaxsServer" />
+          <FunctionImportMapping FunctionImportName="SP_GetTableNameModifiedData" FunctionName="db_GestorDocumtsTestModel.Store.SP_GetTableNameModifiedData" />
+          <FunctionImportMapping FunctionImportName="SP_TABLE_JSON" FunctionName="db_GestorDocumtsTestModel.Store.SP_TABLE_JSON" />
+          <FunctionImportMapping FunctionImportName="SP_TABLE_JSON_MODIFIEDDATA" FunctionName="db_GestorDocumtsTestModel.Store.SP_TABLE_JSON_MODIFIEDDATA" />
+          <FunctionImportMapping FunctionImportName="SpConfirmSincRows" FunctionName="db_GestorDocumtsTestModel.Store.SpConfirmSincRows" />
+          <FunctionImportMapping FunctionImportName="SpUpsertServerRows" FunctionName="db_GestorDocumtsTestModel.Store.SpUpsertServerRows" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SyncServiceServerEntity">
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.APP_BANDEJA" Width="1.5" PointX="10.5" PointY="17.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.APP_MENU" Width="1.5" PointX="6" PointY="31.875" Height="3.1340950520833353" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.APP_ROL" Width="1.5" PointX="6" PointY="18.75" Height="3.326396484374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.APP_ROL_MENU" Width="1.5" PointX="8.25" PointY="23" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.APP_USUARIO" Width="1.5" PointX="6" PointY="22.875" Height="4.480205078124996" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.APP_USUARIO_ROL" Width="1.5" PointX="11.25" PointY="24.625" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_DETERMINANTE" Width="1.5" PointX="3" PointY="4.875" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_INSTRUCCION" Width="1.5" PointX="0.75" PointY="13.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_ORGANIGRAMA" Width="1.5" PointX="10" PointY="4" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_PRIORIDAD" Width="1.5" PointX="0.75" PointY="9.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO" Width="1.5" PointX="0.75" PointY="17.5" Height="2.3648893229166745" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_STATUS_TURNO" Width="1.5" PointX="6" PointY="28.125" Height="2.3648893229166745" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE" Width="1.5" PointX="0.75" PointY="5.375" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO" Width="1.5" PointX="5.25" PointY="3.375" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_TIPO_EXTENCION" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_TIPO_UNIDAD_NORMATIVA" Width="1.5" PointX="7.75" PointY="4.375" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.CAT_UBICACION" Width="1.5" PointX="0.75" PointY="20.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.GET_ASUNTO" Width="1.5" PointX="3" PointY="10.875" Height="7.3647265625000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.GET_DOCUMENTOS" Width="1.5" PointX="7.5" PointY="10.75" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.GET_EXPEDIENTE" Width="1.5" PointX="5.25" PointY="11.5" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.GET_FECHA_VENCIMIENTO" Width="1.5" PointX="5.25" PointY="14.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.GET_TURNO" Width="1.5" PointX="8.25" PointY="15.75" Height="5.634013671874996" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.INF_ACCION" Width="1.5" PointX="11" PointY="28.5" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.INF_FORM" Width="1.5" PointX="11" PointY="31.375" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.INF_INFODOC" Width="1.5" PointX="13.25" PointY="18.875" Height="4.2879036458333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.MODIFIEDDATA" Width="1.5" PointX="10" PointY="0.875" Height="1.9802864583333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.REL_DESTINATARIO" Width="1.5" PointX="10.5" PointY="20.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.REL_DESTINATARIO_CCP" Width="1.5" PointX="10.25" PointY="12.25" Height="2.7494921875000102" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.REL_SIGNATARIO" Width="1.5" PointX="10.25" PointY="8.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.REL_SIGNATARIO_EXTERNO" Width="1.5" PointX="5.25" PointY="7.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_GestorDocumtsTestModel.SYNCTABLE" Width="1.5" PointX="7.75" PointY="1" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="db_GestorDocumtsTestModel.FK__APP_BANDE__IdTur__534D60F1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="18.547841796875" />
+          <ConnectorPoint PointX="10.5" PointY="18.547841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_MENU_APP_MENU_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.5319230769230767" PointY="35.009095052083339" />
+          <ConnectorPoint PointX="6.5319230769230767" PointY="35.259095052083339" />
+          <ConnectorPoint PointX="6.9784615384615378" PointY="35.259095052083339" />
+          <ConnectorPoint PointX="6.9784615384615378" PointY="35.009095052083339" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_MENU_APP_ROL_MENU_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="33.442047526041669" />
+          <ConnectorPoint PointX="9" PointY="33.442047526041669" />
+          <ConnectorPoint PointX="9" PointY="25.749492187499996" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_ROL_APP_ROL_MENU_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="22.019857022836533" />
+          <ConnectorPoint PointX="8.03125" PointY="22.551107022836533" />
+          <ConnectorPoint PointX="8.03125" PointY="24.374746093749998" />
+          <ConnectorPoint PointX="8.25" PointY="24.374746093749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_ROL_APP_USUARIO_ROL_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.47576923076923" PointY="22.076396484374996" />
+          <ConnectorPoint PointX="7.875" PointY="22.475627253605765" />
+          <ConnectorPoint PointX="7.875" PointY="26.593241687499997" />
+          <ConnectorPoint PointX="8.0104166666666661" PointY="26.593241687499997" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="26.593241687499997" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="26.593241687499997" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="26.593241687499997" />
+          <ConnectorPoint PointX="11.25" PointY="26.593241687499997" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_ROL_GET_TURNO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="20.067006835937498" />
+          <ConnectorPoint PointX="7.854166666666667" PointY="20.067006835937498" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="20.067006835937498" />
+          <ConnectorPoint PointX="8.25" PointY="20.067006835937498" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_ROL_INF_INFODOC_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.7066326153846152" PointY="22.076396484374996" />
+          <ConnectorPoint PointX="6.7066326153846152" PointY="22.326396484374996" />
+          <ConnectorPoint PointX="7.642435897435897" PointY="22.326396484374992" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="22.326396484374996" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="22.326396484374996" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="22.326396484374996" />
+          <ConnectorPoint PointX="10.25" PointY="22.326396484374996" />
+          <ConnectorPoint PointX="10.25" PointY="19.875" />
+          <ConnectorPoint PointX="12.541666666666666" PointY="19.875" />
+          <ConnectorPoint PointX="12.708333333333334" PointY="19.875" />
+          <ConnectorPoint PointX="12.875" PointY="19.875" />
+          <ConnectorPoint PointX="12.875" PointY="21.018951822916662" />
+          <ConnectorPoint PointX="13.25" PointY="21.018951822916662" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_ROL_REL_DESTINATARIO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="21.701932847355764" />
+          <ConnectorPoint PointX="7.854166666666667" PointY="21.701932847355764" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="21.701932847355764" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="21.701932847355764" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="21.701932847355764" />
+          <ConnectorPoint PointX="10.166666666666666" PointY="21.701932847355764" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="21.701932847355764" />
+          <ConnectorPoint PointX="10.5" PointY="21.701932847355764" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_APP_ROL" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="18.751152846153843" />
+          <ConnectorPoint PointX="7.875" PointY="18.376152846153843" />
+          <ConnectorPoint PointX="7.875" PointY="15.37449218750001" />
+          <ConnectorPoint PointX="8.5416666666666661" PointY="15.37449218750001" />
+          <ConnectorPoint PointX="8.7083333333333339" PointY="15.37449218750001" />
+          <ConnectorPoint PointX="9.875" PointY="15.37449218750001" />
+          <ConnectorPoint PointX="10.25" PointY="14.99949218750001" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_USUARIO_APP_USUARIO_ROL_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="26.140116937499997" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="26.140116937499997" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="26.140116937499997" />
+          <ConnectorPoint PointX="8.0104166666666661" PointY="26.140116937499997" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="26.140116937499997" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="26.140116937499997" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="26.140116937499997" />
+          <ConnectorPoint PointX="11.25" PointY="26.140116937499997" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_USUARIO_GET_TURNO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="22.938460538461534" />
+          <ConnectorPoint PointX="7.8160744349011209" PointY="22.622386103560412" />
+          <ConnectorPoint PointX="7.9339255650988791" PointY="22.504534973362656" />
+          <ConnectorPoint PointX="7.9375" PointY="22.500960538461534" />
+          <ConnectorPoint PointX="7.9375" PointY="17.877251417968754" />
+          <ConnectorPoint PointX="8.25" PointY="17.877251417968754" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.APP_USUARIO_INF_INFODOC_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.103315807692308" PointY="22.875" />
+          <ConnectorPoint PointX="7.103315807692308" PointY="22.576396484374996" />
+          <ConnectorPoint PointX="7.778730720753205" PointY="22.576396484374996" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="22.576396484374996" />
+          <ConnectorPoint PointX="8.0104166666666661" PointY="22.576396484374996" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="22.576396484374996" />
+          <ConnectorPoint PointX="10" PointY="22.576396484374996" />
+          <ConnectorPoint PointX="10" PointY="19.625" />
+          <ConnectorPoint PointX="12.625" PointY="19.625" />
+          <ConnectorPoint PointX="12.625" PointY="22.122179734374988" />
+          <ConnectorPoint PointX="13.25" PointY="22.122179734374988" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_EXTERNO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.7593489583333337" />
+          <ConnectorPoint PointX="5.25" PointY="7.7593489583333337" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_DETERMINANTE_REL_SIGNATARIO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="8.3936979166666674" />
+          <ConnectorPoint PointX="3.75" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="7.510416666666667" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="7.677083333333333" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="9.5416666666666661" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="9.7083333333333339" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="9.875" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="9.875" PointY="9.5958968098958337" />
+          <ConnectorPoint PointX="10.25" PointY="9.5958968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_TIPO_DETERMINANTE_CAT_DETERMINANTE_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.5574446614583337" />
+          <ConnectorPoint PointX="3" PointY="6.5574446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_INSTRUCCION_GET_ASUNTO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.653595377604166" />
+          <ConnectorPoint PointX="3" PointY="14.653595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.FK_CAT_ORGANIGRAMA_CAT_TIPO_UNIDAD_NORMATIVA" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="5.5574446614583337" />
+          <ConnectorPoint PointX="10" PointY="5.5574446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_PRIORIDAD_GET_ASUNTO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.341095377604166" />
+          <ConnectorPoint PointX="3" PointY="11.341095377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_STATUS_ASUNTO_GET_ASUNTO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="17.86986328125" />
+          <ConnectorPoint PointX="3" PointY="17.86986328125" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_STATUS_TURNO_GET_TURNO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="28.157306692307689" />
+          <ConnectorPoint PointX="8.09375" PointY="27.563556692307685" />
+          <ConnectorPoint PointX="8.09375" PointY="18.972129126953128" />
+          <ConnectorPoint PointX="8.25" PointY="18.972129126953128" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_TIPO_DOCUMENTO_GET_DOCUMENTOS_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="3.84375" />
+          <ConnectorPoint PointX="7.59375" PointY="3.84375" />
+          <ConnectorPoint PointX="7.59375" PointY="10.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.CAT_UBICACION_GET_ASUNTO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="21.807444661458334" />
+          <ConnectorPoint PointX="3.75" PointY="21.807444661458334" />
+          <ConnectorPoint PointX="3.75" PointY="18.239726562500003" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.FK_REL_DESTINATARIO_CCP_GET_ASUNTO" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.403595377604169" />
+          <ConnectorPoint PointX="7.25" PointY="14.403595377604169" />
+          <ConnectorPoint PointX="7.25" PointY="15.24949218750001" />
+          <ConnectorPoint PointX="8.5416666666666661" PointY="15.24949218750001" />
+          <ConnectorPoint PointX="8.7083333333333339" PointY="15.24949218750001" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="15.24949218750001" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="15.24949218750001" />
+          <ConnectorPoint PointX="11.031252" PointY="15.24949218750001" />
+          <ConnectorPoint PointX="11.031252" PointY="14.99949218750001" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_ASUNTO_GET_EXPEDIENTE_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.778595377604169" />
+          <ConnectorPoint PointX="5.25" PointY="12.778595377604169" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_ASUNTO_GET_FECHA_VENCIMIENTO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.220896809895834" />
+          <ConnectorPoint PointX="5.25" PointY="16.220896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_ASUNTO_GET_TURNO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.12098899023438" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="18.12098899023438" />
+          <ConnectorPoint PointX="8.0208333333333339" PointY="18.12098899023438" />
+          <ConnectorPoint PointX="8.25" PointY="18.12098899023438" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_EXTERNO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.876152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="10.501152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="8.9443232890624955" />
+          <ConnectorPoint PointX="5.25" PointY="8.9443232890624955" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_ASUNTO_REL_SIGNATARIO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.1249994999999995" PointY="10.875" />
+          <ConnectorPoint PointX="4.1249994999999995" PointY="10.441793619791667" />
+          <ConnectorPoint PointX="7.510416666666667" PointY="10.441793619791667" />
+          <ConnectorPoint PointX="7.677083333333333" PointY="10.441793619791667" />
+          <ConnectorPoint PointX="9.625" PointY="10.441793619791667" />
+          <ConnectorPoint PointX="9.625" PointY="8.8291964049479219" />
+          <ConnectorPoint PointX="10.25" PointY="8.8291964049479219" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_EXPEDIENTE_GET_DOCUMENTOS_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="12.778595377604169" />
+          <ConnectorPoint PointX="7.5" PointY="12.778595377604169" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_TURNO_GET_DOCUMENTOS_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.625" PointY="15.75" />
+          <ConnectorPoint PointX="8.625" PointY="14.845602213541667" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.GET_TURNO_REL_DESTINATARIO_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="20.754506835937498" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="20.754506835937498" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="20.754506835937498" />
+          <ConnectorPoint PointX="10.166666666666666" PointY="20.754506835937498" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="20.754506835937498" />
+          <ConnectorPoint PointX="10.5" PointY="20.754506835937498" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.INF_ACCION_INF_INFODOC_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.5" PointY="29.586293945312498" />
+          <ConnectorPoint PointX="13.510414166666665" PointY="29.586293945312498" />
+          <ConnectorPoint PointX="13.677080833333333" PointY="29.586293945312498" />
+          <ConnectorPoint PointX="14" PointY="29.586293945312498" />
+          <ConnectorPoint PointX="14" PointY="23.162903645833325" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.INF_FORM_INF_INFODOC_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.5" PointY="32.4612939453125" />
+          <ConnectorPoint PointX="13.5937475" PointY="32.4612939453125" />
+          <ConnectorPoint PointX="13.5937475" PointY="23.162903645833325" />
+        </AssociationConnector>
+        <AssociationConnector Association="db_GestorDocumtsTestModel.FK__MODIFIEDD__IdSin__6B24EA82" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="1.8939925130208337" />
+          <ConnectorPoint PointX="10" PointY="1.8939925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

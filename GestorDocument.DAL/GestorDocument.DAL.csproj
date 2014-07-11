@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A0F4B34-6E2B-4F7E-A679-CC1D33ADE5D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestorDocument.DAL</RootNamespace>
+    <AssemblyName>GestorDocument.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\GestorDocument.DAL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\GestorDocument.DAL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APP_MENU.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APP_ROL.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APP_ROL_MENU.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APP_USUARIO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APP_USUARIO_ROL.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_DETERMINANTE.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_INSTRUCCION.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_ORGANIGRAMA.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_PRIORIDAD.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_SESION.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_STATUS_ASUNTO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_STATUS_TURNO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TIPO_DETERMINANTE.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TIPO_DOCUMENTO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TIPO_EXTENCION.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_TIPO_UNIDAD_NORMATIVA.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAT_UBICACION.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestorDocument.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorDocument.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestorDocument.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestorDocument.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorDocument.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GestorDocument.edmx.EntityClasses.IRequiredIOptional.cs" />
+    <Compile Include="GetAsuntosBusqueda_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_ASUNTO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_DOCUMENTOS.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_EXPEDIENTE.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_FECHA_VENCIMIENTO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_TURNO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INF_ACCION.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INF_FORM.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INF_INFODOC.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODIFIEDDATA.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="REL_DESTINATARIO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REL_DESTINATARIO_CCP.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REL_SIGNATARIO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REL_SIGNATARIO_EXTERNO.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\GestorDocumentDataSet.cs">
+      <DependentUpon>GestorDocumentDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\GestorDocumentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorDocumentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\AsuntoRepository.cs" />
+    <Compile Include="Repository\DashBoardRepository.cs" />
+    <Compile Include="Repository\DestinatarioCcpRepository.cs" />
+    <Compile Include="Repository\DestinatarioRepository.cs" />
+    <Compile Include="Repository\DeterminanteRepository.cs" />
+    <Compile Include="Repository\DocumentoRepository.cs" />
+    <Compile Include="Repository\ExpedienteRepository.cs" />
+    <Compile Include="Repository\FechaVencimientoRepository.cs" />
+    <Compile Include="Repository\InstruccionRepository.cs" />
+    <Compile Include="Repository\MenuRepository.cs" />
+    <Compile Include="Repository\OrganigramaRepository.cs" />
+    <Compile Include="Repository\PrioridadRepository.cs" />
+    <Compile Include="Repository\ReportesRepository.cs" />
+    <Compile Include="Repository\SesionRepository.cs" />
+    <Compile Include="Repository\SignatarioExternoRepository.cs" />
+    <Compile Include="Repository\SignatarioRepository.cs" />
+    <Compile Include="Repository\StatusAsuntoRepository.cs" />
+    <Compile Include="Repository\StatusTurnoRepository.cs" />
+    <Compile Include="Repository\SyncDocsRepository.cs" />
+    <Compile Include="Repository\TipoDeterminanteRepository.cs" />
+    <Compile Include="Repository\TipoDocumentoRepository.cs" />
+    <Compile Include="Repository\TurnoRepository.cs" />
+    <Compile Include="Repository\UbicacionRepository.cs" />
+    <Compile Include="Repository\UsuarioRepository.cs" />
+    <Compile Include="Repository\v2\AsuntoRepository.cs" />
+    <Compile Include="Repository\v2\BusquedaRepository.cs" />
+    <Compile Include="Repository\v2\MenuRepository.cs" />
+    <Compile Include="Repository\v2\TableroRepository.cs" />
+    <Compile Include="SpDashboardAtendidosIndicador_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpDashboardDireccionesTableData_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpDashboardMesGraphData_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpDashboardOcavmTableData_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpDashboardPendientesIndicador_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetAsuntosOfiPart_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetMenu_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetTablero_Result.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYNCTABLE.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYNC_DOC.cs">
+      <DependentUpon>GestorDocument.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UNID.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestorDocument.Model\GestorDocument.Model.csproj">
+      <Project>{17FBA103-3EB7-46D9-B84D-1AE16DC0E513}</Project>
+      <Name>GestorDocument.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="GestorDocument.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GestorDocument.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="GestorDocument.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GestorDocument.Context.cs</LastGenOutput>
+    </None>
+    <None Include="GestorDocument.edmx.compareOptions">
+      <DependentUpon>GestorDocument.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestorDocument.edmx.namePrefs">
+      <DependentUpon>GestorDocument.edmx</DependentUpon>
+    </None>
+    <None Include="GestorDocument.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GestorDocument.cs</LastGenOutput>
+    </None>
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Reportes\GestorDocumentDataSet.xsc">
+      <DependentUpon>GestorDocumentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\GestorDocumentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GestorDocumentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\GestorDocumentDataSet.xss">
+      <DependentUpon>GestorDocumentDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

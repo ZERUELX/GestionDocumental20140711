@@ -1,0 +1,183 @@
+﻿<Window x:Class="GestorDocument.UI.AsuntoAddView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AsuntoAddView" Height="530" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btGuardar" Command="{Binding SaveCommand}" 
+                    Content="Guardar" Height="23" HorizontalAlignment="Right"
+                    VerticalAlignment="Center" Margin=" 10,0"
+                    Width="75" Click="btGuardar_Click" Grid.Column="1" />
+            <Button Name="btCancelar" HorizontalAlignment="Right"
+                    Content="Cancelar" Height="23"  Grid.Column="2"
+                    VerticalAlignment="Center" Margin=" 10,0"
+                    Width="75" Click="btCancelar_Click" />
+        </Grid>
+        <Separator Height="9" HorizontalAlignment="Stretch" 
+                   Name="separator2" VerticalAlignment="Center"
+                   Grid.Row="1"/>
+        <Grid Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="NUEVO: Asunto." Height="23" HorizontalAlignment="Left" 
+                       Name="textBlockTitle" VerticalAlignment="Center"
+                       Grid.Row="1" Margin="10,0"/>
+
+            <Separator Height="7" HorizontalAlignment="Stretch" 
+                       Name="separator1" VerticalAlignment="Center"
+                       Grid.Row="2" Grid.ColumnSpan="2"/>
+
+            <TextBlock Text="Fecha de Creación:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="3"  
+                       Name="textBlock1" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox Text="{Binding Asunto.FechaCreacion, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox1"
+                      VerticalAlignment="Center" Width="120" Grid.Row="3" Grid.Column="1" />
+
+            <TextBlock Text="Fecha de Recibido:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="4"  
+                       Name="textBlock2" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Asunto.FechaRecibido, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox2"
+                      VerticalAlignment="Center" Width="120" Grid.Row="4" Grid.Column="1" />
+
+            <TextBlock Text="Fecha del Documento:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="5"  
+                       Name="textBlock3" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Asunto.FechaDocumento, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox3"
+                      VerticalAlignment="Center" Width="120" Grid.Row="5" Grid.Column="1" />
+
+            <TextBlock Text="Título:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="6"  
+                       Name="textBlock4" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Asunto.Titulo, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox4"
+                      VerticalAlignment="Center" Width="120" Grid.Row="6" Grid.Column="1" />
+
+            <TextBlock Text="Descripción:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="7"  
+                       Name="textBlock5" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Asunto.Descripcion, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox5"
+                      VerticalAlignment="Center" Width="120" Grid.Row="7" Grid.Column="1" />
+
+            <TextBlock Text="Alcance:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="8"  
+                       Name="textBlock6" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Asunto.Alcance, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox6"
+                      VerticalAlignment="Center" Width="120" Grid.Row="8" Grid.Column="1" />
+
+            <TextBlock Text="Ubicación:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="9"  
+                       Name="textBlock7" VerticalAlignment="Center"
+                       Margin="10,0"/>
+            
+            <ComboBox ItemsSource="{Binding Ubicacions}"
+                      SelectedItem="{Binding Asunto.Ubicacion}"
+                      DisplayMemberPath="UbicacionName" 
+                      Height="23" HorizontalAlignment="Left" Name="comboBox1" 
+                      VerticalAlignment="Center" Width="120" Grid.Row="9" Grid.Column="1" />
+
+            <TextBlock Text="Instrucción:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="10"  
+                       Name="textBlock8" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <ComboBox ItemsSource="{Binding Instruccions}"
+                      SelectedItem="{Binding Asunto.Instruccion}"
+                      DisplayMemberPath="InstruccionName" 
+                      Height="23" HorizontalAlignment="Left" Name="comboBox2" 
+                      VerticalAlignment="Center" Width="120" Grid.Row="10" Grid.Column="1" />
+
+            <TextBlock Text="Prioridad:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="11"  
+                       Name="textBlock9" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <ComboBox ItemsSource="{Binding Prioridads}"
+                      SelectedItem="{Binding Asunto.Prioridad}"
+                      DisplayMemberPath="PrioridadName" 
+                      Height="23" HorizontalAlignment="Left" Name="comboBox3" 
+                      VerticalAlignment="Center" Width="120" Grid.Row="11" Grid.Column="1" />
+
+            <TextBlock Text="Status del Asunto:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="12"  
+                       Name="textBlock10" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <ComboBox ItemsSource="{Binding StatusAsuntos}"
+                      SelectedItem="{Binding Asunto.StatusAsunto}"
+                      DisplayMemberPath="StatusName" 
+                      Height="23" HorizontalAlignment="Left" Name="comboBox4" 
+                      VerticalAlignment="Center" Width="120" Grid.Row="12" Grid.Column="1" />
+
+            <TextBlock Text="Fecha de Vencimiento:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="13"  
+                       Name="textBlock11" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Asunto.FechaVencimiento, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox7"
+                      VerticalAlignment="Center" Width="120" Grid.Row="13" Grid.Column="1" />
+
+            <TextBlock Text="Folio:" Height="23" 
+                       HorizontalAlignment="Right" Grid.Row="14"  
+                       Name="textBlock12" VerticalAlignment="Center"
+                       Margin="10,0"/>
+
+            <TextBox  Text="{Binding Asunto.Folio, UpdateSourceTrigger=PropertyChanged}"
+                      Height="23" HorizontalAlignment="Left" Name="textBox8"
+                      VerticalAlignment="Center" Width="120" Grid.Row="14" Grid.Column="1" />
+
+            <TextBlock Text="{Binding ElementExists}" Height="23" 
+                       HorizontalAlignment="Center" Name="textBlockElementExist" 
+                       VerticalAlignment="Center" Width="144"
+                       Grid.Row="15" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Grid>
+</Window>

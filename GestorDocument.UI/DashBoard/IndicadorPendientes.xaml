@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="GestorDocument.UI.DashBoard.IndicadorPendientes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="260">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="10,5,10,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+                <StackPanel Background="#FFE72B" Height="10" Grid.Row="0">                    
+                </StackPanel>
+                <StackPanel Background="#FFEFEFEF"  Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" FontFamily="Verdana" FontSize="40" FontWeight="Thin" TextAlignment="Center" Foreground="#FF656161" Text="{Binding Pendientes.PorVencer}"></TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" FontFamily="Tahoma" FontSize="10" TextAlignment="Center" Margin="0,0,0,0">Asuntos pendientes</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Margin="0,0,0,0" >Por vencer</TextBlock>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Margin="10,5,10,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Background="#DB2A29" Height="10" Grid.Row="0">
+                </StackPanel>
+                <StackPanel Background="#FFEFEFEF" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                    <TextBlock HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" FontFamily="Verdana" FontSize="40" FontWeight="Thin" TextAlignment="Center" Foreground="#FF656161" Text="{Binding Pendientes.Vencidos}"></TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" FontFamily="Tahoma" FontSize="10" TextAlignment="Center" Margin="0,0,0,0">Asuntos pendientes</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Margin="0,0,0,0" >Vencidos</TextBlock>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>                    
+</UserControl>

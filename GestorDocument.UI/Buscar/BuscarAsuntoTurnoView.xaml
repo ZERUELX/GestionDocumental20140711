@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="GestorDocument.UI.Buscar.BuscarAsuntoTurnoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="275" d:DesignWidth="360">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary>
+                    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Path Grid.Row="1" Stroke="#6E6E6E" StrokeThickness="1"
+              Fill="White" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Union">
+                    <CombinedGeometry.Geometry1>
+                        <RectangleGeometry  Rect="0,0,350,240" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <RectangleGeometry  Rect="0,0,40,40" >
+                            <RectangleGeometry.Transform>
+                                <RotateTransform Angle="45" CenterX="175" CenterY="380"/>
+                            </RectangleGeometry.Transform>
+                        </RectangleGeometry>
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
+        <Border Margin="10,20" >
+            <GroupBox Header="Buscar Asunto Por">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="5"/>
+
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock HorizontalAlignment="Left" Text="Folio"
+                               VerticalAlignment="Center" Margin="5,0" 
+                               Style="{StaticResource textBockPopUp}" />
+
+                        <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left"
+                         Text="{Binding Busqueda.SelectedFolio,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         VerticalAlignment="Center" Width="250"/>
+                    </Grid>
+
+                    <Border Grid.Row="1" Style="{StaticResource BorderPopUp}"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Center"
+                    Grid.ColumnSpan="3" Margin="0,2" />
+
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock HorizontalAlignment="Left" Text="Titulo"
+                               VerticalAlignment="Center" Margin="5,0" 
+                               Style="{StaticResource textBockPopUp}" />
+
+                        <TextBox Grid.Column="1" Grid.RowSpan="2" Height="50" HorizontalAlignment="Left"
+                         Text="{Binding Busqueda.SelectedTituloAsunto,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         VerticalAlignment="Center" Width="250"/>
+                    </Grid>
+
+                    <Border Grid.Row="3" Style="{StaticResource BorderPopUp}"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Center"
+                    Grid.ColumnSpan="3" Margin="0,2" />
+
+                    <Grid Grid.Row="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock HorizontalAlignment="Left" Text="Descripción"
+                               VerticalAlignment="Center" Margin="5,0" 
+                               Style="{StaticResource textBockPopUp}" />
+
+                        <TextBox Grid.Column="1" Grid.RowSpan="2" Height="50" HorizontalAlignment="Left"
+                         Text="{Binding Busqueda.SelectedDescripcionAsunto,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         VerticalAlignment="Center" Width="250"/>
+                    </Grid>
+
+                    <Border Grid.Row="5" Style="{StaticResource BorderPopUp}"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Center"
+                    Grid.ColumnSpan="3" Margin="0,2" />
+
+                    <Button Grid.Row="6" Grid.Column="1" 
+                            Height="30" HorizontalAlignment="Right"
+                            Margin="10,0" Cursor="Hand"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Width="50" ToolTip="Buscar Asunto"
+                            Name="btnBuscarAsunto"
+                            Style="{StaticResource bntBuscarAsunto}"
+                            Command="{Binding Busqueda.ValidarSearchCommand}"
+                            Click="btnBuscarAsunto_Click">
+                        <Image  Stretch="Fill" Width="20" Height="20"
+                                Source="../Imagenes/SearchBuscarAsunto.png"
+                                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                    </Button>
+                </Grid>
+            </GroupBox>
+        </Border>
+    </Grid>
+</UserControl>

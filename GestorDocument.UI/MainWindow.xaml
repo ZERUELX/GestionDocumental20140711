@@ -1,0 +1,62 @@
+﻿<Window xmlns:my1="clr-namespace:GestorDocument.UI"  
+        x:Class="GestorDocument.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestión Documental" Height="700" Width="1200"
+        MinHeight="600" MinWidth="800"
+        WindowStartupLocation="CenterScreen" 
+        xmlns:my="clr-namespace:GestorDocument.UI.Menus"
+        ResizeMode="CanResizeWithGrip"
+        WindowStyle="None" AllowsTransparency="True"
+        Icon="/GestorDocument.UI;component/Imagenes/GestionDocument.ico"
+        Name="PantallaPrincipal" Loaded="PantallaPrincipal_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <Storyboard x:Key="rotateImg" >
+                        <DoubleAnimation Storyboard.TargetName="imgSyncFiles" 
+                             Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
+                             From="0" To="360" Duration="0:0:1" 
+                             AutoReverse="False" RepeatBehavior="Forever" />
+                    </Storyboard>
+                </ResourceDictionary>
+                <ResourceDictionary Source="./Themes/DictionaryTheme.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Border BorderBrush="#989C9C" BorderThickness="1.5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <!--Encabezado-->
+                <ContentControl >
+                    <my1:MainWindowsHeaderView/>
+                </ContentControl>
+                
+                <!--Menu y content-->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="270"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!--Menu-->
+                    <ContentControl Name="CtMenu">
+                        <my:MenuView HorizontalAlignment="Stretch" 
+                                     x:Name="menuView1" VerticalAlignment="Stretch"/>
+                    </ContentControl>
+                    <!--SubVentanas-->
+                    <ContentControl Grid.Column="1" Name="CtSubMenu"></ContentControl>        
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
