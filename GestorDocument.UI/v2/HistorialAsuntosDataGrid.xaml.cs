@@ -37,42 +37,10 @@ namespace GestorDocument.UI.v2
 
         public void init(string tipoAsunto)
         {
-            BrushConverter bc = new BrushConverter();
-
-            //switch (tipoAsunto)
-            //{
-            //    case "Asuntos Urgentes":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#FE2E2E");
-            //        break;
-            //    case "Asuntos Pendientes":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#FF8000");
-            //        break;
-            //    case "Todos los Asuntos":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#80CBC9");
-            //        break;
-            //    case "Asuntos Atendidos":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#088A08");
-            //        break;
-            //    case "Asuntos Prioritarios":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#FF8000");
-            //        break;
-            //    case "Asuntos Ordinarios":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#FF8000");
-            //        break;
-            //    case "Asuntos Atendidos Dentro de Fecha":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#088A08");
-            //        break;
-            //    case "Asuntos Atendidos Fuera de Fecha":
-            //        grdAsuntos.Background = (Brush)bc.ConvertFrom("#088A08");
-            //        break;
-            //    default:
-            //        break;
-            //}
-
+            BrushConverter bc = new BrushConverter();            
             textBTituloGrid.FontSize = 20;
             textBTituloGrid.Text = tipoAsunto;
-            textBTituloGrid.Foreground = Brushes.White;
-           
+            textBTituloGrid.Foreground = Brushes.White;           
             vm.Init(10, tipoAsunto);
             this.DataContext = vm;
         }

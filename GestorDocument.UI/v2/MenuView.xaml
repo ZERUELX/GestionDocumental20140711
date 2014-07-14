@@ -29,9 +29,11 @@
                        HorizontalAlignment="Center"/>
         </Border>
         <ListBox Grid.Row="1" ItemsSource="{Binding Menu,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 SelectedItem="{Binding SelectedItem,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  Cursor="Hand"
                  Name="ListMenu" 
-                 Style="{StaticResource ListBoxStyle}">
+                 Style="{StaticResource ListBoxStyle}"
+                 MouseUp="ListMenu_MouseUp">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid >

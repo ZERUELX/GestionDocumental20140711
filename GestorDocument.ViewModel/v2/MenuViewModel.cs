@@ -49,6 +49,21 @@ namespace GestorDocument.ViewModel.v2
         private long _IdRol;
         public const string IdRolPropertyName = "IdRol";
 
+        public MenuModel SelectedItem
+        {
+            get { return _SelectedItem; }
+            set
+            {
+                if (_SelectedItem != value)
+                {
+                    _SelectedItem = value;
+                    OnPropertyChanged(SelectedItemPropertyName);
+                }
+            }
+        }
+        private MenuModel _SelectedItem;
+        public const string SelectedItemPropertyName = "SelectedItem";       
+
         #endregion
 
         #region Metodos.

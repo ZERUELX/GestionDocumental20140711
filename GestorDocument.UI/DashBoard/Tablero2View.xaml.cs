@@ -9,6 +9,7 @@ namespace GestorDocument.UI.DashBoard
     /// </summary>
     public partial class Tablero2View : UserControl
     {
+        TableroViewModel vm = new TableroViewModel();
         public Tablero2View()
         {
             InitializeComponent();
@@ -38,6 +39,13 @@ namespace GestorDocument.UI.DashBoard
         private void FilterImg_MouseEnter(object sender, MouseEventArgs e)
         {
             FilterPopup.IsOpen = true;
+        }
+
+        public void Refresh()
+        {
+            this.TodosGraphView.Refresh(vm.TodosGraphViewModel);
+            this.UrgentesGraphView.Refresh(vm.UrgenteGraphViewModel);
+            this.PrioritariosGraphView.Refresh(vm.PrioritariosGraphViewModel);
         }
 
         private void Border_MouseLeave(object sender, MouseEventArgs e)
