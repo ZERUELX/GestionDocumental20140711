@@ -18,7 +18,7 @@ namespace GestorDocument.UI.Reportes
     /// <summary>
     /// Lógica de interacción para ReporteEficienciaView.xaml
     /// </summary>
-    public partial class ReporteEficienciaView : MetroWindow
+    public partial class ReporteEficienciaView : Window
     {
         public ReporteEficienciaView()
         {

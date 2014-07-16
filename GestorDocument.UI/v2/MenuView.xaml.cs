@@ -40,6 +40,9 @@ namespace GestorDocument.UI.v2
                 case "Nuevo Asunto":
                     break;
                 case "Borrador":
+                    HistorialAsuntosDataGrid grid = new HistorialAsuntosDataGrid();
+                    grid.init("Borrador");
+                    StockSingleton.Instance.SelectedItem = grid;
                     break;
                 case "Reportes":
                     PantallaReportes reportes;

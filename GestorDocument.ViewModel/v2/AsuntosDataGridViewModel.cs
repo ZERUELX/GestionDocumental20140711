@@ -274,6 +274,9 @@ namespace GestorDocument.ViewModel.v2
                 case "Asuntos Atendidos Fuera de Fecha":
                     BackgroundColorTitle = "#088A08";
                     break;
+                case "Borrador":
+                    BackgroundColorTitle = "#0040FF";
+                    break;
                 default:
                     break;
             }

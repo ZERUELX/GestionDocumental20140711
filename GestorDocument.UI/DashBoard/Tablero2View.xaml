@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              Background="Gainsboro"
              xmlns:my="clr-namespace:GestorDocument.UI.DashBoard"
-             d:DesignHeight="900" d:DesignWidth="900">
+             d:DesignHeight="900" d:DesignWidth="900" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="130"/>
