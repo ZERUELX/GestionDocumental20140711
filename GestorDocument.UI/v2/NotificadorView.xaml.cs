@@ -36,9 +36,16 @@ namespace GestorDocument.UI.v2
 
         private void txtUrgentes_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            HistorialAsuntosDataGrid ha = new HistorialAsuntosDataGrid();
-            ha.init("Asuntos Urgentes");
-            StockSingleton.Instance.SelectedItem = ha;
+            HistorialAsuntosDataGrid ha;
+            e.Handled = true;
+            ////AU = Asuntos Urgentes
+            if (!StockSingleton.Instance.DictionaryControl.ContainsKey("AU"))
+            {
+                ha = new HistorialAsuntosDataGrid();
+                ha.init("Asuntos Urgentes");
+                StockSingleton.Instance.DictionaryControl.Add("AU", ha);
+            }
+            StockSingleton.Instance.SelectedItem = StockSingleton.Instance.DictionaryControl["AU"];
 
             //e.Handled = true;
             ////AU = Asuntos Urgentes
@@ -53,74 +60,51 @@ namespace GestorDocument.UI.v2
             //    StockSingleton.Instance.AgregarAPila("AU");
             //    StockSingleton.Instance.SelectedItem = ha;
             //}
-            
+
         }
 
         private void TodosAsuntos_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            HistorialAsuntosDataGrid ha = new HistorialAsuntosDataGrid();
-            ha.init("Todos los Asuntos");
-            StockSingleton.Instance.SelectedItem = ha;
-            ////TA = Todos Asuntos
-            //if (!StockSingleton.Instance.DictionaryControl.ContainsKey("TA"))
-            //{
-            //    StockSingleton.Instance.DictionaryControl.Add("TA", ha);
-            //    StockSingleton.Instance.AgregarAPila("TA");
-            //    StockSingleton.Instance.SelectedItem = ha;
-            //}
-            //else
-            //{
-            //    StockSingleton.Instance.AgregarAPila("TA");
-            //    StockSingleton.Instance.SelectedItem = ha;
-            //}
+            HistorialAsuntosDataGrid ha;
+            //TA = Todos Asuntos
+            if (!StockSingleton.Instance.DictionaryControl.ContainsKey("TA"))
+            {
+                ha = new HistorialAsuntosDataGrid();
+                ha.init("Todos los Asuntos");
+                StockSingleton.Instance.DictionaryControl.Add("TA", ha);
+            }
+            StockSingleton.Instance.SelectedItem = StockSingleton.Instance.DictionaryControl["TA"];
         }
 
         private void txtAsuntosAtendidos_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            HistorialAsuntosDataGrid ha = new HistorialAsuntosDataGrid();
-            ha.init("Asuntos Atendidos");
-            StockSingleton.Instance.SelectedItem = ha;
-            ////AA = Asuntos Atendidos
-            //if (e.Source.Equals(sender))
-            //    e.Handled = false;
-            //else
-            //    e.Handled = true;
-            //if (!StockSingleton.Instance.DictionaryControl.ContainsKey("AA"))
-            //{
-            //    StockSingleton.Instance.DictionaryControl.Add("AA", ha);
-            //    StockSingleton.Instance.AgregarAPila("AA");
-            //    StockSingleton.Instance.SelectedItem = ha;
-            //}
-            //else
-            //{
-            //    StockSingleton.Instance.SelectedItem = ha;
-            //    StockSingleton.Instance.AgregarAPila("AA");
-            //}
+            HistorialAsuntosDataGrid ha;
+            e.Handled = true;
+            ////AU = Asuntos Urgentes
+            if (!StockSingleton.Instance.DictionaryControl.ContainsKey("AA"))
+            {
+                ha = new HistorialAsuntosDataGrid();
+                ha.init("Asuntos Atendidos");
+                StockSingleton.Instance.DictionaryControl.Add("AA", ha);
+            }
+            StockSingleton.Instance.SelectedItem = StockSingleton.Instance.DictionaryControl["AA"];
         }
 
         private void txtAsuntosPendientes_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            HistorialAsuntosDataGrid ha = new HistorialAsuntosDataGrid();
-            ha.init("Asuntos Pendientes");
-            StockSingleton.Instance.SelectedItem = ha;
-            ////AP = Asuntos Pendientes
-            //if (e.Source.Equals(sender))
-            //    e.Handled = false;
-            //else
-            //    e.Handled = true;
-            //if (!StockSingleton.Instance.DictionaryControl.ContainsKey("AP"))
-            //{
-            //    StockSingleton.Instance.DictionaryControl.Add("AP", ha);
-            //    StockSingleton.Instance.AgregarAPila("AP");
-            //    StockSingleton.Instance.SelectedItem = ha;
-            //}
-            //else
-            //{
-            //    StockSingleton.Instance.SelectedItem = ha;
-            //    StockSingleton.Instance.AgregarAPila("AP");
-            //}
+            HistorialAsuntosDataGrid ha;
+            //AP = Asuntos Pendientes
+            e.Handled = true;
+            if (!StockSingleton.Instance.DictionaryControl.ContainsKey("AP"))
+            {
+                ha = new HistorialAsuntosDataGrid();
+                ha.init("Asuntos Pendientes");
+                StockSingleton.Instance.DictionaryControl.Add("AP", ha);
+            }
+
+            StockSingleton.Instance.SelectedItem = StockSingleton.Instance.DictionaryControl["AP"];
         }
 
-      
+
     }
 }
