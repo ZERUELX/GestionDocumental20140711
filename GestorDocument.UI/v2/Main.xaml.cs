@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GestorDocument.UI.v2.Stock;
+using GestorDocument.ViewModel.Login;
 
 namespace GestorDocument.UI.v2
 {
@@ -22,33 +23,33 @@ namespace GestorDocument.UI.v2
         public Main()
         {
             InitializeComponent();
-            Init();            
+            //Init();            
         }
-
-        public void Init()
+        
+        public void Init(UserLoginViewModel user)
         {
-            //TableroView control = null;
-            //if (StockSingleton.Instance.DictionaryControl.ContainsKey("TV"))
-            //    control = StockSingleton.Instance.DictionaryControl["TV"] as TableroView;
-            //else
-            //{
-            //    control = new TableroView();
-            //    StockSingleton.Instance.DictionaryControl.Add("TV", control);
-            //}
-            //StockSingleton.Instance.AddStack("TV", control);
-           // this.ctnPrincipal.Content = control;
-
-         
-            TableroView control = new TableroView();
+            TableroView control;
+            if (!StockSingleton.Instance.DictionaryControl.ContainsKey("CUADRANTE"))
+            {
+                control = new TableroView();                
+                StockSingleton.Instance.DictionaryControl.Add("CUADRANTE", control);                       
+            }
+            else
+            {
+                control = StockSingleton.Instance.DictionaryControl["CUADRANTE"] as TableroView;
+            }
             control.Init();
             StockSingleton.Instance.SelectedItem = control;
 
-            StockSingleton.Instance.AgregarAPila("CUADRANTE");
-            StockSingleton.Instance.DictionaryControl.Add("CUADRANTE", control);
-           
-            //HistorialAsuntosDataGrid dt = new HistorialAsuntosDataGrid();
+            if (!StockSingleton.Instance.StackControls.Contains("CUADRANTE"))
+            {
+                StockSingleton.Instance.AgregarAPila("CUADRANTE");            
+            }            
             this.ctnPrincipal.DataContext = StockSingleton.Instance;
-           // this.ctnPrincipal.Content = dt;
+
+            ucNotificador.Init(user);
+            ucMenu.Init(user);
+            ucUsuarioInfo.Init(user);
         }
     }
 }

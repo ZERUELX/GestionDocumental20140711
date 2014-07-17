@@ -18,7 +18,8 @@
         </ResourceDictionary>
 
     </UserControl.Resources>
-    <Grid Background="#2E2E2E">
+    <Grid Background="#2E2E2E" >
+        <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="AUTO"/>
             <RowDefinition Height="AUTO"/>
@@ -42,15 +43,15 @@
             <Label Content="Usuario :" Name="lblUser" Margin="0,0" Grid.Column="1"
                        HorizontalAlignment="Left" VerticalAlignment="center"
                        Style="{StaticResource labelUser}"/>
-            <TextBlock Text="{Binding Usuario.UsuarioCorreo}" Name="lblUsuario" Grid.Column="2"
+            <TextBlock Text="{Binding User.UsuarioCorreo}" Name="lblUsuario" Grid.Column="2"
                        HorizontalAlignment="Left" VerticalAlignment="center"
                        Style="{StaticResource textBlockUser}"
-                       TextTrimming="CharacterEllipsis" ToolTip="{Binding Usuario.UsuarioCorreo}"/>
+                       TextTrimming="CharacterEllipsis" ToolTip="{Binding User.UsuarioCorreo}"/>
 
             <Label Content="Rol :" Name="lblRol" Margin="0,0" Grid.Row="1"
                        HorizontalAlignment="Left" VerticalAlignment="center"
                        Style="{StaticResource labelUser}" Grid.Column="1"/>
-            <TextBlock Text="{Binding Usuario.Rol.RolName}" Name="lblRoles" Grid.Column="2"
+            <TextBlock Text="{Binding User.Rol.RolName}" Name="lblRoles" Grid.Column="2"
                        HorizontalAlignment="Left" VerticalAlignment="center" Grid.Row="1"
                        Style="{StaticResource textBlockUser}"
                        TextTrimming="CharacterEllipsis" ToolTip="{Binding Usuario.Rol.RolName}"/>
@@ -74,6 +75,7 @@
 
         <Button Content="Cerrar Sesión"  Grid.Row="2"
                 Height="25" HorizontalAlignment="Center"  Name="btnCerrar" 
-                VerticalAlignment="Center" Width="120"  />
+                VerticalAlignment="Center" Width="120" Click="btnCerrar_Click" />
+        </Grid>
     </Grid>
 </UserControl>

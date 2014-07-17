@@ -17,7 +17,7 @@ namespace GestorDocument.DAL.Repository
             {
                 try
                 {
-                    var s = (from o in entity.CAT_SESION.Include("APP_USUARIO")
+                    var s = (from o in entity.CAT_SESION.Include("APP_USUARIO")                             
                              select o).First<CAT_SESION>();
 
                     sesion = new SesionModel();
@@ -30,7 +30,7 @@ namespace GestorDocument.DAL.Repository
                         Apellido = s.APP_USUARIO.Apellido,
                         Area = s.APP_USUARIO.Area,
                         UsuarioPwd = s.APP_USUARIO.UsuarioCorreo,
-                        IsActive = s.APP_USUARIO.IsActive
+                        IsActive = s.APP_USUARIO.IsActive,                        
                     };
                     sesion.NoCerrarSesion = s.IsSaveSesion;
 

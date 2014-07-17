@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GestorDocument.ViewModel.v2;
 using GestorDocument.UI.v2.Stock;
+using GestorDocument.ViewModel.Login;
 
 namespace GestorDocument.UI.v2
 {
@@ -25,12 +26,12 @@ namespace GestorDocument.UI.v2
         public NotificadorView()
         {
             InitializeComponent();
-            Init();
+            
         }
 
-        public void Init()
+        public void Init(UserLoginViewModel user)
         {
-            tvm.Init(10);
+            tvm.Init(user.User.Rol.IdRol);
             this.DataContext = tvm;
         }
 

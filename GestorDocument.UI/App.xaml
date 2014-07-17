@@ -1,8 +1,8 @@
 ﻿<Application x:Class="GestorDocument.UI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
-             StartupUri="v2/Main.xaml">
-    <!--Startup="Application_Startup"StartupUri="v2/Main.xaml"-->
+             Startup="Application_Startup">
+    <!--Startup="Application_Startup"StartupUri="v2/Main.xaml" StartupUri="v2/Main.xaml"-->
              <!--StartupUri="DashBoard/DashBoardGraphView.xaml">-->
              <!--Startup="Application_Startup">-->
              <!--StartupUri="Login/SplashView.xaml"-->

@@ -128,7 +128,8 @@ namespace GestorDocument.DAL.Repository
                         Nombre = res.Nombre,
                         Puesto = res.Puesto,
                         UsuarioPwd = res.UsuarioPwd,
-                        IsActive = res.IsActive
+                        IsActive = res.IsActive,
+                        Rol = this.getRol(res.IdUsuario)
                     };
                 }
                 catch (Exception ex)
@@ -153,7 +154,7 @@ namespace GestorDocument.DAL.Repository
             {
                 try
                 {
-                    var res = (from o in entity.APP_USUARIO
+                    var res = (from o in entity.APP_USUARIO.Include("APP_USUARIO_ROL")
                                where o.UsuarioCorreo == userMail
                                select o).First<APP_USUARIO>();
 
@@ -166,7 +167,8 @@ namespace GestorDocument.DAL.Repository
                         Puesto = res.Puesto,
                         UsuarioCorreo = res.UsuarioCorreo,
                         UsuarioPwd = res.UsuarioPwd,
-                        IsActive = res.IsActive
+                        IsActive = res.IsActive,
+                        Rol = this.getRol(res.IdUsuario)                        
                     };
 
                 }
@@ -177,6 +179,37 @@ namespace GestorDocument.DAL.Repository
             }
 
             return um;
+        }
+
+
+        public Model.RolModel getRol(long idUsuario)
+        {
+            Model.RolModel rol = new Model.RolModel();
+            try
+            {
+                using (var entity=new GestorDocumentEntities())
+                {
+                    APP_ROL res;
+                    res = (from r in entity.APP_ROL
+                           join ur in entity.APP_USUARIO_ROL
+                           on r.IdRol equals ur.IdRol
+                           join u in entity.APP_USUARIO
+                           on ur.IdUsuario equals u.IdUsuario
+                           where u.IdUsuario == idUsuario
+                           select r).FirstOrDefault();
+                    if (res != null)
+                    {
+                        rol.IdRol = res.IdRol;
+                        rol.RolName = res.RolName;                        
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                                
+            }
+
+            return rol;
         }
 
         public void UpdateUsuario(Model.UsuarioModel usuario)

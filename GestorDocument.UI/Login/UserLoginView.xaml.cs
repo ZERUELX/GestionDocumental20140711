@@ -14,6 +14,7 @@ using MahApps.Metro.Controls;
 using GestorDocument.ViewModel.Login;
 using System.ComponentModel;
 using System.Diagnostics;
+using GestorDocument.UI.v2;
 
 namespace GestorDocument.UI.Login
 {
@@ -80,7 +81,10 @@ namespace GestorDocument.UI.Login
 
         public void LoginSuccess()
         {
-            (new MainWindow(this.GetViewModel())).Show();  
+            //(new Main(this.GetViewModel())).Show();
+            Main m = new Main();
+            m.Init(GetViewModel());
+            m.Show();
             this.Close();
         }
 

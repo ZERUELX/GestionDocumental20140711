@@ -3,6 +3,7 @@ using GestorDocument.ViewModel.v2;
 using GestorDocument.UI.v2.Stock;
 using GestorDocument.UI.Reportes;
 using GestorDocument.UI.DashBoard;
+using GestorDocument.ViewModel.Login;
 
 namespace GestorDocument.UI.v2
 {
@@ -15,12 +16,12 @@ namespace GestorDocument.UI.v2
         public MenuView()
         {
             InitializeComponent();
-            Init();
+            //Init();
         }
 
-        public void Init()
+        public void Init(UserLoginViewModel user)
         {
-            mvm.Init(10);
+            mvm.Init(user.User.Rol.IdRol);
             this.DataContext = mvm;
         }
 
