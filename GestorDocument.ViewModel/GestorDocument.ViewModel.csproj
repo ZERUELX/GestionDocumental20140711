@@ -169,8 +169,10 @@
     <Compile Include="UbicacionAddViewModel.cs" />
     <Compile Include="UbicacionModViewModel.cs" />
     <Compile Include="UbicacionViewModel.cs" />
+    <Compile Include="v2\AddDocumentoViewModel.cs" />
     <Compile Include="v2\AsuntosDataGridViewModel.cs" />
     <Compile Include="v2\MenuViewModel.cs" />
+    <Compile Include="v2\NuevoAsuntoTurnoViewModel.cs" />
     <Compile Include="v2\TableroViewModel.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>

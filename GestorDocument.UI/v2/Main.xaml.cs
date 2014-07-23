@@ -37,8 +37,7 @@ namespace GestorDocument.UI.v2
             else
             {
                 control = StockSingleton.Instance.DictionaryControl["CUADRANTE"] as TableroView;
-            }
-            control.Init();
+            }            
             StockSingleton.Instance.SelectedItem = control;
 
             if (!StockSingleton.Instance.StackControls.Contains("CUADRANTE"))
@@ -47,6 +46,7 @@ namespace GestorDocument.UI.v2
             }            
             this.ctnPrincipal.DataContext = StockSingleton.Instance;
 
+            control.Init(user);
             ucNotificador.Init(user);
             ucMenu.Init(user);
             ucUsuarioInfo.Init(user);

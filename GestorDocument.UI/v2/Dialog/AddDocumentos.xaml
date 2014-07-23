@@ -1,0 +1,79 @@
+﻿<Window x:Class="GestorDocument.UI.v2.Dialog.AddDocumentos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:control="http://metro.mahapps.com/winfx/xaml/controls"
+        Title="AGREGAR DOCUMENTO" Height="180" Width="650" MinHeight="180" MinWidth="650"
+        MaxHeight="180" MaxWidth="650"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowStyle="SingleBorderWindow">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="../../Themes/DictionaryTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Tipo de  documento" Margin="10,0"
+                   HorizontalAlignment="Right"
+                   Name="label1" VerticalAlignment="Center"
+                   Style="{StaticResource labelCampo}"/>
+            <ComboBox ItemsSource="{Binding TipoDocumentos}"
+                      SelectedItem="{Binding SelectedItem.TipoDocumentoName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="TipoDocumentoName" 
+                      Grid.Column="1" Height="23" HorizontalAlignment="Left"
+                      Name="cbTipoDoc" VerticalAlignment="Center" Width="180" />
+            <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="160"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="ADJUNTAR DOCUMENTO" Grid.Column="1" Grid.Row="1" 
+                        Height="25" HorizontalAlignment="Center" 
+                        Name="btnAgregarDoc" VerticalAlignment="Center" Width="140"
+                        Command="{Binding AddDocCommand}"/>
+                <TextBlock HorizontalAlignment="Left" Margin="5,0"
+                           Name="txtDocPath" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                           Text="{Binding DocumentoPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="AGREGAR DOCUMENTO" Grid.Row="2" Height="25" 
+                    HorizontalAlignment="Left"  Margin="20,0"
+                    Name="btnAgregar" VerticalAlignment="Center"
+                    Width="140" 
+                    Command="{Binding AddDocument}"/>
+
+            <Button Content="CANCELAR" Grid.Column="1" Grid.Row="2" 
+                    Height="23" HorizontalAlignment="Right" Margin="20,0"
+                    Name="btnCancelar" VerticalAlignment="Center"
+                    Width="100" Click="btnCancelar_Click"/>
+        </Grid>
+    </Grid>
+</Window>

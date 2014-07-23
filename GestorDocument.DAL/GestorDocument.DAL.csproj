@@ -229,8 +229,12 @@
     <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Repository\v2\AsuntoRepository.cs" />
     <Compile Include="Repository\v2\BusquedaRepository.cs" />
+    <Compile Include="Repository\v2\InstruccionRepository.cs" />
     <Compile Include="Repository\v2\MenuRepository.cs" />
+    <Compile Include="Repository\v2\PrioridadRepository.cs" />
+    <Compile Include="Repository\v2\StatusAsuntoRepository.cs" />
     <Compile Include="Repository\v2\TableroRepository.cs" />
+    <Compile Include="Repository\v2\TipoDocumentoRepository.cs" />
     <Compile Include="SpDashboardAtendidosIndicador_Result.cs">
       <DependentUpon>GestorDocument.tt</DependentUpon>
     </Compile>

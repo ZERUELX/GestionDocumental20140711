@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using GestorDocument.ViewModel.AsuntoTurno;
 using GestorDocument.ViewModel;
+using GestorDocument.ViewModel.v2;
 
 namespace GestorDocument.UI.AsuntoTurno
 {
@@ -43,21 +44,7 @@ namespace GestorDocument.UI.AsuntoTurno
                 ;
             }
 
-        }
-
-        public void GetAddDocumento(AsuntoModViewModel viewModel)
-        {
-            try
-            {
-                Confirmation confirmacion = new Confirmation();
-                this.DataContext = new AddDocumentoAsuntoViewModel(viewModel, confirmacion);
-            }
-            catch (Exception)
-            {
-                ;
-            }
-
-        }
+        }        
 
         public void GetAddDocumento(TrancingAsuntoTurnoViewModel viewModel)
         {

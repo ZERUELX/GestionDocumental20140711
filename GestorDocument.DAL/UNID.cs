@@ -49,5 +49,18 @@ namespace GestorDocument.DAL
 
             return aux2;
         }
+
+        public long getUDF_UnidId()
+        {
+            long res = 0;
+            try
+            {
+                res = long.Parse(String.Format("{0:yyyyMMddHHmmsss}",DateTime.Now));
+            }
+            catch (Exception)
+            {                                
+            }
+            return res;
+        }
     }
 }

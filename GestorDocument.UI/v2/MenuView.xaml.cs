@@ -4,6 +4,7 @@ using GestorDocument.UI.v2.Stock;
 using GestorDocument.UI.Reportes;
 using GestorDocument.UI.DashBoard;
 using GestorDocument.ViewModel.Login;
+using GestorDocument.UI.AsuntoTurno;
 
 namespace GestorDocument.UI.v2
 {
@@ -13,6 +14,7 @@ namespace GestorDocument.UI.v2
     public partial class MenuView : UserControl
     {
         MenuViewModel mvm = new MenuViewModel();
+        UserLoginViewModel Usuario;
         public MenuView()
         {
             InitializeComponent();
@@ -21,6 +23,7 @@ namespace GestorDocument.UI.v2
 
         public void Init(UserLoginViewModel user)
         {
+            this.Usuario = user;
             mvm.Init(user.User.Rol.IdRol);
             this.DataContext = mvm;
         }
@@ -39,6 +42,16 @@ namespace GestorDocument.UI.v2
                     StockSingleton.Instance.SelectedItem = StockSingleton.Instance.DictionaryControl["CUADRANTE"];
                     break;
                 case "Nuevo Asunto":
+                    NuevoAsuntoTurnoView nuevoTurno;
+                    if (!StockSingleton.Instance.DictionaryControl.ContainsKey("NT"))
+                    {
+                        nuevoTurno = new NuevoAsuntoTurnoView();
+                        StockSingleton.Instance.DictionaryControl.Add("NT", nuevoTurno);
+                        //StockSingleton.Instance.SelectedItem = StockSingleton.Instance.DictionaryControl["NT"];
+                    }
+                    nuevoTurno = StockSingleton.Instance.DictionaryControl["NT"] as NuevoAsuntoTurnoView;
+                    nuevoTurno.Init(Usuario.User);
+                    StockSingleton.Instance.SelectedItem = nuevoTurno;
                     break;
                 case "Borrador":
                     HistorialAsuntosDataGrid grid = new HistorialAsuntosDataGrid();

@@ -10,6 +10,7 @@ using GestorDocument.DAL;
 using System.Configuration;
 using System.IO;
 using System.ComponentModel;
+using GestorDocument.ViewModel.v2;
 
 
 namespace GestorDocument.ViewModel.AsuntoTurno
@@ -34,6 +35,7 @@ namespace GestorDocument.ViewModel.AsuntoTurno
         //private AsuntoAddViewModel _AsuntoAddViewModel;
         private AsuntoModViewModel _AsuntoModViewModel;
         private TrancingAsuntoTurnoViewModel _TrancingAsuntoTurnoViewModel;
+       
 
         public DocumentosModel Documentos
         {
@@ -216,6 +218,7 @@ namespace GestorDocument.ViewModel.AsuntoTurno
 
             this.LoadGrid();
         }
+
 
         // ***************************** ***************************** *****************************
         // Constructor y carga de elementos.

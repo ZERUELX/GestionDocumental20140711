@@ -84,8 +84,8 @@ namespace GestorDocument.UI.AsuntoTurno
         private void btnAgregarExpedinete_Click(object sender, RoutedEventArgs e)
         {
             AddDocumentosView addDocumento = new AddDocumentosView();
-            addDocumento.GetAddDocumento(GetViewModel());
-            addDocumento.ShowDialog();
+            //addDocumento.GetAddDocumento(
+            //addDocumento.ShowDialog();
         }
 
         public ContentControl GetContentPane()

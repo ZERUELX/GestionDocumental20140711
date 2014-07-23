@@ -511,6 +511,12 @@
     <Compile Include="Ubicacion\UbicacionView.xaml.cs">
       <DependentUpon>UbicacionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="v2\Buscar\BuscarAsuntoTurnoView.xaml.cs">
+      <DependentUpon>BuscarAsuntoTurnoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\Dialog\AddDocumentos.xaml.cs">
+      <DependentUpon>AddDocumentos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="v2\HistorialAsuntosDataGrid.xaml.cs">
       <DependentUpon>HistorialAsuntosDataGrid.xaml</DependentUpon>
     </Compile>
@@ -522,6 +528,9 @@
     </Compile>
     <Compile Include="v2\NotificadorView.xaml.cs">
       <DependentUpon>NotificadorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="v2\NuevoAsuntoTurnoView.xaml.cs">
+      <DependentUpon>NuevoAsuntoTurnoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="v2\PopUp.xaml.cs">
       <DependentUpon>PopUp.xaml</DependentUpon>
@@ -1045,6 +1054,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="v2\Buscar\BuscarAsuntoTurnoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\Dialog\AddDocumentos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="v2\HistorialAsuntosDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1058,6 +1075,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="v2\NotificadorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="v2\NuevoAsuntoTurnoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
